@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'Recorded Newsreader';
+  src: url('/build-sprint/newsreader-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #000;
+  touch-action: none;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.canvas:active {
+  cursor: grabbing;
+}
+
+.title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas {
+    cursor: default;
+  }
+}
+
+/* Export panel: parked on the right so it never sits over the slab. */
+.exportControl {
+  position: absolute;
+  top: 50%;
+  right: clamp(16px, 3vw, 40px);
+  display: grid;
+  transform: translateY(-50%);
+}
+
+.exportPlate {
+  display: grid;
+  gap: 12px;
+  width: min(280px, 34vw);
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(8, 8, 10, 0.86);
+  backdrop-filter: blur(12px);
+}
+
+.exportHeader {
+  display: grid;
+  gap: 5px;
+}
+
+.exportHeader strong {
+  color: #fff;
+  font-size: 14px;
+}
+
+.exportHeader small,
+.exportNote {
+  color: rgba(255, 255, 255, 0.43);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.exportRow {
+  display: grid;
+  gap: 10px;
+}
+
+.exportRow select {
+  min-width: 0;
+  height: 38px;
+  padding: 0 12px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: transparent;
+}
+
+.exportButton.exportButton {
+  min-height: 42px;
+  padding: 0 18px;
+  color: #050507;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: none;
+  border-radius: 999px;
+  background: #d4a84e;
+}
+
+.exportButton.exportButton:disabled {
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.exportProgress {
+  width: 100%;
+  height: 4px;
+  accent-color: #d4a84e;
+}
+
+/* Narrow windows have no room beside the slab; sit it along the bottom. */
+@media (max-width: 720px) {
+  .exportControl {
+    top: auto;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    left: 16px;
+    transform: none;
+  }
+
+  .exportPlate {
+    width: auto;
+  }
+}
+
+/* The reference button is a MUI button; these restore what it provided. */
+.exportButton.exportButton { border: 0; cursor: pointer; font-family: inherit; }
+.exportButton.exportButton:disabled { cursor: default; }
