@@ -3,9 +3,9 @@ import { writeFile, mkdir } from 'node:fs/promises';
 
 const missing = 'I could not find this in official sources';
 const questions = [
-  'Which scheme gives money to farmers?',
-  'Health insurance for poor families',
-  'Which scheme provides scholarships for students?',
+  'schemes for farmers',
+  'health insurance for poor families',
+  'scholarship for girl students',
   'How do I apply for a passport?',
   'blorptastic purple moons eat zigzag umbrellas',
 ];
@@ -29,6 +29,7 @@ test('a citizen gets five honest answers with exact government sources', async (
     const response = await responsePromise;
     const body = await response.json();
     expect(response.status(), JSON.stringify(body)).toBe(200);
+    expect(body).not.toHaveProperty('diagnostics');
     await expect(page.getByTestId('answer-text')).toHaveText(body.answer.replace(/\n\n/g, ''), { useInnerText: false });
     expect(body.remaining).toBe(19 - index);
     expect(body.answer.trim().split(/\s+/).length).toBeLessThanOrEqual(200);

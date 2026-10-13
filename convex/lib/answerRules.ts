@@ -79,7 +79,8 @@ export function simpleEnglish(text: string): string {
 
 // Never accept model-generated URLs. Each statement must supply an exact
 // supporting quotation from a retrieved chunk. Reject malformed or unsupported
-// output as a whole, rather than showing a partially validated answer.
+// statements individually, so one bad quotation cannot erase other supported
+// information. Only fully validated statements and their sources are displayed.
 export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
   const missing = { answer: NOT_FOUND, sources: [] };
   if (!raw || typeof raw !== "object") return missing;
@@ -89,25 +90,29 @@ export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
   const sources = new Map<string, { title: string; url: string }>();
   const paragraphs: string[] = [];
   for (const value of result.statements) {
-    if (!value || typeof value !== "object") return missing;
+    if (!value || typeof value !== "object") continue;
     const statement = value as { text?: unknown; evidence?: unknown };
     if (typeof statement.text !== "string" || !statement.text.trim()
       || !Array.isArray(statement.evidence) || !statement.evidence.length
-      || statement.evidence.length > 8) return missing;
-    const text = statement.text.trim();
-    if (/https?:\/\/|www\./i.test(text)) return missing;
+      || statement.evidence.length > 8) continue;
+    const text = simpleEnglish(statement.text.trim());
+    if (/https?:\/\/|www\./i.test(text)) continue;
+    const statementSources = new Map<string, { title: string; url: string }>();
+    let valid = true;
     for (const entry of statement.evidence) {
-      if (!entry || typeof entry !== "object") return missing;
+      if (!entry || typeof entry !== "object") { valid = false; break; }
       const evidence = entry as { chunkId?: unknown; quote?: unknown };
       const chunk = chunks.find((item) => item.id === evidence.chunkId);
       if (!chunk || !isGovernmentUrl(chunk.url) || typeof evidence.quote !== "string"
         || normalize(evidence.quote).length < 20
-        || !normalize(chunk.text).includes(normalize(evidence.quote))) return missing;
-      sources.set(chunk.url, { title: chunk.title, url: chunk.url });
+        || !normalize(chunk.text).includes(normalize(evidence.quote))) { valid = false; break; }
+      statementSources.set(chunk.url, { title: chunk.title, url: chunk.url });
     }
+    if (!valid || [...paragraphs, text].join(" ").split(/\s+/).length > 200) continue;
     paragraphs.push(text);
+    for (const [url, source] of statementSources) sources.set(url, source);
   }
-  const answer = simpleEnglish(paragraphs.join("\n\n"));
-  if (answer.split(/\s+/).length > 200) return missing;
+  if (!paragraphs.length) return missing;
+  const answer = paragraphs.join("\n\n");
   return { answer, sources: [...sources.values()] };
 }

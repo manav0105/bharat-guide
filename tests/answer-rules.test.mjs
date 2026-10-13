@@ -42,3 +42,16 @@ test('hospital wording becomes plain English without changing the amount', () =>
   assert.equal(simpleEnglish('It provides Rs. 5 lakhs for secondary and tertiary care hospitalization at empanelled hospitals.'),
     'It provides Rs. 5 lakhs for hospital treatment at approved hospitals.');
 });
+
+test('a bad quotation in one statement does not discard a fully supported statement', () => {
+  const first = { id: 'first', title: 'Farmer support', text: 'Farmers who own land can get help to buy a smartphone.', url: 'https://example.gov.in/farmers' };
+  const second = { id: 'second', title: 'Irrigation support', text: 'Irrigation subsidies are available for Schedule Tribe farmers.', url: 'https://example.gov.in/irrigation' };
+  const reply = { found: true, statements: [
+    { text: 'Farmers who own land can get help to buy a smartphone.', evidence: [{ chunkId: 'first', quote: first.text }] },
+    { text: 'Irrigation subsidies are available for Scheduled Tribe farmers.', evidence: [{ chunkId: 'second', quote: 'Irrigation subsidies are available for Scheduled Tribe farmers.' }] },
+  ] };
+  assert.deepEqual(groundedAnswer(reply, [first, second]), {
+    answer: reply.statements[0].text,
+    sources: [{ title: first.title, url: first.url }],
+  });
+});

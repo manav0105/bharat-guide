@@ -29,18 +29,33 @@ ranked candidates, skips navigation/contact-only chunks and non-government
 URLs, then passes the top eight remaining chunks to the action. No embeddings,
 external search, browser model calls, or AI conversation history are used.
 
-The AI must either return supported statements with exact evidence quotations,
-or refuse. The server checks the evidence against the retrieved chunks, builds
-source links itself, and rejects malformed or over-200-word output. Unsupported
-questions return exactly `I could not find this in official sources` with no
-sources. Provider outages show a separate retry message.
+The AI can give partial information about a related welfare scheme, but every
+displayed statement still needs exact evidence from a retrieved chunk. The
+server checks statements individually: one malformed quotation cannot erase
+other supported statements. It builds source links only for displayed facts and
+keeps the answer under 200 words. If all proposed evidence fails, the action
+tries one repair before showing a service retry message, not a false claim that
+the database has no sources. Unrelated or out-of-scope questions return exactly
+`I could not find this in official sources` with no sources. Passport/visa
+administrative services are outside this welfare-benefit guide's scope, even
+though incidental Passport Seva text exists in the loaded dataset.
+
+For admin diagnosis, run `python -B scripts/diagnose_answers.py before` to
+capture the three reported questions with all eight selected chunks and the raw
+AI reply. Run `python -B scripts/diagnose_answers.py after` for those questions
+plus the passport control. This calls the same action used by the site, with
+an internal-only trace flag. No raw replies or traces reach the public HTTP API,
+and provider keys are never included. Files go to the ignored `.verification/`
+directory. Tracing does not change search, prompts, filters, or answer rules.
 
 ## Daily allowance
 
 An opaque, HttpOnly visitor cookie identifies a browser without login. Only a
 hash is stored in Convex. The server permits 20 questions per Indian calendar
 day; counter checks and increments share one transaction. Conflicting requests
-retry the counter update without repeating a model call. Reloading or opening
+retry the counter update without repeating a model call. One evidence-repair
+call, if needed, belongs to the same question and is not charged again to the
+visitor's daily allowance. Reloading or opening
 another tab keeps the allowance. Failed provider calls still count as attempts.
 
 As with any cookie-based limit without login, clearing cookies or using another
