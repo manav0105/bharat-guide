@@ -1,0 +1,44 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { DAILY_LIMIT, NOT_FOUND, canAsk, indiaDay, usedToday, groundedAnswer, usefulChunk, searchQuestion, simpleEnglish } from '../convex/lib/answerRules.ts';
+
+test('twenty questions per Indian calendar day, including midnight reset', () => {
+  const now = Date.parse('2026-10-14T12:00:00Z');
+  const day = indiaDay(now);
+  assert.equal(DAILY_LIMIT, 20);
+  assert.equal(canAsk(day, 19, now), true);
+  assert.equal(canAsk(day, 20, now), false);
+  assert.equal(usedToday('2026-10-13', 20, now), 0);
+  assert.equal(canAsk('2026-10-13', 20, now), true);
+  assert.equal(indiaDay(Date.parse('2026-10-14T18:29:59Z')), '2026-10-14');
+  assert.equal(indiaDay(Date.parse('2026-10-14T18:30:00Z')), '2026-10-15');
+});
+
+test('unsupported output, invented sources and overlong answers fail closed', () => {
+  const chunk = { id: 'c1', title: 'Example scheme', text: 'Eligible farmers receive financial assistance of Rs. 6000 per year.', url: 'https://example.gov.in/scheme' };
+  const valid = { found: true, statements: [{ text: 'Eligible farmers get Rs. 6000 each year.', evidence: [{ chunkId: 'c1', quote: chunk.text }] }] };
+  assert.deepEqual(groundedAnswer(valid, [chunk]).sources, [{ title: chunk.title, url: chunk.url }]);
+  assert.equal(groundedAnswer({ found: false, statements: [] }, [chunk]).answer, NOT_FOUND);
+  const inventedQuote = structuredClone(valid);
+  inventedQuote.statements[0].evidence[0].quote = 'All farmers get Rs. 50000 per year.';
+  assert.equal(groundedAnswer(inventedQuote, [chunk]).answer, NOT_FOUND);
+  const inventedId = structuredClone(valid);
+  inventedId.statements[0].evidence[0].chunkId = 'missing';
+  assert.equal(groundedAnswer(inventedId, [chunk]).answer, NOT_FOUND);
+  const tooLong = structuredClone(valid);
+  tooLong.statements[0].text = Array(201).fill('word').join(' ');
+  assert.equal(groundedAnswer(tooLong, [chunk]).answer, NOT_FOUND);
+  assert.equal(groundedAnswer(valid, [{ ...chunk, url: 'https://example.com/scheme' }]).answer, NOT_FOUND);
+});
+
+test('navigation and contact text are excluded, useful scheme text is retained', () => {
+  assert.equal(usefulChunk('Home\nMenu\nContact Us\nAbout Us\nPrivacy Policy\nTerms and conditions\nAccessibility\nBack to Top', 'A scheme'), false);
+  assert.equal(usefulChunk('Contact Us\nPlease contact the department in our main office for all enquiries and general information about this website.\nEmail: office@example.gov.in', 'Contact Us'), false);
+  assert.equal(usefulChunk('Home\nEligible farmers can receive financial assistance of Rs. 6000 per year under this scheme.\nContact Us', 'Farmer support'), true);
+  assert.equal(searchQuestion('Which scheme gives money to farmers?'), 'farmers');
+});
+
+test('hospital wording becomes plain English without changing the amount', () => {
+  assert.equal(simpleEnglish('It provides Rs. 5 lakhs for secondary and tertiary care hospitalization at empanelled hospitals.'),
+    'It provides Rs. 5 lakhs for hospital treatment at approved hospitals.');
+});

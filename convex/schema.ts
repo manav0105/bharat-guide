@@ -2,6 +2,11 @@ import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({
+  visitors: defineTable({
+    tokenHash: v.string(),
+    day: v.string(),
+    questions: v.number(),
+  }).index("by_token", ["tokenHash"]),
   documents: defineTable({
     title: v.string(),
     text: v.string(),

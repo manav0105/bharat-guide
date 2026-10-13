@@ -1,3 +1,3 @@
 import { createRoot } from 'react-dom/client';
-import { RecordedPassportIteration } from './passport/RecordedPassportIteration';
-createRoot(document.getElementById('root')!).render(<RecordedPassportIteration />);
+import { BharatGuide } from './BharatGuide';
+createRoot(document.getElementById('root')!).render(<BharatGuide />);
