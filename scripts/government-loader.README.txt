@@ -1,0 +1,47 @@
+One-time Bharat government document loader
+
+Install the Python dependency:
+  python -m pip install -r scripts/loader-requirements.txt
+
+Preview five rows without writing anything:
+  python scripts/load_government_documents.py --preview
+
+Import and verify:
+  python scripts/load_government_documents.py
+
+The documents schema and admin-only verification functions are already deployed
+to this project's existing development deployment. The script uses the existing
+Convex CLI login, not a Hugging Face token. It never selects production.
+Convex's CLI requires a dependency entry in package.json; the loader adds that
+entry temporarily for each CLI command and restores the exact original bytes
+in a finally block. Neither package.json nor package-lock.json is changed by
+a completed run.
+
+The source revision is pinned in the script. It uses datasets streaming=True
+and token=False. No SQLite backup, CSV archive, or complete dataset is downloaded.
+Only the selected 2,000 documents are staged in a temporary JSONLines file,
+then appended using Convex's supported import command. The temporary file is
+removed automatically. Existing data is never replaced or deleted.
+
+Field differences in this source revision:
+- The schemes/benefits topic is called "schemes".
+- Parquet quality describes extraction ("full_text" or "ocr_text"), not approval.
+  The canonical source must also have assessment_status="eligible".
+  These are the screened records corresponding to the CSV's status="good".
+- There is no host column in Parquet; the host is read from the document URL.
+- There is no category column; it is not required in the destination table.
+
+Each documents entry is one chunk of at most 1,000 Unicode characters, with
+title, text, url, host, topics, sourceId, chunkIndex, chunkCount, and importId.
+Chunks preserve all characters and reconstruct the source text exactly.
+The source and chunk indexes allow reconstruction, and search_text enables
+Convex text search. Embeddings and an AI search interface are outside this task.
+
+The read-back verification counts unique source rows and saved chunks, checks
+chunk lengths and complete, nonduplicate chunk sequences, and reads three
+sample titles and URLs from Convex. A completed run may be rerun safely: it
+verifies the existing import instead of adding duplicate chunks. An incomplete
+existing import causes an error rather than overwriting data.
+
+Source documentation:
+https://huggingface.co/datasets/ankitjh4/bharat-government-documents/blob/1b76e58adbb0a69e113e27626a15b97d039d897e/README.md
