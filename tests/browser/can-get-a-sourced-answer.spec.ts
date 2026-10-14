@@ -24,13 +24,13 @@ test('a citizen gets five honest answers with exact government sources', async (
   const records: { question: string; answer: string; sources: { title: string; url: string }[] }[] = [];
   for (const [index, question] of questions.entries()) {
     await page.getByLabel('What would you like to know?').fill(question);
-    const responsePromise = page.waitForResponse((response) => response.url().endsWith('/api/ask') && response.request().method() === 'POST');
+    const responsePromise = page.waitForResponse((response) => response.url().endsWith('/api/ask') && response.request().method() === 'POST', {timeout:180000});
     await page.getByRole('button', { name: 'Find an answer', exact: true }).click();
     const response = await responsePromise;
     const body = await response.json();
     expect(response.status(), JSON.stringify(body)).toBe(200);
     expect(body).not.toHaveProperty('diagnostics');
-    await expect(page.getByTestId('answer-text')).toHaveText(body.answer.replace(/\n\n/g, ''), { useInnerText: false });
+    await expect(page.getByTestId('answer-text').last()).toHaveText(body.answer.replace(/\n\n/g, ''), { useInnerText: false });
     expect(body.remaining).toBe(19 - index);
     expect(body.answer.trim().split(/\s+/).length).toBeLessThanOrEqual(200);
     records.push({ question, answer: body.answer, sources: body.sources });
@@ -43,12 +43,12 @@ test('a citizen gets five honest answers with exact government sources', async (
       expect(body.sources.length).toBeGreaterThan(0);
       for (const source of body.sources) {
         expect(new URL(source.url).protocol).toMatch(/^https?:$/);
-        await expect(page.getByRole('link', { name: `${source.title} (opens in a new tab)`, exact: true })).toHaveAttribute('href', source.url);
+        await expect(page.getByTestId('chat-turn').last().getByRole('link', { name: `${source.title} (opens in a new tab)`, exact: true })).toHaveAttribute('href', source.url);
       }
     } else {
       expect(body.answer).toBe(missing);
       expect(body.sources).toEqual([]);
-      await expect(page.getByRole('heading', { name: 'Official pages used' })).toHaveCount(0);
+      await expect(page.getByTestId('chat-turn').last().getByRole('heading', { name: 'Official pages used' })).toHaveCount(0);
     }
   }
   expect(errors).toEqual([]);

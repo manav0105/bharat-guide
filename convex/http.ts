@@ -1,6 +1,7 @@
 import { httpRouter } from "convex/server";
 import { httpAction } from "./_generated/server";
 import { internal } from "./_generated/api";
+import { parseHistory } from "./lib/conversation";
 
 const http = httpRouter();
 const cookieName = "bharat_visitor";
@@ -48,13 +49,13 @@ http.route({
       return json({ error: "Send a question as JSON." }, 415);
     }
     const length = Number(request.headers.get("Content-Length") || 0);
-    if (length > 4096) return json({ error: "Keep your question under 500 characters." }, 413);
+    if (length > 65536) return json({ error: "This question and its recent chat context are too long." }, 413);
     const token = readToken(request);
     if (!token) return json({ error: "Refresh the page to start your daily allowance." }, 401);
     let input: unknown;
     try {
       const body = await request.text();
-      if (body.length > 4096) return json({ error: "Keep your question under 500 characters." }, 413);
+      if (body.length > 20000) return json({ error: "This question and its recent chat context are too long." }, 413);
       input = JSON.parse(body);
     } catch {
       return json({ error: "Please enter a question." }, 400);
@@ -63,9 +64,11 @@ http.route({
     if (typeof question !== "string" || !question.trim() || question.trim().length > 500) {
       return json({ error: "Enter a question between 1 and 500 characters." }, 400);
     }
+    const history = parseHistory(input && typeof input === "object" && "history" in input ? input.history : undefined);
+    if (!history) return json({ error: "Send at most three completed chat turns." }, 400);
     let result;
     try {
-      result = await ctx.runAction(internal.ai.answer, { question: question.trim(), tokenHash: await hash(token) });
+      result = await ctx.runAction(internal.ai.answer, { question: question.trim(), history, tokenHash: await hash(token) });
     } catch {
       return json({ error: "The answer service is busy. Please try again in a moment." }, 503);
     }

@@ -7,7 +7,7 @@
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",
     "deploy": "node scripts/deploy.mjs",
-    "test": "node --test tests/answer-rules.test.mjs",
+    "test": "node --test tests/answer-rules.test.mjs tests/conversation.test.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {

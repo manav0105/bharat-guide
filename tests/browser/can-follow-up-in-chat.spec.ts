@@ -1,0 +1,59 @@
+import {test,expect} from '@playwright/test';
+import {writeFile} from 'node:fs/promises';
+
+test('PAN follow-ups keep context in the browser and New chat keeps the allowance',async({page})=>{
+ const questions=['how to apply for PAN card','what documents do I need?','how long does it take?'];
+ const records:{question:string;answer:string;sources:{title:string;url:string}[];status:number;error:string|null}[]=[];
+ const providerRequests:string[]=[];
+ page.on('request',r=>{if(/generativelanguage|openai\.com/.test(r.url()))providerRequests.push(r.url());});
+ await page.goto('/');
+ await expect(page.getByRole('status').filter({hasText:'20 of 20'})).toBeVisible();
+ for(const [i,question]of questions.entries()){
+  await page.getByLabel('What would you like to know?').fill(question);
+  const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/ask')&&r.request().method()==='POST',{timeout:180000});
+  await page.getByLabel('What would you like to know?').press('Enter');
+  const response=await responsePromise;const body=await response.json();
+  const request=response.request().postDataJSON();
+  expect(request.question).toBe(question);
+  expect(request.history).toEqual(records.slice(-3).map(r=>({question:r.question,answer:r.answer})));
+  records.push({question,answer:body.answer,sources:body.sources,status:response.status(),error:body.error||null});
+  await writeFile(process.env.BHARAT_TEST_URL ? '.verification/bharat-chat-answers-live.json' : '.verification/bharat-chat-answers.json',JSON.stringify(records,null,2));
+  console.log(`Question: ${question}\nAnswer: ${body.answer||body.error}\nSources: ${JSON.stringify(body.sources)}\n`);
+  expect(response.status()).toBe(200);
+  if (i === 0) expect(body.answer).not.toBe('I could not find this in official sources');
+  if (body.answer === 'I could not find this in official sources') expect(body.sources).toEqual([]);
+  else expect(body.sources.length).toBeGreaterThan(0);
+  expect(body.answer.trim().split(/\s+/).length).toBeLessThanOrEqual(200);
+  await expect(page.getByTestId('chat-turn')).toHaveCount(i+1);
+  await expect(page.getByTestId('answer-text').last()).toHaveText(body.answer.replace(/\n\n/g,''),{useInnerText:false});
+  await expect(page.getByRole('status').filter({hasText:`${19-i} of 20`})).toBeVisible();
+ }
+ expect(providerRequests).toEqual([]);
+ const composer=await page.locator('.chat-composer').boundingBox();
+ expect(composer!.y+composer!.height).toBeCloseTo(844,0);
+ await expect.poll(async()=>{
+  const answer=await page.getByTestId('answer-text').last().boundingBox();
+  const bar=await page.locator('.chat-composer').boundingBox();
+  return answer!.y+answer!.height-bar!.y;
+ }).toBeLessThanOrEqual(0);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.screenshot({path:'.verification/bharat-chat-mobile.png'});
+ await page.setViewportSize({width:1280,height:900});
+ await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+ await page.screenshot({path:'.verification/bharat-chat-desktop.png'});
+ await page.reload();
+ await expect(page.getByTestId('chat-turn')).toHaveCount(3);
+ await expect(page.getByRole('status').filter({hasText:'17 of 20'})).toBeVisible();
+ await page.getByLabel('What would you like to know?').fill('first line');
+ await page.getByLabel('What would you like to know?').press('Shift+Enter');
+ await expect(page.getByLabel('What would you like to know?')).toHaveValue('first line\n');
+ await page.getByRole('button',{name:'New chat',exact:true}).click();
+ await expect(page.getByTestId('chat-turn')).toHaveCount(0);
+ await expect(page.getByRole('status').filter({hasText:'17 of 20'})).toBeVisible();
+ await page.reload();
+ await expect(page.getByTestId('chat-turn')).toHaveCount(0);
+ await expect(page.getByRole('status').filter({hasText:'17 of 20'})).toBeVisible();
+ const invalid=await page.request.post('/api/ask',{data:{question:'PAN',history:Array(4).fill({question:'PAN',answer:'PAN'})}});
+ expect(invalid.status()).toBe(400);
+ await expect(page.getByRole('status').filter({hasText:'17 of 20'})).toBeVisible();
+});
