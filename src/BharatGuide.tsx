@@ -5,8 +5,8 @@ import './bharat-guide.css';
 
 type Answer = { answer: string; sources: { title: string; url: string }[]; remaining: number };
 const examples = [
-  'Which scheme gives money to farmers?',
-  'Health insurance for poor families',
+  'Update my address in the voter list',
+  'How to apply for a PAN card',
   'Scholarships for students',
 ];
 
@@ -83,7 +83,7 @@ export function BharatGuide() {
     </header>
     <main className="main-content">
       <div className="introduction">
-        <h1>Government schemes and benefits, explained.</h1>
+        <h1>Government services and benefits, explained.</h1>
         <p>Get a short answer, with the official pages behind it.</p>
       </div>
       <form className="question-form" onSubmit={ask} aria-busy={busy}>

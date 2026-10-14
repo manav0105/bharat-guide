@@ -24,10 +24,13 @@ export function searchQuestion(question: string): string {
   return [...new Set(meaningful.length ? meaningful : words)].slice(0, 16).join(" ");
 }
 
-export function isGovernmentUrl(value: string): boolean {
+export function isLoadedSourceUrl(value: string): boolean {
   try {
     const url = new URL(value);
-    return url.protocol === "https:" && /(?:^|\.)(?:gov|nic)\.in$/.test(url.hostname);
+    // The import is screened and evidence IDs must belong to retrieved rows.
+    // Do not discard official universities or agencies merely because their
+    // published URL uses .ac.in, .org.in, or HTTP instead of .gov.in/HTTPS.
+    return ["http:", "https:"].includes(url.protocol) && !!url.hostname && !url.username && !url.password;
   } catch {
     return false;
   }
@@ -36,16 +39,18 @@ export function isGovernmentUrl(value: string): boolean {
 const menuLine = /^(?:home|main menu|menu|search|contact us|about us|contact|feedback|sitemap|site map|privacy policy|terms(?: and conditions)?|accessibility|screen reader access|skip to(?: main)? content|back to top|share(?: on.*)?|print|login|sign in|register|facebook|twitter|linkedin|youtube|instagram|a\+|a-|a|english|हिन्दी|हिंदी|copyright.*|all rights reserved.*)$/i;
 const contactLine = /(?:[\w.+-]+@[\w.-]+\.[a-z]{2,}|^(?:tel(?:ephone)?|phone|fax|email|e-mail|address|helpline|contact number)\s*[:+])/i;
 
-export function usefulChunk(text: string, title: string): boolean {
+export function usefulChunk(text: string, title: string, question = ""): boolean {
+  const wantsContact = /\b(?:contact|phone|telephone|helpline|email|where is|location of|address of)\b/i.test(question);
+  if (wantsContact && contactLine.test(text) && text.length >= 30) return true;
   const lines = text.split(/\n+/).map((line) => line.trim())
     .filter((line) => line && !menuLine.test(line) && !contactLine.test(line));
   const body = lines.join(" ");
   if (body.length < 70) return false;
   const substantive = lines.some((line) => {
     const words = line.match(/[a-z]{2,}/gi) ?? [];
-    return words.length >= 12 && (
+    return words.length >= 8 && (
       /[.!?]/.test(line)
-      || /\b(?:eligible|eligibility|benefit|provides?|assistance|insurance|coverage|grant|subsidy|scholarship|pension|loan|income|farmers|students|application|apply|annual|per annum)\b/i.test(line)
+      || /\b(?:eligible|eligibility|benefit|provides?|assistance|insurance|coverage|grant|subsidy|scholarship|pension|loan|income|farmers|students|application|apply|annual|per annum|voter|elector|aadhaar|pan|passport|tax|return|hospital|school|certificate|property|registration|submit)\b/i.test(line)
     );
   });
   // A contact page can contain long directory prose; it isn't scheme evidence.
@@ -103,7 +108,7 @@ export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
       if (!entry || typeof entry !== "object") { valid = false; break; }
       const evidence = entry as { chunkId?: unknown; quote?: unknown };
       const chunk = chunks.find((item) => item.id === evidence.chunkId);
-      if (!chunk || !isGovernmentUrl(chunk.url) || typeof evidence.quote !== "string"
+      if (!chunk || !isLoadedSourceUrl(chunk.url) || typeof evidence.quote !== "string"
         || normalize(evidence.quote).length < 20
         || !normalize(chunk.text).includes(normalize(evidence.quote))) { valid = false; break; }
       statementSources.set(chunk.url, { title: chunk.title, url: chunk.url });

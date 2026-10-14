@@ -20,5 +20,6 @@ export default defineSchema({
   })
     .index("by_import", ["importId"])
     .index("by_source_chunk", ["sourceId", "chunkIndex"])
-    .searchIndex("search_text", { searchField: "text", filterFields: ["host"] }),
+    .searchIndex("search_text", { searchField: "text", filterFields: ["host"] })
+    .searchIndex("search_title", { searchField: "title", filterFields: ["host"] }),
 });

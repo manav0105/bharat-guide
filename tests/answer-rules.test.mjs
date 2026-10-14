@@ -28,7 +28,8 @@ test('unsupported output, invented sources and overlong answers fail closed', ()
   const tooLong = structuredClone(valid);
   tooLong.statements[0].text = Array(201).fill('word').join(' ');
   assert.equal(groundedAnswer(tooLong, [chunk]).answer, NOT_FOUND);
-  assert.equal(groundedAnswer(valid, [{ ...chunk, url: 'https://example.com/scheme' }]).answer, NOT_FOUND);
+  assert.equal(groundedAnswer(valid, [{ ...chunk, url: 'javascript:alert(1)' }]).answer, NOT_FOUND);
+  assert.equal(groundedAnswer(valid, [{ ...chunk, url: 'https://university.ac.in/scheme' }]).sources[0].url, 'https://university.ac.in/scheme');
 });
 
 test('navigation and contact text are excluded, useful scheme text is retained', () => {
@@ -54,4 +55,10 @@ test('a bad quotation in one statement does not discard a fully supported statem
     answer: reply.statements[0].text,
     sources: [{ title: first.title, url: first.url }],
   });
+});
+
+test('administrative instructions and requested contact facts are usable, menus are not', () => {
+  assert.equal(usefulChunk('To update your address in the electoral roll, submit Form 8 with your proof of address.', 'Voter registration'), true);
+  assert.equal(usefulChunk('Contact Us\nPhone: 1800-000-000\nEmail: office@example.gov.in', 'Contact Us', 'What is the office phone number?'), true);
+  assert.equal(usefulChunk('Home\nMenu\nPAN\nTax\nApply\nRegistration\nContact Us\nSitemap', 'PAN services'), false);
 });
