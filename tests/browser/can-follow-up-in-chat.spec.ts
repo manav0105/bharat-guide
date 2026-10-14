@@ -20,7 +20,8 @@ test('PAN follow-ups keep context in the browser and New chat keeps the allowanc
   await writeFile(process.env.BHARAT_TEST_URL ? '.verification/bharat-chat-answers-live.json' : '.verification/bharat-chat-answers.json',JSON.stringify(records,null,2));
   console.log(`Question: ${question}\nAnswer: ${body.answer||body.error}\nSources: ${JSON.stringify(body.sources)}\n`);
   expect(response.status()).toBe(200);
-  if (i === 0) expect(body.answer).not.toBe('I could not find this in official sources');
+  expect(body.answer).not.toBe('I could not find this in official sources');
+  expect(body.answer).toMatch(/PAN/i);
   if (body.answer === 'I could not find this in official sources') expect(body.sources).toEqual([]);
   else expect(body.sources.length).toBeGreaterThan(0);
   expect(body.answer.trim().split(/\s+/).length).toBeLessThanOrEqual(200);
