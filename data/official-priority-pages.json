@@ -1,0 +1,70 @@
+{
+  "retrievedAt": "2026-10-14",
+  "note": "Official-source excerpts, copied without AI rewriting; titles identify the original page and selected section. Older publication dates are retained in provenance.",
+  "pages": [
+    {
+      "taskIds": [
+        18
+      ],
+      "title": "NGSP Dashboard — Voter Service Portal FAQs",
+      "url": "https://voters.eci.gov.in/home/ngsp/",
+      "text": "How do I download e-EPIC?\n\ne-EPIC can be downloaded by registering on website https://voters.eci.gov.in/home/e-epic-download and through Voter Helpline application. e-EPIC is downloaded only after verifying the OTP received on the registered mobile number.",
+      "topics": [
+        "public_services"
+      ],
+      "provenance": "Verbatim official-page passage retrieved from its public search index; direct requests are blocked here."
+    },
+    {
+      "taskIds": [
+        26
+      ],
+      "title": "23rd Instalment of PM-KISAN — Technology-Enabled Service Delivery System",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2275744&lang=1&reg=3",
+      "text": "Technology-Enabled Service Delivery System under PM-KISAN\nPM-KISAN is supported by a farmer-centric digital infrastructure that streamlines access and enhances transparency in the delivery of benefits. Aadhaar-based authentication forms a key pillar of the system, facilitating secure beneficiary identification and payment verification. Farmers can complete e-KYC using:\n\n  * OTP-based authentication\n  * Biometric authentication\n  * Face authentication\nThe PM-KISAN web portal serves as the central digital platform for beneficiary registration, verification, and data management. It maintains a unified national database of farmers and facilitates fund transfers through integration with the Public Financial Management System (PFMS). It also enables real-time monitoring of financial transactions nationwide. The portal further provides location-wise lists of beneficiary farmers, thereby enhancing transparency in programme implementation.\nComplementing the portal, the PM-KISAN mobile application, launched in 2020, extends these services to mobile users. The application enables farmers to undertake self-registration, track the status of benefit transfers, and complete e-KYC verification. In 2023, the application was upgraded with a Face Authentication feature. This allows farmers to complete e-KYC by scanning their faces, thereby eliminating the need for OTP or fingerprint-based verification.\nHence, this measure has been proven instrumental in improving accessibility of this scheme.",
+      "topics": [
+        "schemes",
+        "public_services"
+      ],
+      "provenance": "Verbatim lines 88–96 of the official PIB page, retrieved with the web reader."
+    },
+    {
+      "taskIds": [
+        27
+      ],
+      "title": "PM-Kisan: Centre disburses ₹4.27 lakh crore in 22 installments since inception",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244630&lang=1&reg=3",
+      "text": "A dedicated ‘Farmers Corner’ has been provided on the PM-KISAN portal where a number of facilities have been provided to farmers including checking their beneficiary status and instalment payment details. There is an additional functionality i.e. Know Your Status, provided on the portal for the farmers to check their eligibility and payment status. Farmers can also visit their local Common Service Center where they can get their beneficiary status and instalment payment details.",
+      "topics": [
+        "schemes",
+        "public_services"
+      ],
+      "provenance": "Verbatim official-page paragraph retrieved from its public search index; direct requests are blocked here."
+    },
+    {
+      "taskIds": [
+        40
+      ],
+      "title": "JANAUSHADHI — Frequently Asked Questions",
+      "url": "https://www.janaushadhi.gov.in/faq",
+      "text": "What is Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP)?‘Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP)’ is a campaign launched by the Department of Pharmaceuticals in association with Central Pharma Public Sector Undertakings, to provide quality medicines at affordable prices to the masses through dedicated outlets called 'Pradhan Mantri Bhartiya Janaushadhi Kendra'. These centers offer generic medicines at much lower prices. The potency of these medicines is the same as compared to expensive branded medicines available in the open market.\n\nHow many Pradhan Mantri Janaushadhi Kendras have been opened and what are their locations?More than 16000 are functional. A list of state-wise/district-wise PMBJKs along with their locations is available under the heading 'PMBJP => PMBJP Kendra' on the PMBI website.\n\nLocate Your Nearest PMBJP Kendra On Your Mobile              DOWNLOAD NOW ! Jan Aushadhi Sugam",
+      "topics": [
+        "public_services",
+        "schemes"
+      ],
+      "provenance": "Verbatim question-and-answer passages and locator instruction from the rendered official page; menus and footer omitted."
+    },
+    {
+      "taskIds": [
+        69
+      ],
+      "title": "Department of Posts initiative: Secure the future of girl child by opening a SukanyaSamriddhi account for just ₹250 as a gift during Navratri",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2118725&lang=1&reg=3",
+      "text": "Postmaster General, North Gujarat Region, Ahmedabad, Shri Krishna Kumar Yadav, said that the 'SukanyaSamriddhiYojana' is playing a significant role in the empowerment of girl child. During Navratri, a new initiative can be taken by opening SukanyaSamriddhi accounts for girl child. Under this scheme, a girl’s account can be opened in the Post Office with a minimum of ₹250 for girl child up to 10 years of age. The scheme offers an interest rate of 8.2%, which is higher than any other small savings scheme.\n\nAssistant Director of Postal Services, Shri Ritul Gandhi, said that to open a SukanyaSamriddhi account, one can visit the nearest Post Office with copy of the girl's birth certificate and Aadhaar Card and a copy of her mother or father's Aadhaar card and PAN card along with two photographs. Under Section 80C of Income Tax, there is also a provision of exemption of up to 1.5 lakhs in income tax in this account.",
+      "topics": [
+        "public_services",
+        "schemes"
+      ],
+      "provenance": "Verbatim account-opening paragraphs, lines 12 and 20 of the official PIB page, retrieved with the web reader; published 4 April 2025."
+    }
+  ]
+}
