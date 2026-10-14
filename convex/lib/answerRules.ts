@@ -82,7 +82,42 @@ export function simpleEnglish(text: string): string {
     .replace(/[ \t]{2,}/g, " ").trim();
 }
 
-// Never accept model-generated URLs. Each statement must supply an exact
+// Read Markdown destinations without normalizing or repairing their URLs.
+// Parentheses inside a source URL must not hide a suffix or another link.
+function answerUrls(text: string): string[] | null {
+  const urls: string[] = [];
+  const links = /!?\[[^\]\n]*\]\(/g;
+  let remaining = "", previous = 0, match: RegExpExecArray | null;
+  while ((match = links.exec(text))) {
+    const start = links.lastIndex;
+    let end = start, destination: string;
+    if (text[start] === "<") {
+      end = text.indexOf(">", start + 1);
+      if (end < 0 || text[end + 1] !== ")") return null;
+      destination = text.slice(start + 1, end);
+      end++;
+    } else {
+      let depth = 1;
+      for (; end < text.length; end++) {
+        if (text[end] === "(") depth++;
+        if (text[end] === ")" && --depth === 0) break;
+      }
+      if (end === text.length) return null;
+      destination = text.slice(start, end);
+    }
+    urls.push(destination);
+    remaining += text.slice(previous, match.index) + match[0].slice(0, -2) + " ";
+    previous = end + 1;
+    links.lastIndex = previous;
+  }
+  remaining += text.slice(previous);
+  // Unsupported reference links and non-web schemes cannot introduce a URL.
+  if (/\]\s*\[|^\s*\[[^\]]+\]:|\b(?:javascript|data|mailto|tel):/im.test(remaining)) return null;
+  for (const found of remaining.matchAll(/\b(?:[a-z][a-z0-9+.-]*:\/\/|www\.)[^\s<>"'`]+/gi)) urls.push(found[0]);
+  return urls;
+}
+
+// Each statement must supply an exact
 // supporting quotation from a retrieved chunk. Reject malformed or unsupported
 // statements individually, so one bad quotation cannot erase other supported
 // information. Only fully validated statements and their sources are displayed.
@@ -100,8 +135,14 @@ export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
     if (typeof statement.text !== "string" || !statement.text.trim()
       || !Array.isArray(statement.evidence) || !statement.evidence.length
       || statement.evidence.length > 8) continue;
-    const text = simpleEnglish(statement.text.trim());
-    if (/https?:\/\/|www\./i.test(text)) continue;
+    // Preserve URLs byte-for-byte while simplifying the surrounding prose.
+    const protectedUrls: string[] = [];
+    const masked = statement.text.trim().replace(/https?:\/\/[^\s<>"'`]+/gi, (url) => {
+      protectedUrls.push(url); return `\u0000${protectedUrls.length - 1}\u0000`;
+    });
+    const text = simpleEnglish(masked).replace(/\u0000(\d+)\u0000/g, (_, index) => protectedUrls[Number(index)] ?? "");
+    const linkedUrls = answerUrls(text);
+    if (!linkedUrls || linkedUrls.some((url) => !chunks.some((chunk) => chunk.url === url && isLoadedSourceUrl(url)))) continue;
     const statementSources = new Map<string, { title: string; url: string }>();
     let valid = true;
     for (const entry of statement.evidence) {
@@ -114,6 +155,10 @@ export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
       statementSources.set(chunk.url, { title: chunk.title, url: chunk.url });
     }
     if (!valid || [...paragraphs, text].join(" ").split(/\s+/).length > 200) continue;
+    for (const url of linkedUrls) {
+      const chunk = chunks.find((item) => item.url === url)!;
+      statementSources.set(url, { title: chunk.title, url });
+    }
     paragraphs.push(text);
     for (const [url, source] of statementSources) sources.set(url, source);
   }

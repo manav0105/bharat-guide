@@ -62,3 +62,20 @@ test('administrative instructions and requested contact facts are usable, menus 
   assert.equal(usefulChunk('Contact Us\nPhone: 1800-000-000\nEmail: office@example.gov.in', 'Contact Us', 'What is the office phone number?'), true);
   assert.equal(usefulChunk('Home\nMenu\nPAN\nTax\nApply\nRegistration\nContact Us\nSitemap', 'PAN services'), false);
 });
+
+test('answer links must exactly match a retrieved source URL', () => {
+  const chunk = {id:'links',title:'Official instructions',text:'Submit the completed application to the local office for processing.',url:'https://example.gov.in/empanelled/form_(8)?lang=en'};
+  const reply = text => ({found:true,statements:[{text,evidence:[{chunkId:chunk.id,quote:chunk.text}]}]});
+  const linked = `**How to apply**\n- **Read** [Official instructions](${chunk.url}).\n\nOfficial source: [Official instructions](${chunk.url})`;
+  assert.equal(groundedAnswer(reply(linked),[chunk]).answer,linked);
+  assert.equal(groundedAnswer(reply(`Read [Official instructions](<${chunk.url}>)`),[chunk]).answer,`Read [Official instructions](<${chunk.url}>)`);
+  assert.equal(groundedAnswer(reply(`Read ${chunk.url}`),[chunk]).sources[0].url,chunk.url);
+  for(const url of ['https://evil.example/form',chunk.url+'/extra',chunk.url+'#section',chunk.url+'&other=1',chunk.url.replace('example.gov.in','EXAMPLE.gov.in'),'//example.gov.in/form','javascript:alert(1)','mailto:office@example.gov.in']) {
+    assert.equal(groundedAnswer(reply(`Read [instructions](${url})`),[chunk]).answer,NOT_FOUND,url);
+  }
+  assert.equal(groundedAnswer(reply(`Read [https://evil.example/form](${chunk.url})`),[chunk]).answer,NOT_FOUND);
+  assert.equal(groundedAnswer(reply(`Read [instructions](${chunk.url}) and https://evil.example/form`),[chunk]).answer,NOT_FOUND);
+  assert.equal(groundedAnswer(reply('Read [instructions][ref]\n[ref]: https://evil.example/form'),[chunk]).answer,NOT_FOUND);
+  const bodyOnly={...chunk,text:chunk.text+' More at https://other.gov.in/form.'};
+  assert.equal(groundedAnswer(reply('Read [instructions](https://other.gov.in/form)'),[bodyOnly]).answer,NOT_FOUND);
+});
