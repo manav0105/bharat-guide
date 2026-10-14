@@ -70,7 +70,7 @@ http.route({
     try {
       result = await ctx.runAction(internal.ai.answer, { question: question.trim(), history, tokenHash: await hash(token) });
     } catch {
-      return json({ error: "The answer service is busy. Please try again in a moment." }, 503);
+      return json({ error: "Service busy, please try again in a minute" }, 503);
     }
     if (result.error === "limit") {
       return json({ error: "You have asked 20 questions today. Come back tomorrow.", remaining: 0 }, 429);
@@ -79,9 +79,9 @@ http.route({
       return json({ error: "Answers are not available yet. Please try again later." }, 503);
     }
     if (result.error === "unavailable") {
-      return json({ error: "The answer service is busy. Please try again in a moment.", remaining: result.remaining }, 503);
+      return json({ error: "Service busy, please try again in a minute", remaining: result.remaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath }, 503);
     }
-    return json({ answer: result.answer, sources: result.sources, remaining: result.remaining });
+    return json({ answer: result.answer, sources: result.sources, remaining: result.remaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath });
   }),
 });
 

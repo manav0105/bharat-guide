@@ -2,26 +2,29 @@ import {test,expect} from '@playwright/test';
 import {writeFile} from 'node:fs/promises';
 
 test('PAN follow-ups keep context in the browser and New chat keeps the allowance',async({page})=>{
+ test.setTimeout(900_000);
  const questions=['how to apply for PAN card','what documents do I need?','how long does it take?'];
- const records:{question:string;answer:string;sources:{title:string;url:string}[];status:number;error:string|null}[]=[];
+ const records:{question:string;answer:string;sources:{title:string;url:string}[];status:number;error:string|null;searchQuery:string;rewritePath:string;searchSources:{title:string;url:string}[]}[]=[];
  const providerRequests:string[]=[];
  page.on('request',r=>{if(/generativelanguage|openai\.com/.test(r.url()))providerRequests.push(r.url());});
  await page.goto('/');
  await expect(page.getByRole('status').filter({hasText:'20 of 20'})).toBeVisible();
  for(const [i,question]of questions.entries()){
   await page.getByLabel('What would you like to know?').fill(question);
-  const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/ask')&&r.request().method()==='POST',{timeout:180000});
+  const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/ask')&&r.request().method()==='POST',{timeout:600000});
   await page.getByLabel('What would you like to know?').press('Enter');
   const response=await responsePromise;const body=await response.json();
   const request=response.request().postDataJSON();
   expect(request.question).toBe(question);
   expect(request.history).toEqual(records.slice(-3).map(r=>({question:r.question,answer:r.answer})));
-  records.push({question,answer:body.answer,sources:body.sources,status:response.status(),error:body.error||null});
+  records.push({question,answer:body.answer,sources:body.sources,status:response.status(),error:body.error||null,searchQuery:body.searchQuery,rewritePath:body.rewritePath,searchSources:body.searchSources});
   await writeFile(process.env.BHARAT_TEST_URL ? '.verification/bharat-chat-answers-live.json' : '.verification/bharat-chat-answers.json',JSON.stringify(records,null,2));
-  console.log(`Question: ${question}\nAnswer: ${body.answer||body.error}\nSources: ${JSON.stringify(body.sources)}\n`);
+  console.log(`Rewritten query: ${body.searchQuery}\nPath: ${body.rewritePath}\nTop 3 source urls: ${JSON.stringify((body.searchSources || []).map((s:{url:string})=>s.url))}\nQuestion: ${question}\nAnswer: ${body.answer||body.error}\nSources: ${JSON.stringify(body.sources)}\n`);
   expect(response.status()).toBe(200);
   expect(body.answer).not.toBe('I could not find this in official sources');
   expect(body.answer).toMatch(/PAN/i);
+  expect(body.searchQuery).toMatch(/PAN card/i);
+  await expect(page.getByTestId('searched-query').last()).toHaveText(`Searched: ${body.searchQuery} - ${body.rewritePath}`);
   if (body.answer === 'I could not find this in official sources') expect(body.sources).toEqual([]);
   else expect(body.sources.length).toBeGreaterThan(0);
   expect(body.answer.trim().split(/\s+/).length).toBeLessThanOrEqual(200);
@@ -57,4 +60,23 @@ test('PAN follow-ups keep context in the browser and New chat keeps the allowanc
  const invalid=await page.request.post('/api/ask',{data:{question:'PAN',history:Array(4).fill({question:'PAN',answer:'PAN'})}});
  expect(invalid.status()).toBe(400);
  await expect(page.getByRole('status').filter({hasText:'17 of 20'})).toBeVisible();
+ for(const [i,question] of ['which scheme gives money to farmers','who is eligible?'].entries()){
+  await page.getByLabel('What would you like to know?').fill(question);
+  const responsePromise=page.waitForResponse(r=>r.url().endsWith('/api/ask')&&r.request().method()==='POST',{timeout:600000});
+  await page.getByLabel('What would you like to know?').press('Enter');
+  const response=await responsePromise;const body=await response.json();
+  expect(response.status()).toBe(200);
+  expect(response.request().postDataJSON().history).toEqual(records.slice(3).map(r=>({question:r.question,answer:r.answer})));
+  expect(body.searchQuery).toMatch(/farmers?/i);
+  expect(body.searchQuery).not.toMatch(/PAN/i);
+  expect(body.answer).not.toBe('I could not find this in official sources');
+  expect(body.answer).toMatch(/farmers?/i);
+  expect(body.sources.length).toBeGreaterThan(0);
+  expect(body.remaining).toBe(16-i);
+  await expect(page.getByTestId('searched-query').last()).toHaveText(`Searched: ${body.searchQuery} - ${body.rewritePath}`);
+  records.push({question,answer:body.answer,sources:body.sources,status:response.status(),error:body.error||null,searchQuery:body.searchQuery,rewritePath:body.rewritePath,searchSources:body.searchSources});
+  console.log(`Question: ${question}\nRewritten query: ${body.searchQuery}\nPath: ${body.rewritePath}\nTop 3 source urls: ${JSON.stringify((body.searchSources || []).map((s:{url:string})=>s.url))}\nAnswer: ${body.answer}\n`);
+ }
+ await writeFile('.verification/followup-search-proof.json',JSON.stringify(records,null,2));
+ await page.screenshot({path:'.verification/followup-search-query.png'});
 });

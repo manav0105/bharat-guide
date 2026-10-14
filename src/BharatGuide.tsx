@@ -4,8 +4,8 @@ import { exampleAnswer } from './exampleAnswer';
 import './bharat-guide.css';
 
 type Source = { title: string; url: string };
-type Answer = { answer: string; sources: Source[]; remaining: number };
-type Turn = { id: string; question: string; result?: Answer; error?: string };
+type Answer = { answer: string; sources: Source[]; remaining: number; searchQuery?: string; rewritePath?: string };
+type Turn = { id: string; question: string; result?: Answer; error?: string; searchQuery?: string; rewritePath?: string };
 const CHAT_KEY = 'bharat-guide-chat-v1';
 const examples = ['Update my address in the voter list', 'How to apply for a PAN card', 'Scholarships for students'];
 
@@ -105,7 +105,7 @@ export function BharatGuide() {
       if (generation.current !== currentGeneration) return;
       if (typeof body.remaining === 'number') setRemaining(body.remaining);
       setTurns(old => old.map(t => t.id !== id ? t : response.ok ? { ...t, result: body }
-        : { ...t, error: body.error || 'Could not get an answer. Please try again.' }));
+        : { ...t, error: body.error || 'Could not get an answer. Please try again.', searchQuery: body.searchQuery, rewritePath: body.rewritePath }));
     } catch {
       if (generation.current === currentGeneration) setTurns(old => old.map(t => t.id === id
         ? { ...t, error: 'Could not connect. Check your connection and try again.' } : t));
@@ -140,8 +140,8 @@ export function BharatGuide() {
           <div className="assistant-message">
             <h2 className="message-author">Bharat Guide</h2>
             {turn.result ? <><div className="answer-text" data-testid="answer-text">
-              {turn.result.answer.split('\n\n').map((p,i) => <p key={i}>{p}</p>)}</div><Sources sources={turn.result.sources} /></>
-              : turn.error ? <div className="error-message" role="alert"><p>{turn.error}</p>
+              {turn.result.answer.split('\n\n').map((p,i) => <p key={i}>{p}</p>)}</div>{turn.result.searchQuery && <p className="searched-query" data-testid="searched-query">Searched: {turn.result.searchQuery} - {turn.result.rewritePath}</p>}<Sources sources={turn.result.sources} /></>
+              : turn.error ? <div className="error-message" role="alert"><p>{turn.error}</p>{turn.searchQuery && <p className="searched-query" data-testid="searched-query">Searched: {turn.searchQuery} - {turn.rewritePath}</p>}
                 <button type="button" onClick={() => { setQuestion(turn.question); input.current?.focus(); }}>Try again</button></div>
                 : <div className="searching" role="status"><span className="loading-dot" />Reading the government pages…</div>}
           </div>
