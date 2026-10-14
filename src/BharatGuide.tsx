@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
-import { exampleAnswer } from './exampleAnswer';
 import './bharat-guide.css';
 
 type Source = { title: string; url: string };
@@ -127,12 +126,6 @@ export function BharatGuide() {
         <div className="suggestions"><p>Not sure where to start?</p><div className="example-list">
           {examples.map(example => <button type="button" key={example} onClick={() => { setQuestion(example); input.current?.focus(); }}>{example}</button>)}
         </div></div>
-        <section className="answer-result example-answer" aria-labelledby="example-heading">
-          <h2 id="example-heading">Example answer</h2><p className="asked-question">{exampleAnswer.question}</p>
-          <div className="answer-text" data-testid="example-answer-text">{exampleAnswer.answer.split('\n\n').map((p,i) => <p key={i}>{p}</p>)}</div>
-          <Sources sources={exampleAnswer.sources} />
-          <p className="example-eligibility">Eligibility depends on each scheme. Check the official page.</p>
-        </section>
       </>}
       <section className="conversation" aria-label="Conversation" role="log" aria-live="polite" aria-relevant="additions text">
         {turns.map(turn => <article className="chat-turn" key={turn.id} data-testid="chat-turn">
