@@ -22,7 +22,7 @@ a { text-underline-offset: 4px; }
 .skip-link { position: absolute; top: -80px; left: 20px; padding: 12px; background: white; z-index: 2; }
 .skip-link:focus { top: 12px; }
 .site-header { width: min(1120px, 100%); padding: 28px 22px; margin: auto; margin-top: 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--green); text-decoration: none; font-size: 22px; font-weight: 700; }
+.brand { display: inline-flex; align-items: center; gap: 10px; padding-block: 7px; min-height: 44px; color: var(--green); text-decoration: none; font-size: 22px; font-weight: 700; }
 .header-note { color: var(--muted); font-size: 14px; }
 .main-content { width: min(760px, 100%); padding: 32px 22px 48px; margin: 0 auto; flex: 1; }
 .introduction { margin-bottom: 34px; }
@@ -52,6 +52,9 @@ textarea:disabled { opacity: .7; }
 .error-message button { margin-top: 12px; border: 0; background: transparent; color: #703b17; padding: 7px 0; text-decoration: underline; }
 .answer-result { padding-top: 28px; border-top: 1px solid var(--line); }
 .answer-result h2 { margin: 0 0 8px; font-size: 26px; letter-spacing: -.015em; }
+.example-answer { margin-top: 28px; }
+.example-answer .source-section { margin-top: 18px; }
+.example-eligibility { margin: 18px 0 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
 .asked-question { color: var(--muted); font-size: 16px; margin: 0 0 22px; line-height: 1.4; overflow-wrap: anywhere; }
 .answer-text p { font-size: 20px; line-height: 1.6; margin: 0 0 16px; overflow-wrap: anywhere; }
 .source-section { margin-top: 30px; }

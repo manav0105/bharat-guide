@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
+import { exampleAnswer } from './exampleAnswer';
 import './bharat-guide.css';
 
 type Answer = { answer: string; sources: { title: string; url: string }[]; remaining: number };
@@ -82,8 +83,8 @@ export function BharatGuide() {
     </header>
     <main className="main-content">
       <div className="introduction">
-        <h1>A little help.<br />A clearer way forward.</h1>
-        <p>Ask about government schemes and benefits.<br className="desktop-break" /> Get a short answer, with the official pages behind it.</p>
+        <h1>Government schemes and benefits, explained.</h1>
+        <p>Get a short answer, with the official pages behind it.</p>
       </div>
       <form className="question-form" onSubmit={ask} aria-busy={busy}>
         <label htmlFor="question">What would you like to know?</label>
@@ -99,6 +100,21 @@ export function BharatGuide() {
           </button>
         </div>
       </form>
+      {!result && !busy && !error && <section className="answer-result example-answer" aria-labelledby="example-heading">
+        <h2 id="example-heading">Example answer</h2>
+        <p className="asked-question">{exampleAnswer.question}</p>
+        <div className="answer-text" data-testid="example-answer-text">{exampleAnswer.answer.split('\n\n').map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
+        <div className="source-section">
+          <h3>Official pages used</h3>
+          <ul>{exampleAnswer.sources.map((source) => <li key={source.url}>
+            <a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`${source.title} (opens in a new tab)`}>
+              <span className="source-title">{source.title}</span>
+              <span className="source-url">{source.url}</span>
+            </a>
+          </li>)}</ul>
+        </div>
+        <p className="example-eligibility">Eligibility depends on each scheme. Check the official page.</p>
+      </section>}
       {!result && !busy && <div className="suggestions">
         <p>Not sure where to start?</p>
         <div className="example-list">{examples.map((example) => <button type="button" key={example}
