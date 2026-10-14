@@ -13,6 +13,7 @@ import type * as documentLoader from "../documentLoader.js";
 import type * as http from "../http.js";
 import type * as lib_answerRules from "../lib/answerRules.js";
 import type * as questions from "../questions.js";
+import type * as storageCleanup from "../storageCleanup.js";
 
 import type {
   ApiFromModules,
@@ -26,6 +27,7 @@ declare const fullApi: ApiFromModules<{
   http: typeof http;
   "lib/answerRules": typeof lib_answerRules;
   questions: typeof questions;
+  storageCleanup: typeof storageCleanup;
 }>;
 
 /**
