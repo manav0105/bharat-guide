@@ -1,0 +1,28 @@
+{
+  "verifiedAt": "2026-10-14",
+  "priorityListStatus": "draft, not from Google data",
+  "addedPages": 5,
+  "addedChunks": 6,
+  "priorityTasksWithMatchingPages": 100,
+  "uncoveredTasks": [],
+  "documents": 5582,
+  "chunks": 49962,
+  "databaseBytesIncludingIndexes": 367026514,
+  "databaseMB": 350.02375984191895,
+  "sourceChunkIntegrity": true,
+  "liveQuestionsTested": [
+    "how do I download my e-EPIC voter ID",
+    "how do I complete PM-KISAN e-KYC",
+    "how do I check my PM-KISAN payment status",
+    "where can I get affordable Jan Aushadhi medicines",
+    "how do I open a Sukanya Samriddhi account",
+    "which scheme gives money to farmers",
+    "how to apply for PAN card",
+    "blorptastic purple moons eat zigzag umbrellas"
+  ],
+  "liveTestResult": "Seven questions returned sourced answers; nonsense returned the exact not-found response with no sources.",
+  "coverageNote": "Matching pages are not proof that every possible question about a task can be answered. All five newly covered tasks were tested live.",
+  "storageMethod": "Live Convex document sizes plus the current index storage multiplier, visitors, and hosting metadata. MB uses 1,048,576 bytes.",
+  "sourceManifest": "data/official-priority-pages.json",
+  "verbatimLiveReplies": ".verification/official-priority-live-answers.json"
+}
