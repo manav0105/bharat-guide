@@ -16,6 +16,7 @@ import type * as lib_conversation from "../lib/conversation.js";
 import type * as lib_serviceRetry from "../lib/serviceRetry.js";
 import type * as questions from "../questions.js";
 import type * as storageCleanup from "../storageCleanup.js";
+import type * as unansweredQuestions from "../unansweredQuestions.js";
 
 import type {
   ApiFromModules,
@@ -32,6 +33,7 @@ declare const fullApi: ApiFromModules<{
   "lib/serviceRetry": typeof lib_serviceRetry;
   questions: typeof questions;
   storageCleanup: typeof storageCleanup;
+  unansweredQuestions: typeof unansweredQuestions;
 }>;
 
 /**

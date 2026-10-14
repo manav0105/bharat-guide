@@ -1,0 +1,1490 @@
+{
+  "description": "Main official national portals or explicitly labelled regional examples for the 100 draft priority tasks. A URL being loaded is not proof that it answers every question.",
+  "topics": [
+    {
+      "id": 1,
+      "rank": 1,
+      "task": "Update Aadhaar details",
+      "mainOfficialUrl": "https://www.uidai.gov.in/en/",
+      "scope": "India",
+      "previousOfficialUrl": "https://uidai.gov.in/",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 500"
+    },
+    {
+      "id": 2,
+      "rank": 2,
+      "task": "Download Aadhaar or e-Aadhaar",
+      "mainOfficialUrl": "https://www.uidai.gov.in/en/",
+      "scope": "India",
+      "previousOfficialUrl": "https://uidai.gov.in/",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 500"
+    },
+    {
+      "id": 5,
+      "rank": 3,
+      "task": "Apply for PAN card",
+      "mainOfficialUrl": "https://www.incometaxindia.gov.in/tax-services/apply-for-pan",
+      "scope": "India",
+      "supportingOfficialUrls": [
+        "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/Instant%20e-PAN-faq?mobile-app=1"
+      ],
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/Instant%20e-PAN-faq?mobile-app=1"
+      ],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 51,
+      "rank": 4,
+      "task": "Check EPF balance or passbook",
+      "mainOfficialUrl": "https://passbook.epfindia.gov.in/MemberPassBook/login",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://passbook.epfindia.gov.in/MemberPassBook/login"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 48,
+      "rank": 5,
+      "task": "Withdraw EPF money",
+      "mainOfficialUrl": "https://www.epfindia.gov.in/site_en/For_Employees.php",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 41,
+      "rank": 6,
+      "task": "File income tax return",
+      "mainOfficialUrl": "https://www.incometax.gov.in/iec/foportal/help/how-to-file-itr1-form-sahaj",
+      "scope": "India; ITR-1 guide, eligibility applies",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.incometax.gov.in/iec/foportal/help/how-to-file-itr1-form-sahaj"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 27,
+      "rank": 7,
+      "task": "Check PM-KISAN payment status",
+      "mainOfficialUrl": "https://pmkisan.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 500"
+    },
+    {
+      "id": 25,
+      "rank": 8,
+      "task": "Check PM-KISAN eligibility and apply",
+      "mainOfficialUrl": "https://pmkisan.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 500"
+    },
+    {
+      "id": 8,
+      "rank": 9,
+      "task": "Apply for passport",
+      "mainOfficialUrl": "https://www.passportindia.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.passportindia.gov.in/psp"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 32,
+      "rank": 10,
+      "task": "Apply for Ayushman Bharat health cover",
+      "mainOfficialUrl": "https://pmjay.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "page.goto: net::ERR_CONNECTION_REFUSED at https://pmjay.gov.in/"
+    },
+    {
+      "id": 85,
+      "rank": 11,
+      "task": "Apply for student scholarship",
+      "mainOfficialUrl": "https://scholarships.gov.in/",
+      "scope": "India; state and scheme-specific rules apply",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://scholarships.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 59,
+      "rank": 12,
+      "task": "Find government job vacancies",
+      "mainOfficialUrl": "https://www.ncs.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://ncs.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 11,
+      "rank": 13,
+      "task": "Apply for ration card",
+      "mainOfficialUrl": "https://nfsa.gov.in/",
+      "scope": "India; ration-card applications use state portals",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nfsa.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 4,
+      "rank": 14,
+      "task": "Link Aadhaar and PAN",
+      "mainOfficialUrl": "https://www.incometaxindia.gov.in/tax-services/link-aadhaar",
+      "scope": "India",
+      "supportingOfficialUrls": [
+        "https://www.incometax.gov.in/iec/foportal/help/how-to-link-aadhaar"
+      ],
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.incometax.gov.in/iec/foportal/help/how-to-link-aadhaar"
+      ],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 15,
+      "rank": 15,
+      "task": "Register for voter ID",
+      "mainOfficialUrl": "https://voters.eci.gov.in/",
+      "scope": "India",
+      "supportingOfficialUrls": [
+        "https://www.eci.gov.in/faq/en/how-to-register"
+      ],
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.eci.gov.in/faq/en/how-to-register"
+      ],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 20,
+      "rank": 16,
+      "task": "Apply for driving licence",
+      "mainOfficialUrl": "https://parivahan.gov.in/parivahan/",
+      "scope": "India; select state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://parivahan.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 76,
+      "rank": 17,
+      "task": "Get birth certificate",
+      "mainOfficialUrl": "https://crsorgi.gov.in/",
+      "scope": "India; local registration rules apply",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://dc.crsorgi.gov.in/crs/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 57,
+      "rank": 18,
+      "task": "Register on e-Shram",
+      "mainOfficialUrl": "https://eshram.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "No substantive public text after JavaScript rendering"
+    },
+    {
+      "id": 26,
+      "rank": 19,
+      "task": "Complete PM-KISAN e-KYC",
+      "mainOfficialUrl": "https://pmkisan.gov.in/",
+      "scope": "India",
+      "supportingOfficialUrls": [
+        "https://pmkisan.gov.in/Documents/Note-on-Modes-and-processes-of-ekyc-13th-Nov-English.pdf"
+      ],
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 500"
+    },
+    {
+      "id": 91,
+      "rank": 20,
+      "task": "Use DigiLocker for certificates",
+      "mainOfficialUrl": "https://www.digilocker.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.digilocker.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 79,
+      "rank": 21,
+      "task": "Get income certificate",
+      "mainOfficialUrl": "https://revenue.delhi.gov.in/revenue/income-certificate",
+      "scope": "Delhi example; certificates vary by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://revenue.delhi.gov.in/revenue/income-certificate"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 92,
+      "rank": 22,
+      "task": "Get land records or Record of Rights",
+      "mainOfficialUrl": "https://upbhulekh.gov.in/",
+      "scope": "Uttar Pradesh example; land records vary by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://upbhulekh.gov.in/#/home"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 7,
+      "rank": 23,
+      "task": "Track PAN application",
+      "mainOfficialUrl": "https://www.incometaxindia.gov.in/en/pan",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 50,
+      "rank": 24,
+      "task": "Activate UAN and update EPF KYC",
+      "mainOfficialUrl": "https://www.epfindia.gov.in/site_en/For_Employees.php",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 70,
+      "rank": 25,
+      "task": "Apply for PMAY housing assistance",
+      "mainOfficialUrl": "https://pmay-urban.gov.in/",
+      "scope": "Urban India; rural PMAY uses a separate portal",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmay-urban.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 33,
+      "rank": 26,
+      "task": "Get Ayushman card",
+      "mainOfficialUrl": "https://beneficiary.nha.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "No substantive public text after JavaScript rendering"
+    },
+    {
+      "id": 54,
+      "rank": 27,
+      "task": "Apply for old-age pension",
+      "mainOfficialUrl": "https://nsap.dord.gov.in/",
+      "scope": "India; state eligibility and applications vary",
+      "previousOfficialUrl": "https://nsap.nic.in/",
+      "mainLoadedBefore": true,
+      "mainLoadedAfter": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nsap.dord.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 80,
+      "rank": 28,
+      "task": "Get caste certificate",
+      "mainOfficialUrl": "https://dmwest.delhi.gov.in/service/caste-certificate/",
+      "scope": "Delhi example; certificates vary by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "No substantive public text after JavaScript rendering"
+    },
+    {
+      "id": 17,
+      "rank": 29,
+      "task": "Check voter list or polling booth",
+      "mainOfficialUrl": "https://electoralsearch.eci.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "Public search/help menu only; no substantive task instructions"
+    },
+    {
+      "id": 16,
+      "rank": 30,
+      "task": "Update address in voter list",
+      "mainOfficialUrl": "https://voters.eci.gov.in/",
+      "scope": "India",
+      "supportingOfficialUrls": [
+        "https://voters.eci.gov.in/formspdf/Form_8_English.pdf"
+      ],
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://voters.eci.gov.in/formspdf/Form_8_English.pdf"
+      ],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 42,
+      "rank": 31,
+      "task": "Check income tax refund",
+      "mainOfficialUrl": "https://www.incometax.gov.in/iec/foportal/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.incometax.gov.in/iec/foportal/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 9,
+      "rank": 32,
+      "task": "Renew passport",
+      "mainOfficialUrl": "https://www.passportindia.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.passportindia.gov.in/psp"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 12,
+      "rank": 33,
+      "task": "Update ration card or add a family member",
+      "mainOfficialUrl": "https://nfsa.gov.in/",
+      "scope": "India; ration-card changes use state portals",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nfsa.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 3,
+      "rank": 34,
+      "task": "Enrol for Aadhaar",
+      "mainOfficialUrl": "https://www.uidai.gov.in/en/",
+      "scope": "India",
+      "previousOfficialUrl": "https://uidai.gov.in/",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 500"
+    },
+    {
+      "id": 6,
+      "rank": 35,
+      "task": "Correct or reprint PAN card",
+      "mainOfficialUrl": "https://www.incometaxindia.gov.in/en/pan",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 86,
+      "rank": 36,
+      "task": "Apply for scholarship for girl students",
+      "mainOfficialUrl": "https://scholarships.gov.in/",
+      "scope": "India; girls' scholarships depend on the scheme",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://scholarships.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 87,
+      "rank": 37,
+      "task": "Apply for SC or ST scholarship",
+      "mainOfficialUrl": "https://scholarships.gov.in/",
+      "scope": "India; SC/ST scholarships depend on the scheme",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://scholarships.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 69,
+      "rank": 38,
+      "task": "Open Sukanya Samriddhi account",
+      "mainOfficialUrl": "https://www.indiapost.gov.in/banking-services/savings",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "No substantive public text after JavaScript rendering"
+    },
+    {
+      "id": 24,
+      "rank": 39,
+      "task": "Pay traffic challan",
+      "mainOfficialUrl": "https://echallan.parivahan.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://echallan.parivahan.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 19,
+      "rank": 40,
+      "task": "Apply for learner licence",
+      "mainOfficialUrl": "https://parivahan.gov.in/parivahan/",
+      "scope": "India; select state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://parivahan.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 49,
+      "rank": 41,
+      "task": "Transfer EPF account",
+      "mainOfficialUrl": "https://www.epfindia.gov.in/site_en/For_Employees.php",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 65,
+      "rank": 42,
+      "task": "Open Jan Dhan bank account",
+      "mainOfficialUrl": "https://pmjdy.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmjdy.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 53,
+      "rank": 43,
+      "task": "Submit Jeevan Pramaan life certificate",
+      "mainOfficialUrl": "https://jeevanpramaan.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://jeevanpramaan.gov.in/v2.0/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 71,
+      "rank": 44,
+      "task": "Get Ujjwala LPG connection",
+      "mainOfficialUrl": "https://www.pmuy.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.pmuy.gov.in/index.aspx"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 35,
+      "rank": 45,
+      "task": "Create ABHA health ID",
+      "mainOfficialUrl": "https://abha.abdm.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://abha.abdm.gov.in/abha/v3"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 78,
+      "rank": 46,
+      "task": "Register marriage and get certificate",
+      "mainOfficialUrl": "https://revenue.delhi.gov.in/revenue/registration-marriage",
+      "scope": "Delhi example; marriage registration varies by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://revenue.delhi.gov.in/revenue/registration-marriage"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 46,
+      "rank": 47,
+      "task": "Register for GST",
+      "mainOfficialUrl": "https://www.gst.gov.in/",
+      "scope": "India",
+      "supportingOfficialUrls": [
+        "https://tutorial.gst.gov.in/userguide/registration/Apply_for_Registration_Normal_Taxpayer.htm"
+      ],
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://tutorial.gst.gov.in/userguide/registration/Apply_for_Registration_Normal_Taxpayer.htm"
+      ],
+      "mainFetchResult": "Public search/help menu only; no substantive task instructions"
+    },
+    {
+      "id": 47,
+      "rank": 48,
+      "task": "File GST return",
+      "mainOfficialUrl": "https://www.gst.gov.in/",
+      "scope": "India",
+      "supportingOfficialUrls": [
+        "https://tutorial.gst.gov.in/userguide/returns/GSTR_1.htm"
+      ],
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://tutorial.gst.gov.in/userguide/returns/GSTR_1.htm"
+      ],
+      "mainFetchResult": "Public search/help menu only; no substantive task instructions"
+    },
+    {
+      "id": 81,
+      "rank": 49,
+      "task": "Get domicile or residence certificate",
+      "mainOfficialUrl": "https://revenue.delhi.gov.in/revenue/domicile-certificate-0",
+      "scope": "Delhi example; certificates vary by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://revenue.delhi.gov.in/revenue/domicile-certificate-0"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 23,
+      "rank": 50,
+      "task": "Get vehicle registration certificate",
+      "mainOfficialUrl": "https://parivahan.gov.in/parivahan/",
+      "scope": "India; select state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://parivahan.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 21,
+      "rank": 51,
+      "task": "Renew driving licence",
+      "mainOfficialUrl": "https://parivahan.gov.in/parivahan/",
+      "scope": "India; select state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://parivahan.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 58,
+      "rank": 52,
+      "task": "Register for MGNREGA job card",
+      "mainOfficialUrl": "https://nrega.nic.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 63,
+      "rank": 53,
+      "task": "Apply for Mudra loan",
+      "mainOfficialUrl": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "scope": "India",
+      "previousOfficialUrl": "https://www.financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 61,
+      "rank": 54,
+      "task": "Apply for PM Vishwakarma support",
+      "mainOfficialUrl": "https://pmvishwakarma.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmvishwakarma.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 73,
+      "rank": 55,
+      "task": "Apply for rooftop solar subsidy",
+      "mainOfficialUrl": "https://www.pmsuryaghar.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "page.goto: net::ERR_CONNECTION_RESET at https://www.pmsuryaghar.gov.in/"
+    },
+    {
+      "id": 82,
+      "rank": 56,
+      "task": "Get EWS certificate",
+      "mainOfficialUrl": "https://edistrict.delhi.gov.in/",
+      "scope": "Delhi example; EWS certificates vary by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://edistrict.delhi.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 83,
+      "rank": 57,
+      "task": "Get disability certificate or UDID",
+      "mainOfficialUrl": "https://www.swavlambancard.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://swavlambancard.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 55,
+      "rank": 58,
+      "task": "Apply for widow pension",
+      "mainOfficialUrl": "https://nsap.dord.gov.in/",
+      "scope": "India; state eligibility and applications vary",
+      "previousOfficialUrl": "https://nsap.nic.in/",
+      "mainLoadedBefore": true,
+      "mainLoadedAfter": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nsap.dord.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 28,
+      "rank": 59,
+      "task": "Apply for Kisan Credit Card",
+      "mainOfficialUrl": "https://fasalrin.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://fasalrin.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 29,
+      "rank": 60,
+      "task": "Get crop insurance under PMFBY",
+      "mainOfficialUrl": "https://pmfby.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmfby.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 36,
+      "rank": 61,
+      "task": "Get ESIC medical benefits",
+      "mainOfficialUrl": "https://www.esic.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://esic.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 43,
+      "rank": 62,
+      "task": "Pay income tax online",
+      "mainOfficialUrl": "https://www.incometax.gov.in/iec/foportal/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.incometax.gov.in/iec/foportal/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 22,
+      "rank": 63,
+      "task": "Transfer vehicle ownership",
+      "mainOfficialUrl": "https://parivahan.gov.in/parivahan/",
+      "scope": "India; select state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://parivahan.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 88,
+      "rank": 64,
+      "task": "Apply for minority scholarship",
+      "mainOfficialUrl": "https://scholarships.gov.in/",
+      "scope": "India; minority scholarships depend on the scheme",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://scholarships.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 77,
+      "rank": 65,
+      "task": "Get death certificate",
+      "mainOfficialUrl": "https://crsorgi.gov.in/",
+      "scope": "India; local registration rules apply",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://dc.crsorgi.gov.in/crs/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 97,
+      "rank": 66,
+      "task": "Report cybercrime or online financial fraud",
+      "mainOfficialUrl": "https://cybercrime.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://cybercrime.gov.in/home"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 94,
+      "rank": 67,
+      "task": "Register property or pay stamp duty",
+      "mainOfficialUrl": "https://igrsup.gov.in/",
+      "scope": "Uttar Pradesh example; registration varies by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://igrsup.gov.in/igrsup/defaultAction.action"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 95,
+      "rank": 68,
+      "task": "Pay property tax",
+      "mainOfficialUrl": "https://e-nagarsewaup.gov.in/",
+      "scope": "Uttar Pradesh example; property tax varies by local body",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://e-nagarsewaup.gov.in/ulbappsmain/home"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 18,
+      "rank": 69,
+      "task": "Download e-EPIC voter ID",
+      "mainOfficialUrl": "https://voters.eci.gov.in/home/e-epic-download",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 37,
+      "rank": 70,
+      "task": "Get maternity benefit under PMMVY",
+      "mainOfficialUrl": "https://pmmvy.wcd.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmmvy.wcd.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 45,
+      "rank": 71,
+      "task": "Claim income tax deductions",
+      "mainOfficialUrl": "https://www.incometax.gov.in/iec/foportal/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.incometax.gov.in/iec/foportal/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 66,
+      "rank": 72,
+      "task": "Join Atal Pension Yojana",
+      "mainOfficialUrl": "https://jansuraksha.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "No substantive public text after JavaScript rendering"
+    },
+    {
+      "id": 67,
+      "rank": 73,
+      "task": "Join PM Jeevan Jyoti life insurance",
+      "mainOfficialUrl": "https://jansuraksha.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "No substantive public text after JavaScript rendering"
+    },
+    {
+      "id": 68,
+      "rank": 74,
+      "task": "Join PM Suraksha Bima accident insurance",
+      "mainOfficialUrl": "https://jansuraksha.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "No substantive public text after JavaScript rendering"
+    },
+    {
+      "id": 60,
+      "rank": 75,
+      "task": "Get skill training under PMKVY",
+      "mainOfficialUrl": "https://www.skillindiadigital.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.skillindiadigital.gov.in/home"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 62,
+      "rank": 76,
+      "task": "Apply for PMEGP business support",
+      "mainOfficialUrl": "https://kviconline.gov.in/pmegpeportal/pmegphome/index.jsp",
+      "scope": "India",
+      "previousOfficialUrl": "https://www.kviconline.gov.in/pmegpeportal/pmegphome/index.jsp",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "page.goto: Timeout 25000ms exceeded."
+    },
+    {
+      "id": 64,
+      "rank": 77,
+      "task": "Apply for PM SVANidhi street-vendor loan",
+      "mainOfficialUrl": "https://pmsvanidhi.mohua.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmsvanidhi.mohua.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 98,
+      "rank": 78,
+      "task": "File consumer complaint",
+      "mainOfficialUrl": "https://consumerhelpline.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://consumerhelpline.gov.in/public/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 75,
+      "rank": 79,
+      "task": "Apply for electricity connection",
+      "mainOfficialUrl": "https://power.delhi.gov.in/",
+      "scope": "Delhi example; electricity connections are utility-specific",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://power.delhi.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 74,
+      "rank": 80,
+      "task": "Apply for household water connection",
+      "mainOfficialUrl": "https://jaljeevanmission.gov.in/",
+      "scope": "Rural India; urban connections use local utilities",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://jaljeevanmission.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 14,
+      "rank": 81,
+      "task": "Check ration entitlement",
+      "mainOfficialUrl": "https://nfsa.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nfsa.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 13,
+      "rank": 82,
+      "task": "Use One Nation One Ration Card",
+      "mainOfficialUrl": "https://nfsa.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nfsa.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 99,
+      "rank": 83,
+      "task": "File RTI request",
+      "mainOfficialUrl": "https://rtionline.gov.in/",
+      "scope": "Central government; states have separate portals",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://rtionline.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 100,
+      "rank": 84,
+      "task": "Submit government grievance on CPGRAMS",
+      "mainOfficialUrl": "https://pgportal.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pgportal.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 40,
+      "rank": 85,
+      "task": "Get affordable medicines through Jan Aushadhi",
+      "mainOfficialUrl": "https://www.janaushadhi.gov.in/faq",
+      "scope": "India",
+      "mainLoadedBefore": true,
+      "mainLoadedAfter": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.janaushadhi.gov.in/faq"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 89,
+      "rank": 86,
+      "task": "Get education loan support",
+      "mainOfficialUrl": "https://www.education.gov.in/en/pradhan-mantri-vidyalaxmi-pm-vidyalaxmi-scheme-guidelines",
+      "scope": "India",
+      "previousOfficialUrl": "https://www.education.gov.in/pm-vidyalaxmi",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 90,
+      "rank": 87,
+      "task": "Apply for RTE school admission",
+      "mainOfficialUrl": "https://www.edudel.nic.in/",
+      "scope": "Delhi example; RTE admissions vary by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.edudel.nic.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 34,
+      "rank": 88,
+      "task": "Find an Ayushman-approved hospital",
+      "mainOfficialUrl": "https://hospitals.pmjay.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://hospitals.pmjay.gov.in/empApplicationHome.htm"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 30,
+      "rank": 89,
+      "task": "Get farm irrigation subsidy",
+      "mainOfficialUrl": "https://pmksy.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmksy.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 31,
+      "rank": 90,
+      "task": "Get subsidy for farm machinery",
+      "mainOfficialUrl": "https://agrimachinery.nic.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://agrimachinery.nic.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 38,
+      "rank": 91,
+      "task": "Get Janani Suraksha Yojana benefit",
+      "mainOfficialUrl": "https://nhm.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nhm.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 39,
+      "rank": 92,
+      "task": "Book vaccination or get vaccination certificate",
+      "mainOfficialUrl": "https://www.cowin.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "No substantive public text after JavaScript rendering"
+    },
+    {
+      "id": 44,
+      "rank": 93,
+      "task": "Read Form 26AS or AIS",
+      "mainOfficialUrl": "https://www.incometax.gov.in/iec/foportal/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.incometax.gov.in/iec/foportal/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 52,
+      "rank": 94,
+      "task": "Claim EPS pension",
+      "mainOfficialUrl": "https://www.epfindia.gov.in/site_en/For_Employees.php",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "loadedSourceUrls": [],
+      "mainFetchResult": "HTTP 403"
+    },
+    {
+      "id": 56,
+      "rank": 95,
+      "task": "Apply for disability pension",
+      "mainOfficialUrl": "https://nsap.dord.gov.in/",
+      "scope": "India; state eligibility and applications vary",
+      "previousOfficialUrl": "https://nsap.nic.in/",
+      "mainLoadedBefore": true,
+      "mainLoadedAfter": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://nsap.dord.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 84,
+      "rank": 96,
+      "task": "Get non-creamy-layer certificate",
+      "mainOfficialUrl": "https://obc.delhi.gov.in/obc/procedure-obtaining-services",
+      "scope": "Delhi example; certificates vary by state",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://obc.delhi.gov.in/obc/procedure-obtaining-services"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 93,
+      "rank": 97,
+      "task": "Apply for land mutation",
+      "mainOfficialUrl": "https://vaad.up.gov.in/",
+      "scope": "Uttar Pradesh example; mutation varies by state",
+      "previousOfficialUrl": "https://vaad.up.nic.in/",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://vaad.up.gov.in/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 96,
+      "rank": 98,
+      "task": "Check housing project under RERA",
+      "mainOfficialUrl": "https://gujrera.gujarat.gov.in/",
+      "scope": "Gujarat example; RERA registration is state-specific",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://gujrera.gujarat.gov.in/#/"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 10,
+      "rank": 99,
+      "task": "Get police clearance certificate",
+      "mainOfficialUrl": "https://www.passportindia.gov.in/",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.passportindia.gov.in/psp"
+      ],
+      "mainFetchResult": "loaded"
+    },
+    {
+      "id": 72,
+      "rank": 100,
+      "task": "Check LPG subsidy or PAHAL",
+      "mainOfficialUrl": "https://mopng.gov.in/en/marketing/pahal",
+      "scope": "India",
+      "mainLoadedBefore": false,
+      "mainLoadedAfter": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://mopng.gov.in/en/marketing/pahal"
+      ],
+      "mainFetchResult": "loaded"
+    }
+  ],
+  "coverage": {
+    "mainLoadedBefore": 4,
+    "mainLoadedAfter": 68,
+    "coveredBefore": 4,
+    "coveredAfter": 74
+  }
+}

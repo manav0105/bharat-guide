@@ -2,6 +2,7 @@ import { httpRouter } from "convex/server";
 import { httpAction } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { parseHistory } from "./lib/conversation";
+import { NOT_FOUND } from "./lib/answerRules";
 
 const http = httpRouter();
 const cookieName = "bharat_visitor";
@@ -80,6 +81,15 @@ http.route({
     }
     if (result.error === "unavailable") {
       return json({ error: "Service busy, please try again in a minute", remaining: result.remaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath }, 503);
+    }
+    if (result.answer === NOT_FOUND) {
+      try {
+        await ctx.runMutation(internal.unansweredQuestions.record, { question: question.trim() });
+      } catch {
+        // A logging outage must not replace the citizen's answer or expose it
+        // in server logs. No visitor identity or conversation is stored here.
+        console.warn("Could not save unanswered-question log");
+      }
     }
     return json({ answer: result.answer, sources: result.sources, remaining: result.remaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath });
   }),

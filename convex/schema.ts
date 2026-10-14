@@ -7,6 +7,11 @@ export default defineSchema({
     day: v.string(),
     questions: v.number(),
   }).index("by_token", ["tokenHash"]),
+  unansweredQuestions: defineTable({
+    question: v.string(),
+    date: v.string(),
+    askedAt: v.number(),
+  }).index("by_date", ["date"]),
   documents: defineTable({
     title: v.string(),
     text: v.string(),
