@@ -1,0 +1,506 @@
+{
+  "status": "draft, not from Google data",
+  "description": "A practical editorial shortlist, not a measured ranking of search demand. Task matches identify candidate pages, not verified complete answers.",
+  "topics": [
+    {
+      "id": 1,
+      "task": "Update Aadhaar details",
+      "matchPattern": "aadhaar.{0,100}(?:update|correction)|(?:update|correction).{0,100}aadhaar"
+    },
+    {
+      "id": 2,
+      "task": "Download Aadhaar or e-Aadhaar",
+      "matchPattern": "e[- ]?aadhaar|download.{0,60}aadhaar"
+    },
+    {
+      "id": 3,
+      "task": "Enrol for Aadhaar",
+      "matchPattern": "aadhaar.{0,60}enrol|enrol.{0,60}aadhaar"
+    },
+    {
+      "id": 4,
+      "task": "Link Aadhaar and PAN",
+      "matchPattern": "(?:aadhaar.{0,80}pan|pan.{0,80}aadhaar).{0,80}link|link.{0,80}(?:aadhaar.{0,80}pan|pan.{0,80}aadhaar)"
+    },
+    {
+      "id": 5,
+      "task": "Apply for PAN card",
+      "matchPattern": "pan card.{0,80}application|apply.{0,80}pan|new pan|instant e[- ]?pan"
+    },
+    {
+      "id": 6,
+      "task": "Correct or reprint PAN card",
+      "matchPattern": "(?:pan.{0,80}(?:correction|reprint)|(?:correction|reprint).{0,80}pan)"
+    },
+    {
+      "id": 7,
+      "task": "Track PAN application",
+      "matchPattern": "pan.{0,80}(?:status|track)|(?:status|track).{0,80}pan"
+    },
+    {
+      "id": 8,
+      "task": "Apply for passport",
+      "matchPattern": "passport.{0,80}application|apply.{0,80}passport|passport seva"
+    },
+    {
+      "id": 9,
+      "task": "Renew passport",
+      "matchPattern": "passport.{0,80}(?:renew|re[- ]?issue)|(?:renew|re[- ]?issue).{0,80}passport"
+    },
+    {
+      "id": 10,
+      "task": "Get police clearance certificate",
+      "matchPattern": "police clearance certificate"
+    },
+    {
+      "id": 11,
+      "task": "Apply for ration card",
+      "matchPattern": "(?:apply|application|new).{0,80}ration card|ration card.{0,80}(?:apply|application)"
+    },
+    {
+      "id": 12,
+      "task": "Update ration card or add a family member",
+      "matchPattern": "ration card.{0,100}(?:update|correction|add|member)|(?:update|correction|add).{0,80}ration card"
+    },
+    {
+      "id": 13,
+      "task": "Use One Nation One Ration Card",
+      "matchPattern": "one nation one ration|onorc"
+    },
+    {
+      "id": 14,
+      "task": "Check ration entitlement",
+      "matchPattern": "ration.{0,80}(?:entitlement|allocation)|public distribution system|national food security act"
+    },
+    {
+      "id": 15,
+      "task": "Register for voter ID",
+      "matchPattern": "voter.{0,80}(?:registration|register|enrol)|(?:register|enrol).{0,80}voter|form 6\\b"
+    },
+    {
+      "id": 16,
+      "task": "Update address in voter list",
+      "matchPattern": "form 8\\b|(?:voter|elector).{0,100}(?:address|shifting)|(?:address|shifting).{0,100}(?:voter|elector)"
+    },
+    {
+      "id": 17,
+      "task": "Check voter list or polling booth",
+      "matchPattern": "polling (?:booth|station)|electoral roll|voter list"
+    },
+    {
+      "id": 18,
+      "task": "Download e-EPIC voter ID",
+      "matchPattern": "e[- ]?epic|download.{0,80}voter"
+    },
+    {
+      "id": 19,
+      "task": "Apply for learner licence",
+      "matchPattern": "learner.?s? licen[cs]e"
+    },
+    {
+      "id": 20,
+      "task": "Apply for driving licence",
+      "matchPattern": "driving licen[cs]e.{0,80}(?:apply|application)|(?:apply|application).{0,80}driving licen[cs]e"
+    },
+    {
+      "id": 21,
+      "task": "Renew driving licence",
+      "matchPattern": "(?:renew.{0,80}driving|driving.{0,80}renew)"
+    },
+    {
+      "id": 22,
+      "task": "Transfer vehicle ownership",
+      "matchPattern": "transfer.{0,80}(?:vehicle|ownership)|vehicle.{0,80}ownership"
+    },
+    {
+      "id": 23,
+      "task": "Get vehicle registration certificate",
+      "matchPattern": "vehicle registration|registration certificate.{0,80}vehicle"
+    },
+    {
+      "id": 24,
+      "task": "Pay traffic challan",
+      "matchPattern": "e[- ]?challan|traffic.{0,80}(?:fine|challan)"
+    },
+    {
+      "id": 25,
+      "task": "Check PM-KISAN eligibility and apply",
+      "matchPattern": "pm[- ]?kisan|kisan samman nidhi"
+    },
+    {
+      "id": 26,
+      "task": "Complete PM-KISAN e-KYC",
+      "matchPattern": "(?:pm[- ]?kisan|kisan samman).{0,100}(?:kyc|verification)|(?:kyc|verification).{0,100}pm[- ]?kisan"
+    },
+    {
+      "id": 27,
+      "task": "Check PM-KISAN payment status",
+      "matchPattern": "(?:pm[- ]?kisan|kisan samman).{0,100}(?:payment|instalment|installment|status)"
+    },
+    {
+      "id": 28,
+      "task": "Apply for Kisan Credit Card",
+      "matchPattern": "kisan credit card|kcc.{0,30}(?:loan|farmer)"
+    },
+    {
+      "id": 29,
+      "task": "Get crop insurance under PMFBY",
+      "matchPattern": "fasal bima|pmfby|crop insurance"
+    },
+    {
+      "id": 30,
+      "task": "Get farm irrigation subsidy",
+      "matchPattern": "irrigation.{0,80}(?:subsid|assistance)|(?:subsid|assistance).{0,80}irrigation|krishi sinchayee"
+    },
+    {
+      "id": 31,
+      "task": "Get subsidy for farm machinery",
+      "matchPattern": "(?:machinery|tractor|equipment).{0,80}(?:subsid|assistance)|(?:subsid|assistance).{0,80}(?:farm machinery|tractor)"
+    },
+    {
+      "id": 32,
+      "task": "Apply for Ayushman Bharat health cover",
+      "matchPattern": "ayushman bharat|pm[- ]?jay|jan arogya"
+    },
+    {
+      "id": 33,
+      "task": "Get Ayushman card",
+      "matchPattern": "ayushman.{0,80}card|card.{0,80}ayushman"
+    },
+    {
+      "id": 34,
+      "task": "Find an Ayushman-approved hospital",
+      "matchPattern": "(?:ayushman|pm[- ]?jay).{0,100}(?:hospital|empanel)|empanel.{0,100}(?:ayushman|pm[- ]?jay)"
+    },
+    {
+      "id": 35,
+      "task": "Create ABHA health ID",
+      "matchPattern": "\\babha\\b|health (?:id|account)|digital health mission"
+    },
+    {
+      "id": 36,
+      "task": "Get ESIC medical benefits",
+      "matchPattern": "\\besic\\b|employees.? state insurance"
+    },
+    {
+      "id": 37,
+      "task": "Get maternity benefit under PMMVY",
+      "matchPattern": "matru vandana|pmmvy"
+    },
+    {
+      "id": 38,
+      "task": "Get Janani Suraksha Yojana benefit",
+      "matchPattern": "janani suraksha|\\bjsy\\b"
+    },
+    {
+      "id": 39,
+      "task": "Book vaccination or get vaccination certificate",
+      "matchPattern": "vaccin.{0,80}(?:certificate|book|appointment)|co[- ]?win"
+    },
+    {
+      "id": 40,
+      "task": "Get affordable medicines through Jan Aushadhi",
+      "matchPattern": "jan aushadhi|janaushadhi"
+    },
+    {
+      "id": 41,
+      "task": "File income tax return",
+      "matchPattern": "income tax return|e[- ]?filing.{0,60}income tax|income tax.{0,60}e[- ]?filing|\\bitr\\b"
+    },
+    {
+      "id": 42,
+      "task": "Check income tax refund",
+      "matchPattern": "(?:income tax|itr).{0,100}refund|refund.{0,100}(?:income tax|itr)"
+    },
+    {
+      "id": 43,
+      "task": "Pay income tax online",
+      "matchPattern": "(?:income tax|tax).{0,80}(?:e[- ]?pay|challan)|e[- ]?pay tax"
+    },
+    {
+      "id": 44,
+      "task": "Read Form 26AS or AIS",
+      "matchPattern": "form 26as|annual information statement|\\bais\\b.{0,50}tax"
+    },
+    {
+      "id": 45,
+      "task": "Claim income tax deductions",
+      "matchPattern": "section 80c|section 80d|tax deduction|income tax.{0,60}deduction"
+    },
+    {
+      "id": 46,
+      "task": "Register for GST",
+      "matchPattern": "gst.{0,80}registration|register.{0,80}gst|goods and services tax.{0,80}registration"
+    },
+    {
+      "id": 47,
+      "task": "File GST return",
+      "matchPattern": "gst.{0,60}return|gstr[- ]?\\d"
+    },
+    {
+      "id": 48,
+      "task": "Withdraw EPF money",
+      "matchPattern": "(?:epf|provident fund).{0,80}withdraw|withdraw.{0,80}(?:epf|provident fund)"
+    },
+    {
+      "id": 49,
+      "task": "Transfer EPF account",
+      "matchPattern": "(?:epf|provident fund).{0,80}transfer|transfer.{0,80}(?:epf|provident fund)"
+    },
+    {
+      "id": 50,
+      "task": "Activate UAN and update EPF KYC",
+      "matchPattern": "\\buan\\b|universal account number|epf.{0,80}kyc"
+    },
+    {
+      "id": 51,
+      "task": "Check EPF balance or passbook",
+      "matchPattern": "(?:epf|provident fund).{0,80}(?:balance|passbook)|(?:balance|passbook).{0,80}(?:epf|provident fund)"
+    },
+    {
+      "id": 52,
+      "task": "Claim EPS pension",
+      "matchPattern": "employees.? pension scheme|\\beps\\b.{0,80}pension"
+    },
+    {
+      "id": 53,
+      "task": "Submit Jeevan Pramaan life certificate",
+      "matchPattern": "jeevan pramaan|digital life certificate"
+    },
+    {
+      "id": 54,
+      "task": "Apply for old-age pension",
+      "matchPattern": "old[- ]?age pension|elderly.{0,80}pension|national social assistance"
+    },
+    {
+      "id": 55,
+      "task": "Apply for widow pension",
+      "matchPattern": "widow.{0,80}pension|pension.{0,80}widow"
+    },
+    {
+      "id": 56,
+      "task": "Apply for disability pension",
+      "matchPattern": "disab.{0,80}pension|pension.{0,80}disab"
+    },
+    {
+      "id": 57,
+      "task": "Register on e-Shram",
+      "matchPattern": "e[- ]?shram"
+    },
+    {
+      "id": 58,
+      "task": "Register for MGNREGA job card",
+      "matchPattern": "mgnrega|nrega|job card"
+    },
+    {
+      "id": 59,
+      "task": "Find government job vacancies",
+      "matchPattern": "(?:government|govt).{0,80}(?:job|vacan|recruit)|employment exchange|national career service"
+    },
+    {
+      "id": 60,
+      "task": "Get skill training under PMKVY",
+      "matchPattern": "kaushal vikas|pmkvy|skill india"
+    },
+    {
+      "id": 61,
+      "task": "Apply for PM Vishwakarma support",
+      "matchPattern": "vishwakarma"
+    },
+    {
+      "id": 62,
+      "task": "Apply for PMEGP business support",
+      "matchPattern": "pmegp|employment generation programme"
+    },
+    {
+      "id": 63,
+      "task": "Apply for Mudra loan",
+      "matchPattern": "mudra|pradhan mantri mudra"
+    },
+    {
+      "id": 64,
+      "task": "Apply for PM SVANidhi street-vendor loan",
+      "matchPattern": "svanidhi|street vendor.{0,80}loan"
+    },
+    {
+      "id": 65,
+      "task": "Open Jan Dhan bank account",
+      "matchPattern": "jan dhan|pmjdy"
+    },
+    {
+      "id": 66,
+      "task": "Join Atal Pension Yojana",
+      "matchPattern": "atal pension|\\bapy\\b.{0,80}pension"
+    },
+    {
+      "id": 67,
+      "task": "Join PM Jeevan Jyoti life insurance",
+      "matchPattern": "jeevan jyoti|pmjjby"
+    },
+    {
+      "id": 68,
+      "task": "Join PM Suraksha Bima accident insurance",
+      "matchPattern": "suraksha bima|pmsby"
+    },
+    {
+      "id": 69,
+      "task": "Open Sukanya Samriddhi account",
+      "matchPattern": "sukanya samriddhi"
+    },
+    {
+      "id": 70,
+      "task": "Apply for PMAY housing assistance",
+      "matchPattern": "awas yojana|\\bpmay\\b"
+    },
+    {
+      "id": 71,
+      "task": "Get Ujjwala LPG connection",
+      "matchPattern": "ujjwala|\\bpmuy\\b"
+    },
+    {
+      "id": 72,
+      "task": "Check LPG subsidy or PAHAL",
+      "matchPattern": "pahal|lpg.{0,80}subsid|subsid.{0,80}lpg"
+    },
+    {
+      "id": 73,
+      "task": "Apply for rooftop solar subsidy",
+      "matchPattern": "surya ghar|rooftop solar|solar.{0,80}subsid"
+    },
+    {
+      "id": 74,
+      "task": "Apply for household water connection",
+      "matchPattern": "water connection|jal jeevan"
+    },
+    {
+      "id": 75,
+      "task": "Apply for electricity connection",
+      "matchPattern": "electricity connection|power connection|saubhagya"
+    },
+    {
+      "id": 76,
+      "task": "Get birth certificate",
+      "matchPattern": "birth certificate|registration of birth|birth registration"
+    },
+    {
+      "id": 77,
+      "task": "Get death certificate",
+      "matchPattern": "death certificate|registration of death|death registration"
+    },
+    {
+      "id": 78,
+      "task": "Register marriage and get certificate",
+      "matchPattern": "marriage registration|registration of marriage|marriage certificate"
+    },
+    {
+      "id": 79,
+      "task": "Get income certificate",
+      "matchPattern": "income certificate"
+    },
+    {
+      "id": 80,
+      "task": "Get caste certificate",
+      "matchPattern": "caste certificate"
+    },
+    {
+      "id": 81,
+      "task": "Get domicile or residence certificate",
+      "matchPattern": "domicile certificate|residen(?:ce|tial) certificate"
+    },
+    {
+      "id": 82,
+      "task": "Get EWS certificate",
+      "matchPattern": "ews certificate|economically weaker.{0,80}certificate"
+    },
+    {
+      "id": 83,
+      "task": "Get disability certificate or UDID",
+      "matchPattern": "\\budid\\b|disability certificate|unique disability id"
+    },
+    {
+      "id": 84,
+      "task": "Get non-creamy-layer certificate",
+      "matchPattern": "non[- ]?creamy[- ]?layer"
+    },
+    {
+      "id": 85,
+      "task": "Apply for student scholarship",
+      "matchPattern": "scholarship.{0,80}(?:apply|application|student|eligible)|(?:apply|student).{0,80}scholarship|national scholarship portal"
+    },
+    {
+      "id": 86,
+      "task": "Apply for scholarship for girl students",
+      "matchPattern": "(?:girl|female|women).{0,80}scholarship|scholarship.{0,80}(?:girl|female|women)"
+    },
+    {
+      "id": 87,
+      "task": "Apply for SC or ST scholarship",
+      "matchPattern": "(?:scheduled caste|scheduled tribe|\\bsc\\b|\\bst\\b).{0,80}scholarship|scholarship.{0,80}(?:scheduled caste|scheduled tribe|\\bsc\\b|\\bst\\b)"
+    },
+    {
+      "id": 88,
+      "task": "Apply for minority scholarship",
+      "matchPattern": "minority.{0,80}scholarship|scholarship.{0,80}minority"
+    },
+    {
+      "id": 89,
+      "task": "Get education loan support",
+      "matchPattern": "education loan|vidya lakshmi|vidyalakshmi"
+    },
+    {
+      "id": 90,
+      "task": "Apply for RTE school admission",
+      "matchPattern": "right to education|\\brte\\b.{0,80}admission|admission.{0,80}\\brte\\b"
+    },
+    {
+      "id": 91,
+      "task": "Use DigiLocker for certificates",
+      "matchPattern": "digilocker"
+    },
+    {
+      "id": 92,
+      "task": "Get land records or Record of Rights",
+      "matchPattern": "land records|record of rights|bhulekh|bhoomi|jamabandi|patta"
+    },
+    {
+      "id": 93,
+      "task": "Apply for land mutation",
+      "matchPattern": "land.{0,80}mutation|mutation.{0,80}land|mutation of property"
+    },
+    {
+      "id": 94,
+      "task": "Register property or pay stamp duty",
+      "matchPattern": "property registration|registration of property|stamp duty"
+    },
+    {
+      "id": 95,
+      "task": "Pay property tax",
+      "matchPattern": "property tax"
+    },
+    {
+      "id": 96,
+      "task": "Check housing project under RERA",
+      "matchPattern": "\\brera\\b|real estate regulatory"
+    },
+    {
+      "id": 97,
+      "task": "Report cybercrime or online financial fraud",
+      "matchPattern": "cybercrime|cyber crime|online.{0,80}fraud|1930"
+    },
+    {
+      "id": 98,
+      "task": "File consumer complaint",
+      "matchPattern": "consumer.{0,80}complaint|consumer helpline|e[- ]?daakhil"
+    },
+    {
+      "id": 99,
+      "task": "File RTI request",
+      "matchPattern": "right to information|\\brti\\b"
+    },
+    {
+      "id": 100,
+      "task": "Submit government grievance on CPGRAMS",
+      "matchPattern": "cpgrams|public grievance|pgportal"
+    }
+  ]
+}
