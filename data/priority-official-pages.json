@@ -11,9 +11,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 500"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286070&lang=1&reg=3"
+      ],
+      "mainFetchResult": "HTTP 500",
+      "supportingOfficialUrls": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286070&lang=1&reg=3"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 2,
@@ -25,9 +32,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 500"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://tumkur.nic.in/en/service/aadhaar/"
+      ],
+      "mainFetchResult": "HTTP 500",
+      "supportingOfficialUrls": [
+        "https://tumkur.nic.in/en/service/aadhaar/"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 5,
@@ -45,7 +59,9 @@
       "loadedSourceUrls": [
         "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/Instant%20e-PAN-faq?mobile-app=1"
       ],
-      "mainFetchResult": "HTTP 403"
+      "mainFetchResult": "HTTP 403",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 51,
@@ -60,7 +76,9 @@
       "loadedSourceUrls": [
         "https://passbook.epfindia.gov.in/MemberPassBook/login"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 48,
@@ -71,9 +89,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 403"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.labour.gov.in/static/uploads/2025/07/2145c9d2487b4d0d597abdba04563c72.pdf"
+      ],
+      "mainFetchResult": "HTTP 403",
+      "supportingOfficialUrls": [
+        "https://www.labour.gov.in/static/uploads/2025/07/2145c9d2487b4d0d597abdba04563c72.pdf"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 41,
@@ -88,7 +113,9 @@
       "loadedSourceUrls": [
         "https://www.incometax.gov.in/iec/foportal/help/how-to-file-itr1-form-sahaj"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 27,
@@ -97,11 +124,20 @@
       "mainOfficialUrl": "https://pmkisan.gov.in/",
       "scope": "India",
       "mainLoadedBefore": false,
-      "mainLoadedAfter": false,
+      "mainLoadedAfter": true,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 500"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmkisan.gov.in/",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244630&lang=1&reg=3"
+      ],
+      "mainFetchResult": "HTTP 500",
+      "supportingOfficialUrls": [
+        "https://pmkisan.gov.in/",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244630&lang=1&reg=3"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 25,
@@ -110,11 +146,18 @@
       "mainOfficialUrl": "https://pmkisan.gov.in/",
       "scope": "India",
       "mainLoadedBefore": false,
-      "mainLoadedAfter": false,
+      "mainLoadedAfter": true,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 500"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.myscheme.gov.in/schemes/pm-kisan"
+      ],
+      "mainFetchResult": "HTTP 500",
+      "supportingOfficialUrls": [
+        "https://www.myscheme.gov.in/schemes/pm-kisan"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 8,
@@ -129,7 +172,9 @@
       "loadedSourceUrls": [
         "https://www.passportindia.gov.in/psp"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 32,
@@ -140,9 +185,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "page.goto: net::ERR_CONNECTION_REFUSED at https://pmjay.gov.in/"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://atalamritabhiyan.assam.gov.in/schemes/ayushman-bharat-pradhan-mantri-jan-arogya-yojana"
+      ],
+      "mainFetchResult": "page.goto: net::ERR_CONNECTION_REFUSED at https://pmjay.gov.in/",
+      "supportingOfficialUrls": [
+        "https://atalamritabhiyan.assam.gov.in/schemes/ayushman-bharat-pradhan-mantri-jan-arogya-yojana"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 85,
@@ -157,7 +209,9 @@
       "loadedSourceUrls": [
         "https://scholarships.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 59,
@@ -172,7 +226,9 @@
       "loadedSourceUrls": [
         "https://ncs.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 11,
@@ -187,7 +243,9 @@
       "loadedSourceUrls": [
         "https://nfsa.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 4,
@@ -205,7 +263,9 @@
       "loadedSourceUrls": [
         "https://www.incometax.gov.in/iec/foportal/help/how-to-link-aadhaar"
       ],
-      "mainFetchResult": "HTTP 403"
+      "mainFetchResult": "HTTP 403",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 15,
@@ -223,7 +283,9 @@
       "loadedSourceUrls": [
         "https://www.eci.gov.in/faq/en/how-to-register"
       ],
-      "mainFetchResult": "HTTP 403"
+      "mainFetchResult": "HTTP 403",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 20,
@@ -238,7 +300,9 @@
       "loadedSourceUrls": [
         "https://parivahan.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 76,
@@ -253,7 +317,9 @@
       "loadedSourceUrls": [
         "https://dc.crsorgi.gov.in/crs/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 57,
@@ -264,9 +330,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "No substantive public text after JavaScript rendering"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://eshram.gov.in/faqs"
+      ],
+      "mainFetchResult": "No substantive public text after JavaScript rendering",
+      "supportingOfficialUrls": [
+        "https://eshram.gov.in/faqs"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 26,
@@ -275,14 +348,21 @@
       "mainOfficialUrl": "https://pmkisan.gov.in/",
       "scope": "India",
       "supportingOfficialUrls": [
-        "https://pmkisan.gov.in/Documents/Note-on-Modes-and-processes-of-ekyc-13th-Nov-English.pdf"
+        "https://pmkisan.gov.in/Documents/Note-on-Modes-and-processes-of-ekyc-13th-Nov-English.pdf",
+        "https://pmkisan.gov.in/",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2275744&lang=1&reg=3"
       ],
       "mainLoadedBefore": false,
-      "mainLoadedAfter": false,
+      "mainLoadedAfter": true,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 500"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://pmkisan.gov.in/",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2275744&lang=1&reg=3"
+      ],
+      "mainFetchResult": "HTTP 500",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 91,
@@ -297,7 +377,9 @@
       "loadedSourceUrls": [
         "https://www.digilocker.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 79,
@@ -312,7 +394,9 @@
       "loadedSourceUrls": [
         "https://revenue.delhi.gov.in/revenue/income-certificate"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 92,
@@ -327,7 +411,9 @@
       "loadedSourceUrls": [
         "https://upbhulekh.gov.in/#/home"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 7,
@@ -340,7 +426,9 @@
       "coveredBefore": false,
       "coveredAfter": false,
       "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 403"
+      "mainFetchResult": "HTTP 403",
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": false
     },
     {
       "id": 50,
@@ -351,9 +439,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 403"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.myscheme.gov.in/schemes/eps"
+      ],
+      "mainFetchResult": "HTTP 403",
+      "supportingOfficialUrls": [
+        "https://www.myscheme.gov.in/schemes/eps"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 70,
@@ -368,7 +463,9 @@
       "loadedSourceUrls": [
         "https://pmay-urban.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 33,
@@ -379,9 +476,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "No substantive public text after JavaScript rendering"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://atalamritabhiyan.assam.gov.in/schemes/ayushman-bharat-pradhan-mantri-jan-arogya-yojana"
+      ],
+      "mainFetchResult": "No substantive public text after JavaScript rendering",
+      "supportingOfficialUrls": [
+        "https://atalamritabhiyan.assam.gov.in/schemes/ayushman-bharat-pradhan-mantri-jan-arogya-yojana"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 54,
@@ -397,7 +501,9 @@
       "loadedSourceUrls": [
         "https://nsap.dord.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 80,
@@ -408,9 +514,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "No substantive public text after JavaScript rendering"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://revenue.delhi.gov.in/revenue/schedule-castescheduled-tribe-certificate"
+      ],
+      "mainFetchResult": "No substantive public text after JavaScript rendering",
+      "supportingOfficialUrls": [
+        "https://revenue.delhi.gov.in/revenue/schedule-castescheduled-tribe-certificate"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 17,
@@ -421,9 +534,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "Public search/help menu only; no substantive task instructions"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf"
+      ],
+      "mainFetchResult": "Public search/help menu only; no substantive task instructions",
+      "supportingOfficialUrls": [
+        "https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 16,
@@ -441,7 +561,9 @@
       "loadedSourceUrls": [
         "https://voters.eci.gov.in/formspdf/Form_8_English.pdf"
       ],
-      "mainFetchResult": "HTTP 403"
+      "mainFetchResult": "HTTP 403",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 42,
@@ -456,7 +578,9 @@
       "loadedSourceUrls": [
         "https://www.incometax.gov.in/iec/foportal/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 9,
@@ -471,7 +595,9 @@
       "loadedSourceUrls": [
         "https://www.passportindia.gov.in/psp"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 12,
@@ -486,7 +612,9 @@
       "loadedSourceUrls": [
         "https://nfsa.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 3,
@@ -498,9 +626,18 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 500"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://wb.gov.in/government-schemes-details-aadhaar-enrolment-and-seeding.aspx",
+        "https://akshaya.kerala.gov.in/services/1/aadhaar-enrollment"
+      ],
+      "mainFetchResult": "HTTP 500",
+      "supportingOfficialUrls": [
+        "https://wb.gov.in/government-schemes-details-aadhaar-enrolment-and-seeding.aspx",
+        "https://akshaya.kerala.gov.in/services/1/aadhaar-enrollment"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 6,
@@ -511,9 +648,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 403"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2077608&lang=2&reg=48"
+      ],
+      "mainFetchResult": "HTTP 403",
+      "supportingOfficialUrls": [
+        "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2077608&lang=2&reg=48"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 86,
@@ -528,7 +672,9 @@
       "loadedSourceUrls": [
         "https://scholarships.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 87,
@@ -543,7 +689,9 @@
       "loadedSourceUrls": [
         "https://scholarships.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 69,
@@ -554,9 +702,18 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "No substantive public text after JavaScript rendering"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://wb.gov.in/government-schemes-details-sukanya-samriddhi-yojana.aspx",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2118725&lang=1&reg=3"
+      ],
+      "mainFetchResult": "No substantive public text after JavaScript rendering",
+      "supportingOfficialUrls": [
+        "https://wb.gov.in/government-schemes-details-sukanya-samriddhi-yojana.aspx",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2118725&lang=1&reg=3"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 24,
@@ -571,7 +728,9 @@
       "loadedSourceUrls": [
         "https://echallan.parivahan.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 19,
@@ -586,7 +745,9 @@
       "loadedSourceUrls": [
         "https://parivahan.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 49,
@@ -597,9 +758,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 403"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2124244&lang=2&reg=48"
+      ],
+      "mainFetchResult": "HTTP 403",
+      "supportingOfficialUrls": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2124244&lang=2&reg=48"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 65,
@@ -614,7 +782,9 @@
       "loadedSourceUrls": [
         "https://pmjdy.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 53,
@@ -629,7 +799,9 @@
       "loadedSourceUrls": [
         "https://jeevanpramaan.gov.in/v2.0/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 71,
@@ -644,7 +816,9 @@
       "loadedSourceUrls": [
         "https://www.pmuy.gov.in/index.aspx"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 35,
@@ -659,7 +833,9 @@
       "loadedSourceUrls": [
         "https://abha.abdm.gov.in/abha/v3"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 78,
@@ -674,7 +850,9 @@
       "loadedSourceUrls": [
         "https://revenue.delhi.gov.in/revenue/registration-marriage"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 46,
@@ -692,7 +870,9 @@
       "loadedSourceUrls": [
         "https://tutorial.gst.gov.in/userguide/registration/Apply_for_Registration_Normal_Taxpayer.htm"
       ],
-      "mainFetchResult": "Public search/help menu only; no substantive task instructions"
+      "mainFetchResult": "Public search/help menu only; no substantive task instructions",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 47,
@@ -710,7 +890,9 @@
       "loadedSourceUrls": [
         "https://tutorial.gst.gov.in/userguide/returns/GSTR_1.htm"
       ],
-      "mainFetchResult": "Public search/help menu only; no substantive task instructions"
+      "mainFetchResult": "Public search/help menu only; no substantive task instructions",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 81,
@@ -725,7 +907,9 @@
       "loadedSourceUrls": [
         "https://revenue.delhi.gov.in/revenue/domicile-certificate-0"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 23,
@@ -740,7 +924,9 @@
       "loadedSourceUrls": [
         "https://parivahan.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 21,
@@ -755,7 +941,9 @@
       "loadedSourceUrls": [
         "https://parivahan.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 58,
@@ -770,7 +958,9 @@
       "loadedSourceUrls": [
         "https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 63,
@@ -786,7 +976,9 @@
       "loadedSourceUrls": [
         "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 61,
@@ -801,7 +993,9 @@
       "loadedSourceUrls": [
         "https://pmvishwakarma.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 73,
@@ -812,9 +1006,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "page.goto: net::ERR_CONNECTION_RESET at https://www.pmsuryaghar.gov.in/"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.myscheme.gov.in/schemes/pmsgmb"
+      ],
+      "mainFetchResult": "page.goto: net::ERR_CONNECTION_RESET at https://www.pmsuryaghar.gov.in/",
+      "supportingOfficialUrls": [
+        "https://www.myscheme.gov.in/schemes/pmsgmb"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 82,
@@ -829,7 +1030,9 @@
       "loadedSourceUrls": [
         "https://edistrict.delhi.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 83,
@@ -844,7 +1047,9 @@
       "loadedSourceUrls": [
         "https://swavlambancard.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 55,
@@ -860,7 +1065,9 @@
       "loadedSourceUrls": [
         "https://nsap.dord.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 28,
@@ -875,7 +1082,9 @@
       "loadedSourceUrls": [
         "https://fasalrin.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 29,
@@ -890,7 +1099,9 @@
       "loadedSourceUrls": [
         "https://pmfby.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 36,
@@ -905,7 +1116,9 @@
       "loadedSourceUrls": [
         "https://esic.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 43,
@@ -920,7 +1133,9 @@
       "loadedSourceUrls": [
         "https://www.incometax.gov.in/iec/foportal/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 22,
@@ -935,7 +1150,9 @@
       "loadedSourceUrls": [
         "https://parivahan.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 88,
@@ -950,7 +1167,9 @@
       "loadedSourceUrls": [
         "https://scholarships.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 77,
@@ -965,7 +1184,9 @@
       "loadedSourceUrls": [
         "https://dc.crsorgi.gov.in/crs/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 97,
@@ -980,7 +1201,9 @@
       "loadedSourceUrls": [
         "https://cybercrime.gov.in/home"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 94,
@@ -995,7 +1218,9 @@
       "loadedSourceUrls": [
         "https://igrsup.gov.in/igrsup/defaultAction.action"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 95,
@@ -1010,7 +1235,9 @@
       "loadedSourceUrls": [
         "https://e-nagarsewaup.gov.in/ulbappsmain/home"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 18,
@@ -1021,9 +1248,18 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 403"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf",
+        "https://voters.eci.gov.in/home/ngsp/"
+      ],
+      "mainFetchResult": "HTTP 403",
+      "supportingOfficialUrls": [
+        "https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf",
+        "https://voters.eci.gov.in/home/ngsp/"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 37,
@@ -1038,7 +1274,9 @@
       "loadedSourceUrls": [
         "https://pmmvy.wcd.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 45,
@@ -1053,7 +1291,9 @@
       "loadedSourceUrls": [
         "https://www.incometax.gov.in/iec/foportal/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 66,
@@ -1064,9 +1304,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "No substantive public text after JavaScript rendering"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.myscheme.gov.in/schemes/apy"
+      ],
+      "mainFetchResult": "No substantive public text after JavaScript rendering",
+      "supportingOfficialUrls": [
+        "https://www.myscheme.gov.in/schemes/apy"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 67,
@@ -1077,9 +1324,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "No substantive public text after JavaScript rendering"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.myscheme.gov.in/schemes/pmjjby"
+      ],
+      "mainFetchResult": "No substantive public text after JavaScript rendering",
+      "supportingOfficialUrls": [
+        "https://www.myscheme.gov.in/schemes/pmjjby"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 68,
@@ -1090,9 +1344,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "No substantive public text after JavaScript rendering"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.myscheme.gov.in/schemes/pmsby"
+      ],
+      "mainFetchResult": "No substantive public text after JavaScript rendering",
+      "supportingOfficialUrls": [
+        "https://www.myscheme.gov.in/schemes/pmsby"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 60,
@@ -1107,7 +1368,9 @@
       "loadedSourceUrls": [
         "https://www.skillindiadigital.gov.in/home"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 62,
@@ -1119,9 +1382,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "page.goto: Timeout 25000ms exceeded."
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.myscheme.gov.in/schemes/pmegp"
+      ],
+      "mainFetchResult": "page.goto: Timeout 25000ms exceeded.",
+      "supportingOfficialUrls": [
+        "https://www.myscheme.gov.in/schemes/pmegp"
+      ],
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 64,
@@ -1136,7 +1406,9 @@
       "loadedSourceUrls": [
         "https://pmsvanidhi.mohua.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 98,
@@ -1151,7 +1423,9 @@
       "loadedSourceUrls": [
         "https://consumerhelpline.gov.in/public/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 75,
@@ -1166,7 +1440,9 @@
       "loadedSourceUrls": [
         "https://power.delhi.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 74,
@@ -1181,7 +1457,9 @@
       "loadedSourceUrls": [
         "https://jaljeevanmission.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 14,
@@ -1196,7 +1474,9 @@
       "loadedSourceUrls": [
         "https://nfsa.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 13,
@@ -1211,7 +1491,9 @@
       "loadedSourceUrls": [
         "https://nfsa.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 99,
@@ -1226,7 +1508,9 @@
       "loadedSourceUrls": [
         "https://rtionline.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 100,
@@ -1241,7 +1525,9 @@
       "loadedSourceUrls": [
         "https://pgportal.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 40,
@@ -1256,7 +1542,9 @@
       "loadedSourceUrls": [
         "https://www.janaushadhi.gov.in/faq"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 89,
@@ -1268,9 +1556,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 403"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2290079&lang=2&reg=48"
+      ],
+      "mainFetchResult": "HTTP 403",
+      "supportingOfficialUrls": [
+        "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2290079&lang=2&reg=48"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 90,
@@ -1285,7 +1580,9 @@
       "loadedSourceUrls": [
         "https://www.edudel.nic.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 34,
@@ -1300,7 +1597,9 @@
       "loadedSourceUrls": [
         "https://hospitals.pmjay.gov.in/empApplicationHome.htm"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 30,
@@ -1315,7 +1614,9 @@
       "loadedSourceUrls": [
         "https://pmksy.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 31,
@@ -1330,7 +1631,9 @@
       "loadedSourceUrls": [
         "https://agrimachinery.nic.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 38,
@@ -1345,7 +1648,9 @@
       "loadedSourceUrls": [
         "https://nhm.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 39,
@@ -1356,9 +1661,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "No substantive public text after JavaScript rendering"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://southtripura.nic.in/covid-19/"
+      ],
+      "mainFetchResult": "No substantive public text after JavaScript rendering",
+      "supportingOfficialUrls": [
+        "https://southtripura.nic.in/covid-19/"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 44,
@@ -1373,7 +1685,9 @@
       "loadedSourceUrls": [
         "https://www.incometax.gov.in/iec/foportal/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 52,
@@ -1384,9 +1698,16 @@
       "mainLoadedBefore": false,
       "mainLoadedAfter": false,
       "coveredBefore": false,
-      "coveredAfter": false,
-      "loadedSourceUrls": [],
-      "mainFetchResult": "HTTP 403"
+      "coveredAfter": true,
+      "loadedSourceUrls": [
+        "https://www.myscheme.gov.in/schemes/eps"
+      ],
+      "mainFetchResult": "HTTP 403",
+      "supportingOfficialUrls": [
+        "https://www.myscheme.gov.in/schemes/eps"
+      ],
+      "coveredBeforeRecovery": false,
+      "coveredAfterRecovery": true
     },
     {
       "id": 56,
@@ -1402,7 +1723,9 @@
       "loadedSourceUrls": [
         "https://nsap.dord.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 84,
@@ -1417,7 +1740,9 @@
       "loadedSourceUrls": [
         "https://obc.delhi.gov.in/obc/procedure-obtaining-services"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 93,
@@ -1433,7 +1758,9 @@
       "loadedSourceUrls": [
         "https://vaad.up.gov.in/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 96,
@@ -1448,7 +1775,9 @@
       "loadedSourceUrls": [
         "https://gujrera.gujarat.gov.in/#/"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 10,
@@ -1463,7 +1792,9 @@
       "loadedSourceUrls": [
         "https://www.passportindia.gov.in/psp"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     },
     {
       "id": 72,
@@ -1478,13 +1809,17 @@
       "loadedSourceUrls": [
         "https://mopng.gov.in/en/marketing/pahal"
       ],
-      "mainFetchResult": "loaded"
+      "mainFetchResult": "loaded",
+      "coveredBeforeRecovery": true,
+      "coveredAfterRecovery": true
     }
   ],
   "coverage": {
     "mainLoadedBefore": 4,
-    "mainLoadedAfter": 68,
+    "mainLoadedAfter": 71,
     "coveredBefore": 4,
-    "coveredAfter": 74
+    "coveredAfter": 99,
+    "coveredBeforeRecovery": 86,
+    "coveredAfterRecovery": 99
   }
 }

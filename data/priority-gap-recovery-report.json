@@ -1,0 +1,1001 @@
+{
+  "previousReportedCoverage": 74,
+  "auditedCoverageBefore": 86,
+  "coverageAfter": 99,
+  "coverageDefinition": "At least one loaded selected official page about the task, not a guarantee of complete/current instructions or every regional/applicant variant. State examples and older FAQ limitations are labelled.",
+  "dataset": {
+    "name": "ankitjh4/bharat-government-documents",
+    "revision": "1b76e58adbb0a69e113e27626a15b97d039d897e",
+    "streamedRows": 64964,
+    "complete": true,
+    "method": "Streaming Parquet columns; eligible full_text/ocr_text only; government-domain title/URL candidates reviewed against task body content. No full dataset download."
+  },
+  "import": {
+    "importId": "bharat-priority-recovery-2026-10-15-v1",
+    "addedPages": 15,
+    "addedChunks": 107,
+    "pages": [
+      {
+        "url": "https://wb.gov.in/government-schemes-details-aadhaar-enrolment-and-seeding.aspx",
+        "title": "Aadhaar Enrolment And Seeding",
+        "taskIds": [
+          3
+        ],
+        "origin": "Hugging Face streaming dataset",
+        "chunks": 3,
+        "sourceId": "6b0b269ad62cc9b0b24fae2fc605bb834d8f48af3a20535f51b5ec0e340a5d71",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://pmkisan.gov.in/",
+        "title": "PM-Kisan Samman Nidhi",
+        "taskIds": [
+          26,
+          27
+        ],
+        "origin": "Hugging Face streaming dataset",
+        "chunks": 5,
+        "sourceId": "94e98b3d583c19ee4bfdb39ceacdf33ee0084b3b7b6ccea6b428ff9af5405a7f",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://www.myscheme.gov.in/schemes/eps",
+        "title": "Employees' Pension Scheme (EPS)",
+        "taskIds": [
+          50,
+          52
+        ],
+        "origin": "Hugging Face streaming dataset",
+        "chunks": 12,
+        "sourceId": "db214518316ac8632ae02f65382b80e9ffda4f772ceff4388bd344e4fad830df",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://wb.gov.in/government-schemes-details-sukanya-samriddhi-yojana.aspx",
+        "title": "Sukanya Samriddhi Yojana",
+        "taskIds": [
+          69
+        ],
+        "origin": "Hugging Face streaming dataset",
+        "chunks": 6,
+        "sourceId": "86df66c4f7552c0f822cd13354730b16f7d78765186a479b0c8fb085ee62416b",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://www.myscheme.gov.in/schemes/pmjjby",
+        "title": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+        "taskIds": [
+          67
+        ],
+        "origin": "Hugging Face streaming dataset",
+        "chunks": 6,
+        "sourceId": "3ccbb4c6552ae508d575d9cff24908009c1fb14e2a3e618e478bb497358672d6",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf",
+        "title": "eEPIC-FAQs.pdf",
+        "taskIds": [
+          17,
+          18
+        ],
+        "origin": "direct official fallback",
+        "chunks": 4,
+        "sourceId": "7bcacd3a3b486bfc496500081ea8c514eab5942391045c07027c3cd3eb8ae88f",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://eshram.gov.in/faqs",
+        "title": "FAQs | e-Shram",
+        "taskIds": [
+          57
+        ],
+        "origin": "direct official fallback",
+        "chunks": 21,
+        "sourceId": "db416dd52301e1101243fde436d003ccda4afdfc9773dcbd3adcaa51d355c69b",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://revenue.delhi.gov.in/revenue/schedule-castescheduled-tribe-certificate",
+        "title": "Schedule Caste/Scheduled Tribe Certificate | Department of Revenue",
+        "taskIds": [
+          80
+        ],
+        "origin": "direct official fallback",
+        "chunks": 3,
+        "sourceId": "dc7907f2aa2f04ed1667d957593486abb5a6f10b37347377188c45fc3cabc19b",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://www.labour.gov.in/static/uploads/2025/07/2145c9d2487b4d0d597abdba04563c72.pdf",
+        "title": "Press Release:Press Information Bureau",
+        "taskIds": [
+          48
+        ],
+        "origin": "direct official fallback",
+        "chunks": 5,
+        "sourceId": "5db539a104722fc16396aec2b6f31e625d9bec6a232ad1aba297a7425055f702",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2290079&lang=2&reg=48",
+        "title": "Press Release:Press Information Bureau",
+        "taskIds": [
+          89
+        ],
+        "origin": "direct official fallback",
+        "chunks": 8,
+        "sourceId": "25eb72afababae650a13aa44a16aeae9c361907719be1f2f2cef2aa97085f6c1",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286070&lang=1&reg=3",
+        "title": "Press Release Page | Press Information Bureau",
+        "taskIds": [
+          1
+        ],
+        "origin": "direct official fallback",
+        "chunks": 5,
+        "sourceId": "d745bb305c98f532825c16637b55bb9426ad2c6789370e0e91002ac6c24743e4",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2124244&lang=2&reg=48",
+        "title": "Press Release Page | Press Information Bureau",
+        "taskIds": [
+          49
+        ],
+        "origin": "direct official fallback",
+        "chunks": 7,
+        "sourceId": "8c2336366570d127902491f9aa842f3c5212797a7c68e4095ce46a05ca14834b",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://tumkur.nic.in/en/service/aadhaar/",
+        "title": "Aadhaar | District Tumkur, Government of Karnataka | India",
+        "taskIds": [
+          2
+        ],
+        "origin": "direct official fallback",
+        "chunks": 2,
+        "sourceId": "3476ec4ddbddea175217567852906692efd89e16e9232ee4846b5ee17a591142",
+        "extraction": "Original source text, unaltered"
+      },
+      {
+        "url": "https://southtripura.nic.in/covid-19/",
+        "title": "COVID-19 | District South Tripura, Government of Tripura | India",
+        "taskIds": [
+          39
+        ],
+        "origin": "direct official fallback",
+        "chunks": 1,
+        "sourceId": "321faf32935446e51a2d74272ec31957131adf6651ee818dcd6a365bb4b723b7",
+        "extraction": "Four verbatim registration, booking and certificate question-answer sections; clinical advice and old age limits omitted."
+      },
+      {
+        "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2077608&lang=2&reg=48",
+        "title": "Press Release:Press Information Bureau",
+        "taskIds": [
+          6
+        ],
+        "origin": "direct official fallback",
+        "chunks": 19,
+        "sourceId": "9d0595dbe0768c8ec0c935bdfa7aa01a5afa3f884e2613a3d51bed246072e94b",
+        "extraction": "Original source text, unaltered"
+      }
+    ],
+    "before": {
+      "chunks": 50249,
+      "complete": true,
+      "databaseBytes": 368922920,
+      "documents": 5636,
+      "indexBytes": 295138336,
+      "recordBytes": 73784584
+    },
+    "after": {
+      "chunks": 50356,
+      "complete": true,
+      "databaseBytes": 369630470,
+      "documents": 5651,
+      "indexBytes": 295704376,
+      "recordBytes": 73926094
+    }
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "rank": 1,
+      "task": "Update Aadhaar details",
+      "mainOfficialUrl": "https://www.uidai.gov.in/en/",
+      "datasetSiteUrlCount": 3,
+      "datasetCandidateCount": 21,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286070&lang=1&reg=3",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://uidai.gov.in/en/enrolment-and-update",
+          "taskIds": [
+            1
+          ],
+          "reason": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1082)>"
+        },
+        {
+          "url": "https://services.india.gov.in/service/detail/uidai-aadhaar-card-update-services",
+          "taskIds": [
+            1
+          ],
+          "reason": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        },
+        {
+          "url": "https://uidai.gov.in/hi/enrolment-and-update",
+          "taskIds": [
+            1,
+            3
+          ],
+          "reason": "HTTP 500"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "rank": 2,
+      "task": "Download Aadhaar or e-Aadhaar",
+      "mainOfficialUrl": "https://www.uidai.gov.in/en/",
+      "datasetSiteUrlCount": 3,
+      "datasetCandidateCount": 10,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://tumkur.nic.in/en/service/aadhaar/",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://uidai.gov.in/en/aadhaar-online-services",
+          "taskIds": [
+            2
+          ],
+          "reason": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1082)>"
+        },
+        {
+          "url": "https://www.uidai.gov.in/images/LR_Aadhaar_Handbook_2026.pdf",
+          "taskIds": [
+            2
+          ],
+          "reason": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1082)>"
+        },
+        {
+          "url": "https://uidai.gov.in/kn/aadhaar-online-services",
+          "taskIds": [
+            2
+          ],
+          "reason": "HTTP 500"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "rank": 5,
+      "task": "Withdraw EPF money",
+      "mainOfficialUrl": "https://www.epfindia.gov.in/site_en/For_Employees.php",
+      "datasetSiteUrlCount": 41,
+      "datasetCandidateCount": 19,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.labour.gov.in/static/uploads/2025/07/2145c9d2487b4d0d597abdba04563c72.pdf",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://www.epfindia.gov.in/site_docs/PDFs/MiscPDFs/FAQ_OCS_050517_1017.pdf",
+          "taskIds": [
+            48
+          ],
+          "reason": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "rank": 7,
+      "task": "Check PM-KISAN payment status",
+      "mainOfficialUrl": "https://pmkisan.gov.in/",
+      "datasetSiteUrlCount": 10,
+      "datasetCandidateCount": 8,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://pmkisan.gov.in/",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        },
+        {
+          "url": "https://pmkisan.gov.in/",
+          "origin": "Hugging Face streaming dataset",
+          "scopeNote": "Original source text, unaltered"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244630&lang=1&reg=3",
+          "origin": "Previously loaded official excerpt",
+          "scopeNote": "Verbatim official-page paragraph retrieved from its public search index; direct requests are blocked here."
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 25,
+      "rank": 8,
+      "task": "Check PM-KISAN eligibility and apply",
+      "mainOfficialUrl": "https://pmkisan.gov.in/",
+      "datasetSiteUrlCount": 10,
+      "datasetCandidateCount": 8,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.myscheme.gov.in/schemes/pm-kisan",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 32,
+      "rank": 10,
+      "task": "Apply for Ayushman Bharat health cover",
+      "mainOfficialUrl": "https://pmjay.gov.in/",
+      "datasetSiteUrlCount": 2,
+      "datasetCandidateCount": 21,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://atalamritabhiyan.assam.gov.in/schemes/ayushman-bharat-pradhan-mantri-jan-arogya-yojana",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "Assam-specific implementation"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 57,
+      "rank": 18,
+      "task": "Register on e-Shram",
+      "mainOfficialUrl": "https://eshram.gov.in/",
+      "datasetSiteUrlCount": 3,
+      "datasetCandidateCount": 6,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://eshram.gov.in/faqs",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 26,
+      "rank": 19,
+      "task": "Complete PM-KISAN e-KYC",
+      "mainOfficialUrl": "https://pmkisan.gov.in/",
+      "datasetSiteUrlCount": 10,
+      "datasetCandidateCount": 5,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://pmkisan.gov.in/",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        },
+        {
+          "url": "https://pmkisan.gov.in/",
+          "origin": "Hugging Face streaming dataset",
+          "scopeNote": "Original source text, unaltered"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2275744&lang=1&reg=3",
+          "origin": "Previously loaded official excerpt",
+          "scopeNote": "Verbatim lines 88–96 of the official PIB page, retrieved with the web reader."
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 7,
+      "rank": 23,
+      "task": "Track PAN application",
+      "mainOfficialUrl": "https://www.incometaxindia.gov.in/en/pan",
+      "datasetSiteUrlCount": 6,
+      "datasetCandidateCount": 1,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": false,
+      "sources": [],
+      "failedUrls": [
+        {
+          "url": "https://www.incometaxindia.gov.in/tax-services/status-of-pan-protean",
+          "taskIds": [
+            7
+          ],
+          "reason": "HTTP 403"
+        },
+        {
+          "url": "https://www.india.gov.in/services/details/track-your-pan-or-tan-application-status",
+          "taskIds": [
+            7
+          ],
+          "reason": "TimeoutError: The read operation timed out"
+        },
+        {
+          "url": "https://gramawardsachivalayam.ap.gov.in/GSWS/downloads/CSC/Services/FAQ%20on%20CSC%20Services.pdf",
+          "taskIds": [
+            6,
+            7
+          ],
+          "reason": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        },
+        {
+          "url": "https://www.incometaxindia.gov.in/documents/d/guest/order-for-specifying-procedure-for-pan-correction-pdf",
+          "taskIds": [
+            6,
+            7
+          ],
+          "reason": "HTTP 403"
+        },
+        {
+          "url": "https://incometaxindia.gov.in/Forms/tps/1.Permanent%20Account%20Number%20%28PAN%29.pdf",
+          "taskIds": [
+            6,
+            7
+          ],
+          "reason": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1082)>"
+        },
+        {
+          "url": "https://incometaxindia.gov.in/en/pan",
+          "taskIds": [
+            6,
+            7
+          ],
+          "reason": "HTTP 403"
+        }
+      ],
+      "remainingReason": "General PAN tracking pages returned HTTP 403, connection timeout or certificate/DNS errors after retry. Previously loaded instant e-PAN FAQ covers only instant e-PAN tracking; not counted as complete coverage for this task."
+    },
+    {
+      "id": 50,
+      "rank": 24,
+      "task": "Activate UAN and update EPF KYC",
+      "mainOfficialUrl": "https://www.epfindia.gov.in/site_en/For_Employees.php",
+      "datasetSiteUrlCount": 41,
+      "datasetCandidateCount": 3,
+      "datasetSelected": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.myscheme.gov.in/schemes/eps",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        },
+        {
+          "url": "https://www.myscheme.gov.in/schemes/eps",
+          "origin": "Hugging Face streaming dataset",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 33,
+      "rank": 26,
+      "task": "Get Ayushman card",
+      "mainOfficialUrl": "https://beneficiary.nha.gov.in/",
+      "datasetSiteUrlCount": 0,
+      "datasetCandidateCount": 34,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://atalamritabhiyan.assam.gov.in/schemes/ayushman-bharat-pradhan-mantri-jan-arogya-yojana",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "Assam-specific implementation"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 80,
+      "rank": 28,
+      "task": "Get caste certificate",
+      "mainOfficialUrl": "https://dmwest.delhi.gov.in/service/caste-certificate/",
+      "datasetSiteUrlCount": 0,
+      "datasetCandidateCount": 3,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://revenue.delhi.gov.in/revenue/schedule-castescheduled-tribe-certificate",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 17,
+      "rank": 29,
+      "task": "Check voter list or polling booth",
+      "mainOfficialUrl": "https://electoralsearch.eci.gov.in/",
+      "datasetSiteUrlCount": 0,
+      "datasetCandidateCount": 23,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://www.eci.gov.in/faq/en/voter-electors",
+          "taskIds": [
+            17
+          ],
+          "reason": "No substantive public text (JavaScript/login-only or empty page)"
+        },
+        {
+          "url": "https://www.eci.gov.in/faq/en/how-to-register",
+          "taskIds": [
+            17
+          ],
+          "reason": "No substantive public text (JavaScript/login-only or empty page)"
+        }
+      ],
+      "limitation": "Official e-EPIC FAQ is an older publication with legacy voter-portal links; current workflow completeness is not verified."
+    },
+    {
+      "id": 3,
+      "rank": 34,
+      "task": "Enrol for Aadhaar",
+      "mainOfficialUrl": "https://www.uidai.gov.in/en/",
+      "datasetSiteUrlCount": 3,
+      "datasetCandidateCount": 10,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://wb.gov.in/government-schemes-details-aadhaar-enrolment-and-seeding.aspx",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        },
+        {
+          "url": "https://wb.gov.in/government-schemes-details-aadhaar-enrolment-and-seeding.aspx",
+          "origin": "Hugging Face streaming dataset",
+          "scopeNote": "Original source text, unaltered"
+        },
+        {
+          "url": "https://akshaya.kerala.gov.in/services/1/aadhaar-enrollment",
+          "origin": "Previously loaded dataset page",
+          "scopeNote": "Kerala enrolment example"
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://uidai.gov.in/hi/enrolment-and-update",
+          "taskIds": [
+            1,
+            3
+          ],
+          "reason": "HTTP 500"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "rank": 35,
+      "task": "Correct or reprint PAN card",
+      "mainOfficialUrl": "https://www.incometaxindia.gov.in/en/pan",
+      "datasetSiteUrlCount": 6,
+      "datasetCandidateCount": 1,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2077608&lang=2&reg=48",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://services.india.gov.in/service/detail/apply-online-for-new-pan-card-or-corrections-in-pan-card-1",
+          "taskIds": [
+            6
+          ],
+          "reason": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        },
+        {
+          "url": "https://gramawardsachivalayam.ap.gov.in/GSWS/downloads/CSC/Services/FAQ%20on%20CSC%20Services.pdf",
+          "taskIds": [
+            6,
+            7
+          ],
+          "reason": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        },
+        {
+          "url": "https://www.incometaxindia.gov.in/documents/d/guest/order-for-specifying-procedure-for-pan-correction-pdf",
+          "taskIds": [
+            6,
+            7
+          ],
+          "reason": "HTTP 403"
+        },
+        {
+          "url": "https://incometaxindia.gov.in/Forms/tps/1.Permanent%20Account%20Number%20%28PAN%29.pdf",
+          "taskIds": [
+            6,
+            7
+          ],
+          "reason": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1082)>"
+        },
+        {
+          "url": "https://incometaxindia.gov.in/en/pan",
+          "taskIds": [
+            6,
+            7
+          ],
+          "reason": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "rank": 38,
+      "task": "Open Sukanya Samriddhi account",
+      "mainOfficialUrl": "https://www.indiapost.gov.in/banking-services/savings",
+      "datasetSiteUrlCount": 26,
+      "datasetCandidateCount": 1,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://wb.gov.in/government-schemes-details-sukanya-samriddhi-yojana.aspx",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        },
+        {
+          "url": "https://wb.gov.in/government-schemes-details-sukanya-samriddhi-yojana.aspx",
+          "origin": "Hugging Face streaming dataset",
+          "scopeNote": "Original source text, unaltered"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2118725&lang=1&reg=3",
+          "origin": "Previously loaded official excerpt",
+          "scopeNote": "Verbatim account-opening paragraphs, lines 12 and 20 of the official PIB page, retrieved with the web reader; published 4 April 2025."
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 49,
+      "rank": 41,
+      "task": "Transfer EPF account",
+      "mainOfficialUrl": "https://www.epfindia.gov.in/site_en/For_Employees.php",
+      "datasetSiteUrlCount": 41,
+      "datasetCandidateCount": 13,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2124244&lang=2&reg=48",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://www.epfindia.gov.in/site_docs/PDFs/UAN_PDFs/UAN_ForMembers/FAQ-Member-July2015.pdf",
+          "taskIds": [
+            49
+          ],
+          "reason": "HTTP 404"
+        },
+        {
+          "url": "https://labour.gov.in/sites/default/files/pib2209767.pdf",
+          "taskIds": [
+            49
+          ],
+          "reason": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
+        },
+        {
+          "url": "https://www.labour.gov.in/sites/default/files/pib2209767.pdf",
+          "taskIds": [
+            49
+          ],
+          "reason": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "rank": 55,
+      "task": "Apply for rooftop solar subsidy",
+      "mainOfficialUrl": "https://www.pmsuryaghar.gov.in/",
+      "datasetSiteUrlCount": 0,
+      "datasetCandidateCount": 4,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.myscheme.gov.in/schemes/pmsgmb",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 18,
+      "rank": 69,
+      "task": "Download e-EPIC voter ID",
+      "mainOfficialUrl": "https://voters.eci.gov.in/home/e-epic-download",
+      "datasetSiteUrlCount": 0,
+      "datasetCandidateCount": 0,
+      "datasetSelected": false,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        },
+        {
+          "url": "https://voters.eci.gov.in/home/ngsp/",
+          "origin": "Previously loaded official excerpt",
+          "scopeNote": "Verbatim official-page passage retrieved from its public search index; direct requests are blocked here."
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://services.india.gov.in/service/detail/download-your-electronic-voter-id-card-e-epic",
+          "taskIds": [
+            18
+          ],
+          "reason": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+        }
+      ],
+      "limitation": "Official e-EPIC FAQ is an older publication with legacy voter-portal links; current workflow completeness is not verified."
+    },
+    {
+      "id": 66,
+      "rank": 72,
+      "task": "Join Atal Pension Yojana",
+      "mainOfficialUrl": "https://jansuraksha.gov.in/",
+      "datasetSiteUrlCount": 1,
+      "datasetCandidateCount": 2,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.myscheme.gov.in/schemes/apy",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 67,
+      "rank": 73,
+      "task": "Join PM Jeevan Jyoti life insurance",
+      "mainOfficialUrl": "https://jansuraksha.gov.in/",
+      "datasetSiteUrlCount": 1,
+      "datasetCandidateCount": 3,
+      "datasetSelected": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.myscheme.gov.in/schemes/pmjjby",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        },
+        {
+          "url": "https://www.myscheme.gov.in/schemes/pmjjby",
+          "origin": "Hugging Face streaming dataset",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 68,
+      "rank": 74,
+      "task": "Join PM Suraksha Bima accident insurance",
+      "mainOfficialUrl": "https://jansuraksha.gov.in/",
+      "datasetSiteUrlCount": 1,
+      "datasetCandidateCount": 3,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.myscheme.gov.in/schemes/pmsby",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 62,
+      "rank": 76,
+      "task": "Apply for PMEGP business support",
+      "mainOfficialUrl": "https://kviconline.gov.in/pmegpeportal/pmegphome/index.jsp",
+      "datasetSiteUrlCount": 2,
+      "datasetCandidateCount": 49,
+      "datasetSelected": true,
+      "coveredBefore": true,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.myscheme.gov.in/schemes/pmegp",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        }
+      ],
+      "failedUrls": []
+    },
+    {
+      "id": 89,
+      "rank": 86,
+      "task": "Get education loan support",
+      "mainOfficialUrl": "https://www.education.gov.in/en/pradhan-mantri-vidyalaxmi-pm-vidyalaxmi-scheme-guidelines",
+      "datasetSiteUrlCount": 150,
+      "datasetCandidateCount": 23,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2290079&lang=2&reg=48",
+          "origin": "direct official fallback",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://www.education.gov.in/pm-vidyalaxmi",
+          "taskIds": [
+            89
+          ],
+          "reason": "No substantive public text (JavaScript/login-only or empty page)"
+        },
+        {
+          "url": "https://www.education.gov.in/sites/upload_files/mhrd/files/document-reports/PM_Vidyalaxmi_Scheme_Guidelines.pdf",
+          "taskIds": [
+            89
+          ],
+          "reason": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "rank": 92,
+      "task": "Book vaccination or get vaccination certificate",
+      "mainOfficialUrl": "https://www.cowin.gov.in/",
+      "datasetSiteUrlCount": 0,
+      "datasetCandidateCount": 0,
+      "datasetSelected": false,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://southtripura.nic.in/covid-19/",
+          "origin": "direct official fallback",
+          "scopeNote": "Four verbatim registration, booking and certificate question-answer sections; clinical advice and old age limits omitted."
+        }
+      ],
+      "failedUrls": [
+        {
+          "url": "https://covid19dashboard.mohfw.gov.in/pdf/FAQCoWINforcitizens.pdf",
+          "taskIds": [
+            39
+          ],
+          "reason": "TimeoutError: The read operation timed out"
+        },
+        {
+          "url": "https://www.cowin.gov.in/?lang=en",
+          "taskIds": [
+            39
+          ],
+          "reason": "Blocked or no usable public text"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "rank": 94,
+      "task": "Claim EPS pension",
+      "mainOfficialUrl": "https://www.epfindia.gov.in/site_en/For_Employees.php",
+      "datasetSiteUrlCount": 41,
+      "datasetCandidateCount": 2,
+      "datasetSelected": true,
+      "coveredBefore": false,
+      "coveredAfter": true,
+      "sources": [
+        {
+          "url": "https://www.myscheme.gov.in/schemes/eps",
+          "origin": "Hugging Face dataset",
+          "scopeNote": "See source eligibility and scope"
+        },
+        {
+          "url": "https://www.myscheme.gov.in/schemes/eps",
+          "origin": "Hugging Face streaming dataset",
+          "scopeNote": "Original source text, unaltered"
+        }
+      ],
+      "failedUrls": []
+    }
+  ],
+  "stillUncovered": [
+    "Track PAN application"
+  ],
+  "existingSourcesPreserved": 5636,
+  "loggingStatus": "Deployed and verified through the live browser question form",
+  "liveProof": {
+    "url": "https://dapper-cricket-388.convex.site/",
+    "question": "Where can I get a teleportation permit for a purple dragon travelling to Neptune from India?",
+    "status": 200,
+    "answer": "I could not find this in official sources",
+    "sources": [],
+    "remaining": 19,
+    "checkedAt": "2026-10-14T23:05:51.987Z",
+    "savedRecord": {
+      "question": "Where can I get a teleportation permit for a purple dragon travelling to Neptune from India?",
+      "date": "2026-10-15",
+      "askedAt": 1792019152664,
+      "savedAtUtc": "2026-10-14T23:05:52.664000+00:00"
+    }
+  }
+}

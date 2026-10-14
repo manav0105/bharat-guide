@@ -72,7 +72,7 @@ def quality_error(text,title=''):
     if re.search(r'you need to enable javascript to run this app',text,re.I) and len(text)<500:return 'JavaScript-only page'
     return None
 
-def fetch_page(url):
+def fetch_page(url, retry_delay=1, retry_all=False):
     result={'requestedUrl':url,'fetchedAt':datetime.now(timezone.utc).isoformat(),'method':'direct HTTP'}
     if not allowed(url):return {**result,'error':'URL outside permitted domains'}
     for attempt in range(2):
@@ -92,14 +92,16 @@ def fetch_page(url):
                 parser=PageText();parser.feed(raw.decode(encoding,errors='replace'))
                 text=parser.text();title=' '.join(parser.title).strip();links=[urllib.parse.urljoin(final,x['href']) for x in parser.links if allowed(urllib.parse.urljoin(final,x['href']))]
             error=quality_error(text,title)
+            if error and retry_all and attempt==0:
+                time.sleep(retry_delay);continue
             return {**result,'sourceUrl':final,'title':title or urllib.parse.urlsplit(final).hostname,'text':text,'links':list(dict.fromkeys(links))[:1000],'bytesFetched':len(raw),**({'error':error} if error else {})}
         except urllib.error.HTTPError as error:
             reason='HTTP '+str(error.code)
-            if error.code>=500 and attempt==0:time.sleep(1);continue
+            if attempt==0 and (retry_all or error.code>=500):time.sleep(retry_delay);continue
             return {**result,'error':reason}
         except Exception as error:
             reason=type(error).__name__+': '+str(error)
-            if attempt==0 and isinstance(error,(TimeoutError,urllib.error.URLError)):time.sleep(1);continue
+            if attempt==0 and (retry_all or isinstance(error,(TimeoutError,urllib.error.URLError))):time.sleep(retry_delay);continue
             return {**result,'error':reason[:250]}
 
 def convex(name,args):

@@ -1,101 +1,101 @@
-﻿rank,task,scope,mainOfficialUrl,mainLoadedBefore,mainLoadedAfter,coveredBefore,coveredAfter,loadedSourceUrls,mainFetchResult
-1,Update Aadhaar details,India,https://www.uidai.gov.in/en/,False,False,False,False,,HTTP 500
-2,Download Aadhaar or e-Aadhaar,India,https://www.uidai.gov.in/en/,False,False,False,False,,HTTP 500
-3,Apply for PAN card,India,https://www.incometaxindia.gov.in/tax-services/apply-for-pan,False,False,False,True,https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/Instant%20e-PAN-faq?mobile-app=1,HTTP 403
-4,Check EPF balance or passbook,India,https://passbook.epfindia.gov.in/MemberPassBook/login,False,True,False,True,https://passbook.epfindia.gov.in/MemberPassBook/login,loaded
-5,Withdraw EPF money,India,https://www.epfindia.gov.in/site_en/For_Employees.php,False,False,False,False,,HTTP 403
-6,File income tax return,"India; ITR-1 guide, eligibility applies",https://www.incometax.gov.in/iec/foportal/help/how-to-file-itr1-form-sahaj,False,True,False,True,https://www.incometax.gov.in/iec/foportal/help/how-to-file-itr1-form-sahaj,loaded
-7,Check PM-KISAN payment status,India,https://pmkisan.gov.in/,False,False,False,False,,HTTP 500
-8,Check PM-KISAN eligibility and apply,India,https://pmkisan.gov.in/,False,False,False,False,,HTTP 500
-9,Apply for passport,India,https://www.passportindia.gov.in/,False,True,False,True,https://www.passportindia.gov.in/psp,loaded
-10,Apply for Ayushman Bharat health cover,India,https://pmjay.gov.in/,False,False,False,False,,page.goto: net::ERR_CONNECTION_REFUSED at https://pmjay.gov.in/
-11,Apply for student scholarship,India; state and scheme-specific rules apply,https://scholarships.gov.in/,False,True,False,True,https://scholarships.gov.in/,loaded
-12,Find government job vacancies,India,https://www.ncs.gov.in/,False,True,False,True,https://ncs.gov.in/,loaded
-13,Apply for ration card,India; ration-card applications use state portals,https://nfsa.gov.in/,False,True,False,True,https://nfsa.gov.in/,loaded
-14,Link Aadhaar and PAN,India,https://www.incometaxindia.gov.in/tax-services/link-aadhaar,False,False,False,True,https://www.incometax.gov.in/iec/foportal/help/how-to-link-aadhaar,HTTP 403
-15,Register for voter ID,India,https://voters.eci.gov.in/,False,False,False,True,https://www.eci.gov.in/faq/en/how-to-register,HTTP 403
-16,Apply for driving licence,India; select state,https://parivahan.gov.in/parivahan/,False,True,False,True,https://parivahan.gov.in/,loaded
-17,Get birth certificate,India; local registration rules apply,https://crsorgi.gov.in/,False,True,False,True,https://dc.crsorgi.gov.in/crs/,loaded
-18,Register on e-Shram,India,https://eshram.gov.in/,False,False,False,False,,No substantive public text after JavaScript rendering
-19,Complete PM-KISAN e-KYC,India,https://pmkisan.gov.in/,False,False,False,False,,HTTP 500
-20,Use DigiLocker for certificates,India,https://www.digilocker.gov.in/,False,True,False,True,https://www.digilocker.gov.in/,loaded
-21,Get income certificate,Delhi example; certificates vary by state,https://revenue.delhi.gov.in/revenue/income-certificate,False,True,False,True,https://revenue.delhi.gov.in/revenue/income-certificate,loaded
-22,Get land records or Record of Rights,Uttar Pradesh example; land records vary by state,https://upbhulekh.gov.in/,False,True,False,True,https://upbhulekh.gov.in/#/home,loaded
+﻿rank,task,scope,mainOfficialUrl,mainLoadedBefore,mainLoadedAfter,coveredBeforeRecovery,coveredAfterRecovery,loadedSourceUrls,mainFetchResult
+1,Update Aadhaar details,India,https://www.uidai.gov.in/en/,False,False,False,True,https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286070&lang=1&reg=3,HTTP 500
+2,Download Aadhaar or e-Aadhaar,India,https://www.uidai.gov.in/en/,False,False,False,True,https://tumkur.nic.in/en/service/aadhaar/,HTTP 500
+3,Apply for PAN card,India,https://www.incometaxindia.gov.in/tax-services/apply-for-pan,False,False,True,True,https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/Instant%20e-PAN-faq?mobile-app=1,HTTP 403
+4,Check EPF balance or passbook,India,https://passbook.epfindia.gov.in/MemberPassBook/login,False,True,True,True,https://passbook.epfindia.gov.in/MemberPassBook/login,loaded
+5,Withdraw EPF money,India,https://www.epfindia.gov.in/site_en/For_Employees.php,False,False,False,True,https://www.labour.gov.in/static/uploads/2025/07/2145c9d2487b4d0d597abdba04563c72.pdf,HTTP 403
+6,File income tax return,"India; ITR-1 guide, eligibility applies",https://www.incometax.gov.in/iec/foportal/help/how-to-file-itr1-form-sahaj,False,True,True,True,https://www.incometax.gov.in/iec/foportal/help/how-to-file-itr1-form-sahaj,loaded
+7,Check PM-KISAN payment status,India,https://pmkisan.gov.in/,False,True,True,True,https://pmkisan.gov.in/; https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244630&lang=1&reg=3,HTTP 500
+8,Check PM-KISAN eligibility and apply,India,https://pmkisan.gov.in/,False,True,True,True,https://www.myscheme.gov.in/schemes/pm-kisan,HTTP 500
+9,Apply for passport,India,https://www.passportindia.gov.in/,False,True,True,True,https://www.passportindia.gov.in/psp,loaded
+10,Apply for Ayushman Bharat health cover,India,https://pmjay.gov.in/,False,False,True,True,https://atalamritabhiyan.assam.gov.in/schemes/ayushman-bharat-pradhan-mantri-jan-arogya-yojana,page.goto: net::ERR_CONNECTION_REFUSED at https://pmjay.gov.in/
+11,Apply for student scholarship,India; state and scheme-specific rules apply,https://scholarships.gov.in/,False,True,True,True,https://scholarships.gov.in/,loaded
+12,Find government job vacancies,India,https://www.ncs.gov.in/,False,True,True,True,https://ncs.gov.in/,loaded
+13,Apply for ration card,India; ration-card applications use state portals,https://nfsa.gov.in/,False,True,True,True,https://nfsa.gov.in/,loaded
+14,Link Aadhaar and PAN,India,https://www.incometaxindia.gov.in/tax-services/link-aadhaar,False,False,True,True,https://www.incometax.gov.in/iec/foportal/help/how-to-link-aadhaar,HTTP 403
+15,Register for voter ID,India,https://voters.eci.gov.in/,False,False,True,True,https://www.eci.gov.in/faq/en/how-to-register,HTTP 403
+16,Apply for driving licence,India; select state,https://parivahan.gov.in/parivahan/,False,True,True,True,https://parivahan.gov.in/,loaded
+17,Get birth certificate,India; local registration rules apply,https://crsorgi.gov.in/,False,True,True,True,https://dc.crsorgi.gov.in/crs/,loaded
+18,Register on e-Shram,India,https://eshram.gov.in/,False,False,False,True,https://eshram.gov.in/faqs,No substantive public text after JavaScript rendering
+19,Complete PM-KISAN e-KYC,India,https://pmkisan.gov.in/,False,True,True,True,https://pmkisan.gov.in/; https://www.pib.gov.in/PressReleasePage.aspx?PRID=2275744&lang=1&reg=3,HTTP 500
+20,Use DigiLocker for certificates,India,https://www.digilocker.gov.in/,False,True,True,True,https://www.digilocker.gov.in/,loaded
+21,Get income certificate,Delhi example; certificates vary by state,https://revenue.delhi.gov.in/revenue/income-certificate,False,True,True,True,https://revenue.delhi.gov.in/revenue/income-certificate,loaded
+22,Get land records or Record of Rights,Uttar Pradesh example; land records vary by state,https://upbhulekh.gov.in/,False,True,True,True,https://upbhulekh.gov.in/#/home,loaded
 23,Track PAN application,India,https://www.incometaxindia.gov.in/en/pan,False,False,False,False,,HTTP 403
-24,Activate UAN and update EPF KYC,India,https://www.epfindia.gov.in/site_en/For_Employees.php,False,False,False,False,,HTTP 403
-25,Apply for PMAY housing assistance,Urban India; rural PMAY uses a separate portal,https://pmay-urban.gov.in/,False,True,False,True,https://pmay-urban.gov.in/,loaded
-26,Get Ayushman card,India,https://beneficiary.nha.gov.in/,False,False,False,False,,No substantive public text after JavaScript rendering
+24,Activate UAN and update EPF KYC,India,https://www.epfindia.gov.in/site_en/For_Employees.php,False,False,False,True,https://www.myscheme.gov.in/schemes/eps,HTTP 403
+25,Apply for PMAY housing assistance,Urban India; rural PMAY uses a separate portal,https://pmay-urban.gov.in/,False,True,True,True,https://pmay-urban.gov.in/,loaded
+26,Get Ayushman card,India,https://beneficiary.nha.gov.in/,False,False,True,True,https://atalamritabhiyan.assam.gov.in/schemes/ayushman-bharat-pradhan-mantri-jan-arogya-yojana,No substantive public text after JavaScript rendering
 27,Apply for old-age pension,India; state eligibility and applications vary,https://nsap.dord.gov.in/,True,True,True,True,https://nsap.dord.gov.in/,loaded
-28,Get caste certificate,Delhi example; certificates vary by state,https://dmwest.delhi.gov.in/service/caste-certificate/,False,False,False,False,,No substantive public text after JavaScript rendering
-29,Check voter list or polling booth,India,https://electoralsearch.eci.gov.in/,False,False,False,False,,Public search/help menu only; no substantive task instructions
-30,Update address in voter list,India,https://voters.eci.gov.in/,False,False,False,True,https://voters.eci.gov.in/formspdf/Form_8_English.pdf,HTTP 403
-31,Check income tax refund,India,https://www.incometax.gov.in/iec/foportal/,False,True,False,True,https://www.incometax.gov.in/iec/foportal/,loaded
-32,Renew passport,India,https://www.passportindia.gov.in/,False,True,False,True,https://www.passportindia.gov.in/psp,loaded
-33,Update ration card or add a family member,India; ration-card changes use state portals,https://nfsa.gov.in/,False,True,False,True,https://nfsa.gov.in/,loaded
-34,Enrol for Aadhaar,India,https://www.uidai.gov.in/en/,False,False,False,False,,HTTP 500
-35,Correct or reprint PAN card,India,https://www.incometaxindia.gov.in/en/pan,False,False,False,False,,HTTP 403
-36,Apply for scholarship for girl students,India; girls' scholarships depend on the scheme,https://scholarships.gov.in/,False,True,False,True,https://scholarships.gov.in/,loaded
-37,Apply for SC or ST scholarship,India; SC/ST scholarships depend on the scheme,https://scholarships.gov.in/,False,True,False,True,https://scholarships.gov.in/,loaded
-38,Open Sukanya Samriddhi account,India,https://www.indiapost.gov.in/banking-services/savings,False,False,False,False,,No substantive public text after JavaScript rendering
-39,Pay traffic challan,India,https://echallan.parivahan.gov.in/,False,True,False,True,https://echallan.parivahan.gov.in/,loaded
-40,Apply for learner licence,India; select state,https://parivahan.gov.in/parivahan/,False,True,False,True,https://parivahan.gov.in/,loaded
-41,Transfer EPF account,India,https://www.epfindia.gov.in/site_en/For_Employees.php,False,False,False,False,,HTTP 403
-42,Open Jan Dhan bank account,India,https://pmjdy.gov.in/,False,True,False,True,https://pmjdy.gov.in/,loaded
-43,Submit Jeevan Pramaan life certificate,India,https://jeevanpramaan.gov.in/,False,True,False,True,https://jeevanpramaan.gov.in/v2.0/,loaded
-44,Get Ujjwala LPG connection,India,https://www.pmuy.gov.in/,False,True,False,True,https://www.pmuy.gov.in/index.aspx,loaded
-45,Create ABHA health ID,India,https://abha.abdm.gov.in/,False,True,False,True,https://abha.abdm.gov.in/abha/v3,loaded
-46,Register marriage and get certificate,Delhi example; marriage registration varies by state,https://revenue.delhi.gov.in/revenue/registration-marriage,False,True,False,True,https://revenue.delhi.gov.in/revenue/registration-marriage,loaded
-47,Register for GST,India,https://www.gst.gov.in/,False,False,False,True,https://tutorial.gst.gov.in/userguide/registration/Apply_for_Registration_Normal_Taxpayer.htm,Public search/help menu only; no substantive task instructions
-48,File GST return,India,https://www.gst.gov.in/,False,False,False,True,https://tutorial.gst.gov.in/userguide/returns/GSTR_1.htm,Public search/help menu only; no substantive task instructions
-49,Get domicile or residence certificate,Delhi example; certificates vary by state,https://revenue.delhi.gov.in/revenue/domicile-certificate-0,False,True,False,True,https://revenue.delhi.gov.in/revenue/domicile-certificate-0,loaded
-50,Get vehicle registration certificate,India; select state,https://parivahan.gov.in/parivahan/,False,True,False,True,https://parivahan.gov.in/,loaded
-51,Renew driving licence,India; select state,https://parivahan.gov.in/parivahan/,False,True,False,True,https://parivahan.gov.in/,loaded
-52,Register for MGNREGA job card,India,https://nrega.nic.in/,False,True,False,True,https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx,loaded
-53,Apply for Mudra loan,India,https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy,False,True,False,True,https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy,loaded
-54,Apply for PM Vishwakarma support,India,https://pmvishwakarma.gov.in/,False,True,False,True,https://pmvishwakarma.gov.in/,loaded
-55,Apply for rooftop solar subsidy,India,https://www.pmsuryaghar.gov.in/,False,False,False,False,,page.goto: net::ERR_CONNECTION_RESET at https://www.pmsuryaghar.gov.in/
-56,Get EWS certificate,Delhi example; EWS certificates vary by state,https://edistrict.delhi.gov.in/,False,True,False,True,https://edistrict.delhi.gov.in/,loaded
-57,Get disability certificate or UDID,India,https://www.swavlambancard.gov.in/,False,True,False,True,https://swavlambancard.gov.in/,loaded
+28,Get caste certificate,Delhi example; certificates vary by state,https://dmwest.delhi.gov.in/service/caste-certificate/,False,False,False,True,https://revenue.delhi.gov.in/revenue/schedule-castescheduled-tribe-certificate,No substantive public text after JavaScript rendering
+29,Check voter list or polling booth,India,https://electoralsearch.eci.gov.in/,False,False,False,True,https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf,Public search/help menu only; no substantive task instructions
+30,Update address in voter list,India,https://voters.eci.gov.in/,False,False,True,True,https://voters.eci.gov.in/formspdf/Form_8_English.pdf,HTTP 403
+31,Check income tax refund,India,https://www.incometax.gov.in/iec/foportal/,False,True,True,True,https://www.incometax.gov.in/iec/foportal/,loaded
+32,Renew passport,India,https://www.passportindia.gov.in/,False,True,True,True,https://www.passportindia.gov.in/psp,loaded
+33,Update ration card or add a family member,India; ration-card changes use state portals,https://nfsa.gov.in/,False,True,True,True,https://nfsa.gov.in/,loaded
+34,Enrol for Aadhaar,India,https://www.uidai.gov.in/en/,False,False,True,True,https://wb.gov.in/government-schemes-details-aadhaar-enrolment-and-seeding.aspx; https://akshaya.kerala.gov.in/services/1/aadhaar-enrollment,HTTP 500
+35,Correct or reprint PAN card,India,https://www.incometaxindia.gov.in/en/pan,False,False,False,True,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2077608&lang=2&reg=48,HTTP 403
+36,Apply for scholarship for girl students,India; girls' scholarships depend on the scheme,https://scholarships.gov.in/,False,True,True,True,https://scholarships.gov.in/,loaded
+37,Apply for SC or ST scholarship,India; SC/ST scholarships depend on the scheme,https://scholarships.gov.in/,False,True,True,True,https://scholarships.gov.in/,loaded
+38,Open Sukanya Samriddhi account,India,https://www.indiapost.gov.in/banking-services/savings,False,False,True,True,https://wb.gov.in/government-schemes-details-sukanya-samriddhi-yojana.aspx; https://www.pib.gov.in/PressReleasePage.aspx?PRID=2118725&lang=1&reg=3,No substantive public text after JavaScript rendering
+39,Pay traffic challan,India,https://echallan.parivahan.gov.in/,False,True,True,True,https://echallan.parivahan.gov.in/,loaded
+40,Apply for learner licence,India; select state,https://parivahan.gov.in/parivahan/,False,True,True,True,https://parivahan.gov.in/,loaded
+41,Transfer EPF account,India,https://www.epfindia.gov.in/site_en/For_Employees.php,False,False,False,True,https://www.pib.gov.in/PressReleasePage.aspx?PRID=2124244&lang=2&reg=48,HTTP 403
+42,Open Jan Dhan bank account,India,https://pmjdy.gov.in/,False,True,True,True,https://pmjdy.gov.in/,loaded
+43,Submit Jeevan Pramaan life certificate,India,https://jeevanpramaan.gov.in/,False,True,True,True,https://jeevanpramaan.gov.in/v2.0/,loaded
+44,Get Ujjwala LPG connection,India,https://www.pmuy.gov.in/,False,True,True,True,https://www.pmuy.gov.in/index.aspx,loaded
+45,Create ABHA health ID,India,https://abha.abdm.gov.in/,False,True,True,True,https://abha.abdm.gov.in/abha/v3,loaded
+46,Register marriage and get certificate,Delhi example; marriage registration varies by state,https://revenue.delhi.gov.in/revenue/registration-marriage,False,True,True,True,https://revenue.delhi.gov.in/revenue/registration-marriage,loaded
+47,Register for GST,India,https://www.gst.gov.in/,False,False,True,True,https://tutorial.gst.gov.in/userguide/registration/Apply_for_Registration_Normal_Taxpayer.htm,Public search/help menu only; no substantive task instructions
+48,File GST return,India,https://www.gst.gov.in/,False,False,True,True,https://tutorial.gst.gov.in/userguide/returns/GSTR_1.htm,Public search/help menu only; no substantive task instructions
+49,Get domicile or residence certificate,Delhi example; certificates vary by state,https://revenue.delhi.gov.in/revenue/domicile-certificate-0,False,True,True,True,https://revenue.delhi.gov.in/revenue/domicile-certificate-0,loaded
+50,Get vehicle registration certificate,India; select state,https://parivahan.gov.in/parivahan/,False,True,True,True,https://parivahan.gov.in/,loaded
+51,Renew driving licence,India; select state,https://parivahan.gov.in/parivahan/,False,True,True,True,https://parivahan.gov.in/,loaded
+52,Register for MGNREGA job card,India,https://nrega.nic.in/,False,True,True,True,https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx,loaded
+53,Apply for Mudra loan,India,https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy,False,True,True,True,https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy,loaded
+54,Apply for PM Vishwakarma support,India,https://pmvishwakarma.gov.in/,False,True,True,True,https://pmvishwakarma.gov.in/,loaded
+55,Apply for rooftop solar subsidy,India,https://www.pmsuryaghar.gov.in/,False,False,True,True,https://www.myscheme.gov.in/schemes/pmsgmb,page.goto: net::ERR_CONNECTION_RESET at https://www.pmsuryaghar.gov.in/
+56,Get EWS certificate,Delhi example; EWS certificates vary by state,https://edistrict.delhi.gov.in/,False,True,True,True,https://edistrict.delhi.gov.in/,loaded
+57,Get disability certificate or UDID,India,https://www.swavlambancard.gov.in/,False,True,True,True,https://swavlambancard.gov.in/,loaded
 58,Apply for widow pension,India; state eligibility and applications vary,https://nsap.dord.gov.in/,True,True,True,True,https://nsap.dord.gov.in/,loaded
-59,Apply for Kisan Credit Card,India,https://fasalrin.gov.in/,False,True,False,True,https://fasalrin.gov.in/,loaded
-60,Get crop insurance under PMFBY,India,https://pmfby.gov.in/,False,True,False,True,https://pmfby.gov.in/,loaded
-61,Get ESIC medical benefits,India,https://www.esic.gov.in/,False,True,False,True,https://esic.gov.in/,loaded
-62,Pay income tax online,India,https://www.incometax.gov.in/iec/foportal/,False,True,False,True,https://www.incometax.gov.in/iec/foportal/,loaded
-63,Transfer vehicle ownership,India; select state,https://parivahan.gov.in/parivahan/,False,True,False,True,https://parivahan.gov.in/,loaded
-64,Apply for minority scholarship,India; minority scholarships depend on the scheme,https://scholarships.gov.in/,False,True,False,True,https://scholarships.gov.in/,loaded
-65,Get death certificate,India; local registration rules apply,https://crsorgi.gov.in/,False,True,False,True,https://dc.crsorgi.gov.in/crs/,loaded
-66,Report cybercrime or online financial fraud,India,https://cybercrime.gov.in/,False,True,False,True,https://cybercrime.gov.in/home,loaded
-67,Register property or pay stamp duty,Uttar Pradesh example; registration varies by state,https://igrsup.gov.in/,False,True,False,True,https://igrsup.gov.in/igrsup/defaultAction.action,loaded
-68,Pay property tax,Uttar Pradesh example; property tax varies by local body,https://e-nagarsewaup.gov.in/,False,True,False,True,https://e-nagarsewaup.gov.in/ulbappsmain/home,loaded
-69,Download e-EPIC voter ID,India,https://voters.eci.gov.in/home/e-epic-download,False,False,False,False,,HTTP 403
-70,Get maternity benefit under PMMVY,India,https://pmmvy.wcd.gov.in/,False,True,False,True,https://pmmvy.wcd.gov.in/,loaded
-71,Claim income tax deductions,India,https://www.incometax.gov.in/iec/foportal/,False,True,False,True,https://www.incometax.gov.in/iec/foportal/,loaded
-72,Join Atal Pension Yojana,India,https://jansuraksha.gov.in/,False,False,False,False,,No substantive public text after JavaScript rendering
-73,Join PM Jeevan Jyoti life insurance,India,https://jansuraksha.gov.in/,False,False,False,False,,No substantive public text after JavaScript rendering
-74,Join PM Suraksha Bima accident insurance,India,https://jansuraksha.gov.in/,False,False,False,False,,No substantive public text after JavaScript rendering
-75,Get skill training under PMKVY,India,https://www.skillindiadigital.gov.in/,False,True,False,True,https://www.skillindiadigital.gov.in/home,loaded
-76,Apply for PMEGP business support,India,https://kviconline.gov.in/pmegpeportal/pmegphome/index.jsp,False,False,False,False,,page.goto: Timeout 25000ms exceeded.
-77,Apply for PM SVANidhi street-vendor loan,India,https://pmsvanidhi.mohua.gov.in/,False,True,False,True,https://pmsvanidhi.mohua.gov.in/,loaded
-78,File consumer complaint,India,https://consumerhelpline.gov.in/,False,True,False,True,https://consumerhelpline.gov.in/public/,loaded
-79,Apply for electricity connection,Delhi example; electricity connections are utility-specific,https://power.delhi.gov.in/,False,True,False,True,https://power.delhi.gov.in/,loaded
-80,Apply for household water connection,Rural India; urban connections use local utilities,https://jaljeevanmission.gov.in/,False,True,False,True,https://jaljeevanmission.gov.in/,loaded
-81,Check ration entitlement,India,https://nfsa.gov.in/,False,True,False,True,https://nfsa.gov.in/,loaded
-82,Use One Nation One Ration Card,India,https://nfsa.gov.in/,False,True,False,True,https://nfsa.gov.in/,loaded
-83,File RTI request,Central government; states have separate portals,https://rtionline.gov.in/,False,True,False,True,https://rtionline.gov.in/,loaded
-84,Submit government grievance on CPGRAMS,India,https://pgportal.gov.in/,False,True,False,True,https://pgportal.gov.in/,loaded
+59,Apply for Kisan Credit Card,India,https://fasalrin.gov.in/,False,True,True,True,https://fasalrin.gov.in/,loaded
+60,Get crop insurance under PMFBY,India,https://pmfby.gov.in/,False,True,True,True,https://pmfby.gov.in/,loaded
+61,Get ESIC medical benefits,India,https://www.esic.gov.in/,False,True,True,True,https://esic.gov.in/,loaded
+62,Pay income tax online,India,https://www.incometax.gov.in/iec/foportal/,False,True,True,True,https://www.incometax.gov.in/iec/foportal/,loaded
+63,Transfer vehicle ownership,India; select state,https://parivahan.gov.in/parivahan/,False,True,True,True,https://parivahan.gov.in/,loaded
+64,Apply for minority scholarship,India; minority scholarships depend on the scheme,https://scholarships.gov.in/,False,True,True,True,https://scholarships.gov.in/,loaded
+65,Get death certificate,India; local registration rules apply,https://crsorgi.gov.in/,False,True,True,True,https://dc.crsorgi.gov.in/crs/,loaded
+66,Report cybercrime or online financial fraud,India,https://cybercrime.gov.in/,False,True,True,True,https://cybercrime.gov.in/home,loaded
+67,Register property or pay stamp duty,Uttar Pradesh example; registration varies by state,https://igrsup.gov.in/,False,True,True,True,https://igrsup.gov.in/igrsup/defaultAction.action,loaded
+68,Pay property tax,Uttar Pradesh example; property tax varies by local body,https://e-nagarsewaup.gov.in/,False,True,True,True,https://e-nagarsewaup.gov.in/ulbappsmain/home,loaded
+69,Download e-EPIC voter ID,India,https://voters.eci.gov.in/home/e-epic-download,False,False,True,True,https://ceogoa.nic.in/PDF/eEPIC-FAQs.pdf; https://voters.eci.gov.in/home/ngsp/,HTTP 403
+70,Get maternity benefit under PMMVY,India,https://pmmvy.wcd.gov.in/,False,True,True,True,https://pmmvy.wcd.gov.in/,loaded
+71,Claim income tax deductions,India,https://www.incometax.gov.in/iec/foportal/,False,True,True,True,https://www.incometax.gov.in/iec/foportal/,loaded
+72,Join Atal Pension Yojana,India,https://jansuraksha.gov.in/,False,False,True,True,https://www.myscheme.gov.in/schemes/apy,No substantive public text after JavaScript rendering
+73,Join PM Jeevan Jyoti life insurance,India,https://jansuraksha.gov.in/,False,False,False,True,https://www.myscheme.gov.in/schemes/pmjjby,No substantive public text after JavaScript rendering
+74,Join PM Suraksha Bima accident insurance,India,https://jansuraksha.gov.in/,False,False,True,True,https://www.myscheme.gov.in/schemes/pmsby,No substantive public text after JavaScript rendering
+75,Get skill training under PMKVY,India,https://www.skillindiadigital.gov.in/,False,True,True,True,https://www.skillindiadigital.gov.in/home,loaded
+76,Apply for PMEGP business support,India,https://kviconline.gov.in/pmegpeportal/pmegphome/index.jsp,False,False,True,True,https://www.myscheme.gov.in/schemes/pmegp,page.goto: Timeout 25000ms exceeded.
+77,Apply for PM SVANidhi street-vendor loan,India,https://pmsvanidhi.mohua.gov.in/,False,True,True,True,https://pmsvanidhi.mohua.gov.in/,loaded
+78,File consumer complaint,India,https://consumerhelpline.gov.in/,False,True,True,True,https://consumerhelpline.gov.in/public/,loaded
+79,Apply for electricity connection,Delhi example; electricity connections are utility-specific,https://power.delhi.gov.in/,False,True,True,True,https://power.delhi.gov.in/,loaded
+80,Apply for household water connection,Rural India; urban connections use local utilities,https://jaljeevanmission.gov.in/,False,True,True,True,https://jaljeevanmission.gov.in/,loaded
+81,Check ration entitlement,India,https://nfsa.gov.in/,False,True,True,True,https://nfsa.gov.in/,loaded
+82,Use One Nation One Ration Card,India,https://nfsa.gov.in/,False,True,True,True,https://nfsa.gov.in/,loaded
+83,File RTI request,Central government; states have separate portals,https://rtionline.gov.in/,False,True,True,True,https://rtionline.gov.in/,loaded
+84,Submit government grievance on CPGRAMS,India,https://pgportal.gov.in/,False,True,True,True,https://pgportal.gov.in/,loaded
 85,Get affordable medicines through Jan Aushadhi,India,https://www.janaushadhi.gov.in/faq,True,True,True,True,https://www.janaushadhi.gov.in/faq,loaded
-86,Get education loan support,India,https://www.education.gov.in/en/pradhan-mantri-vidyalaxmi-pm-vidyalaxmi-scheme-guidelines,False,False,False,False,,HTTP 403
-87,Apply for RTE school admission,Delhi example; RTE admissions vary by state,https://www.edudel.nic.in/,False,True,False,True,https://www.edudel.nic.in/,loaded
-88,Find an Ayushman-approved hospital,India,https://hospitals.pmjay.gov.in/,False,True,False,True,https://hospitals.pmjay.gov.in/empApplicationHome.htm,loaded
-89,Get farm irrigation subsidy,India,https://pmksy.gov.in/,False,True,False,True,https://pmksy.gov.in/,loaded
-90,Get subsidy for farm machinery,India,https://agrimachinery.nic.in/,False,True,False,True,https://agrimachinery.nic.in/,loaded
-91,Get Janani Suraksha Yojana benefit,India,https://nhm.gov.in/,False,True,False,True,https://nhm.gov.in/,loaded
-92,Book vaccination or get vaccination certificate,India,https://www.cowin.gov.in/,False,False,False,False,,No substantive public text after JavaScript rendering
-93,Read Form 26AS or AIS,India,https://www.incometax.gov.in/iec/foportal/,False,True,False,True,https://www.incometax.gov.in/iec/foportal/,loaded
-94,Claim EPS pension,India,https://www.epfindia.gov.in/site_en/For_Employees.php,False,False,False,False,,HTTP 403
+86,Get education loan support,India,https://www.education.gov.in/en/pradhan-mantri-vidyalaxmi-pm-vidyalaxmi-scheme-guidelines,False,False,False,True,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2290079&lang=2&reg=48,HTTP 403
+87,Apply for RTE school admission,Delhi example; RTE admissions vary by state,https://www.edudel.nic.in/,False,True,True,True,https://www.edudel.nic.in/,loaded
+88,Find an Ayushman-approved hospital,India,https://hospitals.pmjay.gov.in/,False,True,True,True,https://hospitals.pmjay.gov.in/empApplicationHome.htm,loaded
+89,Get farm irrigation subsidy,India,https://pmksy.gov.in/,False,True,True,True,https://pmksy.gov.in/,loaded
+90,Get subsidy for farm machinery,India,https://agrimachinery.nic.in/,False,True,True,True,https://agrimachinery.nic.in/,loaded
+91,Get Janani Suraksha Yojana benefit,India,https://nhm.gov.in/,False,True,True,True,https://nhm.gov.in/,loaded
+92,Book vaccination or get vaccination certificate,India,https://www.cowin.gov.in/,False,False,False,True,https://southtripura.nic.in/covid-19/,No substantive public text after JavaScript rendering
+93,Read Form 26AS or AIS,India,https://www.incometax.gov.in/iec/foportal/,False,True,True,True,https://www.incometax.gov.in/iec/foportal/,loaded
+94,Claim EPS pension,India,https://www.epfindia.gov.in/site_en/For_Employees.php,False,False,False,True,https://www.myscheme.gov.in/schemes/eps,HTTP 403
 95,Apply for disability pension,India; state eligibility and applications vary,https://nsap.dord.gov.in/,True,True,True,True,https://nsap.dord.gov.in/,loaded
-96,Get non-creamy-layer certificate,Delhi example; certificates vary by state,https://obc.delhi.gov.in/obc/procedure-obtaining-services,False,True,False,True,https://obc.delhi.gov.in/obc/procedure-obtaining-services,loaded
-97,Apply for land mutation,Uttar Pradesh example; mutation varies by state,https://vaad.up.gov.in/,False,True,False,True,https://vaad.up.gov.in/,loaded
-98,Check housing project under RERA,Gujarat example; RERA registration is state-specific,https://gujrera.gujarat.gov.in/,False,True,False,True,https://gujrera.gujarat.gov.in/#/,loaded
-99,Get police clearance certificate,India,https://www.passportindia.gov.in/,False,True,False,True,https://www.passportindia.gov.in/psp,loaded
-100,Check LPG subsidy or PAHAL,India,https://mopng.gov.in/en/marketing/pahal,False,True,False,True,https://mopng.gov.in/en/marketing/pahal,loaded
+96,Get non-creamy-layer certificate,Delhi example; certificates vary by state,https://obc.delhi.gov.in/obc/procedure-obtaining-services,False,True,True,True,https://obc.delhi.gov.in/obc/procedure-obtaining-services,loaded
+97,Apply for land mutation,Uttar Pradesh example; mutation varies by state,https://vaad.up.gov.in/,False,True,True,True,https://vaad.up.gov.in/,loaded
+98,Check housing project under RERA,Gujarat example; RERA registration is state-specific,https://gujrera.gujarat.gov.in/,False,True,True,True,https://gujrera.gujarat.gov.in/#/,loaded
+99,Get police clearance certificate,India,https://www.passportindia.gov.in/,False,True,True,True,https://www.passportindia.gov.in/psp,loaded
+100,Check LPG subsidy or PAHAL,India,https://mopng.gov.in/en/marketing/pahal,False,True,True,True,https://mopng.gov.in/en/marketing/pahal,loaded
