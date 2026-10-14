@@ -1,506 +1,1435 @@
 {
-  "status": "draft, not from Google data",
-  "description": "A practical editorial shortlist, not a measured ranking of search demand. Task matches identify candidate pages, not verified complete answers.",
+  "status": "researched draft; not measured Google Trends data",
+  "researched_on": "2026-10-14",
+  "geography": "India",
+  "web_access": true,
+  "description": "An editorial ordering of 100 citizen tasks, informed by recent public adoption/usage reports where relevant and general knowledge elsewhere. This is not a verified ranking of India’s most frequent searches.",
+  "ranking_method": "Estimated ordering based on broad citizen reach, recurring lookups and practical relevance. Published usage figures have different periods and meanings and are not pooled into an alleged search-volume ranking. Exact task ordering is editorial, not sourced.",
+  "score_method": {
+    "type": "estimated rank percentile",
+    "formula": "round(100 * (100 - rank) / 99)",
+    "meaning": "A reproducible ordering score for this draft only. It is not a Google Trends value, search count, probability, or independently measured intensity of public interest. Zero means last in this editorial ordering, not no searches.",
+    "source_rule": "source is estimate for all calculated scores. research_sources records actual URLs that informed the topic’s context, not sources for its numeric score."
+  },
+  "priority_rule": {
+    "top_percent": 25,
+    "count": 25,
+    "meaning": "Draft priority choices, not evidence that these tasks account for 25% of searches or most citizens."
+  },
+  "score_counts": {
+    "sourced": 0,
+    "estimated": 100
+  },
+  "research": [
+    {
+      "id": "google_trends_method",
+      "url": "https://support.google.com/trends/answer/4365533?hl=en",
+      "title": "FAQ about Google Trends data",
+      "finding": "Google describes relative 0–100 search-interest scaling. Comparable India Explore data could not be retrieved: the web reader refused the page and the public endpoint returned HTTP 429. No Google Trends scores are used."
+    },
+    {
+      "id": "google_yis_2025",
+      "url": "https://blog.google/intl/en-in/products/explore-communicate/indias-year-in-search-2025/",
+      "title": "India’s Year in Search 2025",
+      "period": "2025",
+      "finding": "Google defines these lists as queries with sustained traffic spikes versus 2024, not the most frequent queries. This does not establish an all-service ranking."
+    },
+    {
+      "id": "aadhaar_usage",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2141878&lang=2&reg=3",
+      "title": "UIDAI records nearly 230 Cr Aadhaar authentication transaction in June",
+      "period": "June 2025",
+      "finding": "Reports 229.33 crore Aadhaar authentication transactions. This demonstrates broad identity-service use, not the relative popularity of Aadhaar update, download or enrolment searches."
+    },
+    {
+      "id": "pan_adoption",
+      "url": "https://www.incometaxindia.gov.in/documents/20117/0/Income-Tax-Department-PAN-Allotment-Statistics-Up-to-31-03-2025.pdf/ed42d7ab-6f61-ac8a-c380-dcfcd16749a4?t=1767598508173",
+      "title": "Income Tax Department PAN Allotment Statistics",
+      "period": "Up to 31 March 2025",
+      "finding": "PAN adoption statistics provide context for the service, not searches for applications, corrections or tracking."
+    },
+    {
+      "id": "epfo_usage",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2136592&lang=2&reg=3",
+      "title": "EPFO Urges Members to Use Official EPFO Portals",
+      "period": "FY 2024–25; published 16 June 2025",
+      "finding": "Reports 2.34 crore advance claims settled automatically, and describes passbook viewing, KYC and claim services. It does not give comparable per-task search volumes."
+    },
+    {
+      "id": "itr_usage",
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jul/doc2025724591301.pdf",
+      "title": "Income Tax Day 2025 backgrounder",
+      "period": "FY 2024–25",
+      "finding": "Reports around 9.19 crore ITRs filed, including updated returns. Filing counts are not searches or unique people."
+    },
+    {
+      "id": "pmkisan_reach",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2274616&lang=1&reg=3",
+      "title": "Prime Minister to Release the 23rd Instalment of PM-KISAN",
+      "period": "Published 18 June 2026",
+      "finding": "Announces payments for more than 9.44 crore farmers. Beneficiary reach is a contextual signal, not a measured ranking of payment-status, eligibility or e-KYC searches."
+    },
+    {
+      "id": "passport_usage",
+      "url": "https://services2.passportindia.gov.in/",
+      "title": "Passport Seva statistics",
+      "period": "2025",
+      "finding": "Displays 1,40,43,475 passports and other services rendered in India. This combines services and cannot distinguish fresh applications from renewals."
+    },
+    {
+      "id": "ayushman_reach",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2237404&lang=1&reg=3",
+      "title": "43.52 Crore Ayushman Cards Created Under AB-PMJAY",
+      "period": "As of 28 February 2026",
+      "finding": "Card adoption supports the relevance of health-cover services; it is not a count of searches or separate application/card-download queries."
+    },
+    {
+      "id": "umang_usage",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2245056&lang=1&reg=3",
+      "title": "UMANG enabling easy and seamless access to citizen centric services",
+      "period": "Up to February 2026",
+      "finding": "Reports 2,446 services and 737.20 crore cumulative transactions, without a comparable per-task search table."
+    },
+    {
+      "id": "digilocker_usage",
+      "url": "https://negd.gov.in/wp-content/uploads/2025/10/Charru-Malhotra-DIgilocker-the-digital-Vault-of-India.pdf",
+      "title": "DigiLocker: The Digital Vault of India — NeGD case study",
+      "period": "August 2025",
+      "finding": "Reports more than 57 crore registered users. Adoption of document access does not establish the relative frequency of searches for particular certificates."
+    },
+    {
+      "id": "myscheme_traffic",
+      "url": "https://www.semrush.com/website/myscheme.gov.in/overview/",
+      "title": "myScheme public traffic and keyword estimates",
+      "period": "August 2026 snapshot, last updated 18 September 2026",
+      "finding": "The opened page displays 1.94M estimated site visits and 368,000 estimated volume for the keyword pm scholarship. These third-party estimates do not measure all scholarship queries or identify the most searched 100 government tasks."
+    },
+    {
+      "id": "myscheme_portal",
+      "url": "https://www.myscheme.gov.in/",
+      "title": "myScheme official portal",
+      "finding": "Reviewed the public scheme-discovery portal. No comparable topic-level demand table was available."
+    }
+  ],
   "topics": [
     {
       "id": 1,
       "task": "Update Aadhaar details",
-      "matchPattern": "aadhaar.{0,100}(?:update|correction)|(?:update|correction).{0,100}aadhaar"
+      "matchPattern": "aadhaar.{0,100}(?:update|correction)|(?:update|correction).{0,100}aadhaar",
+      "rank": 1,
+      "topic": "Update Aadhaar details",
+      "interest_score": 100,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2141878&lang=2&reg=3"
+      ]
     },
     {
       "id": 2,
       "task": "Download Aadhaar or e-Aadhaar",
-      "matchPattern": "e[- ]?aadhaar|download.{0,60}aadhaar"
-    },
-    {
-      "id": 3,
-      "task": "Enrol for Aadhaar",
-      "matchPattern": "aadhaar.{0,60}enrol|enrol.{0,60}aadhaar"
-    },
-    {
-      "id": 4,
-      "task": "Link Aadhaar and PAN",
-      "matchPattern": "(?:aadhaar.{0,80}pan|pan.{0,80}aadhaar).{0,80}link|link.{0,80}(?:aadhaar.{0,80}pan|pan.{0,80}aadhaar)"
+      "matchPattern": "e[- ]?aadhaar|download.{0,60}aadhaar",
+      "rank": 2,
+      "topic": "Download Aadhaar or e-Aadhaar",
+      "interest_score": 99,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2141878&lang=2&reg=3"
+      ]
     },
     {
       "id": 5,
       "task": "Apply for PAN card",
-      "matchPattern": "pan card.{0,80}application|apply.{0,80}pan|new pan|instant e[- ]?pan"
-    },
-    {
-      "id": 6,
-      "task": "Correct or reprint PAN card",
-      "matchPattern": "(?:pan.{0,80}(?:correction|reprint)|(?:correction|reprint).{0,80}pan)"
-    },
-    {
-      "id": 7,
-      "task": "Track PAN application",
-      "matchPattern": "pan.{0,80}(?:status|track)|(?:status|track).{0,80}pan"
-    },
-    {
-      "id": 8,
-      "task": "Apply for passport",
-      "matchPattern": "passport.{0,80}application|apply.{0,80}passport|passport seva"
-    },
-    {
-      "id": 9,
-      "task": "Renew passport",
-      "matchPattern": "passport.{0,80}(?:renew|re[- ]?issue)|(?:renew|re[- ]?issue).{0,80}passport"
-    },
-    {
-      "id": 10,
-      "task": "Get police clearance certificate",
-      "matchPattern": "police clearance certificate"
-    },
-    {
-      "id": 11,
-      "task": "Apply for ration card",
-      "matchPattern": "(?:apply|application|new).{0,80}ration card|ration card.{0,80}(?:apply|application)"
-    },
-    {
-      "id": 12,
-      "task": "Update ration card or add a family member",
-      "matchPattern": "ration card.{0,100}(?:update|correction|add|member)|(?:update|correction|add).{0,80}ration card"
-    },
-    {
-      "id": 13,
-      "task": "Use One Nation One Ration Card",
-      "matchPattern": "one nation one ration|onorc"
-    },
-    {
-      "id": 14,
-      "task": "Check ration entitlement",
-      "matchPattern": "ration.{0,80}(?:entitlement|allocation)|public distribution system|national food security act"
-    },
-    {
-      "id": 15,
-      "task": "Register for voter ID",
-      "matchPattern": "voter.{0,80}(?:registration|register|enrol)|(?:register|enrol).{0,80}voter|form 6\\b"
-    },
-    {
-      "id": 16,
-      "task": "Update address in voter list",
-      "matchPattern": "form 8\\b|(?:voter|elector).{0,100}(?:address|shifting)|(?:address|shifting).{0,100}(?:voter|elector)"
-    },
-    {
-      "id": 17,
-      "task": "Check voter list or polling booth",
-      "matchPattern": "polling (?:booth|station)|electoral roll|voter list"
-    },
-    {
-      "id": 18,
-      "task": "Download e-EPIC voter ID",
-      "matchPattern": "e[- ]?epic|download.{0,80}voter"
-    },
-    {
-      "id": 19,
-      "task": "Apply for learner licence",
-      "matchPattern": "learner.?s? licen[cs]e"
-    },
-    {
-      "id": 20,
-      "task": "Apply for driving licence",
-      "matchPattern": "driving licen[cs]e.{0,80}(?:apply|application)|(?:apply|application).{0,80}driving licen[cs]e"
-    },
-    {
-      "id": 21,
-      "task": "Renew driving licence",
-      "matchPattern": "(?:renew.{0,80}driving|driving.{0,80}renew)"
-    },
-    {
-      "id": 22,
-      "task": "Transfer vehicle ownership",
-      "matchPattern": "transfer.{0,80}(?:vehicle|ownership)|vehicle.{0,80}ownership"
-    },
-    {
-      "id": 23,
-      "task": "Get vehicle registration certificate",
-      "matchPattern": "vehicle registration|registration certificate.{0,80}vehicle"
-    },
-    {
-      "id": 24,
-      "task": "Pay traffic challan",
-      "matchPattern": "e[- ]?challan|traffic.{0,80}(?:fine|challan)"
-    },
-    {
-      "id": 25,
-      "task": "Check PM-KISAN eligibility and apply",
-      "matchPattern": "pm[- ]?kisan|kisan samman nidhi"
-    },
-    {
-      "id": 26,
-      "task": "Complete PM-KISAN e-KYC",
-      "matchPattern": "(?:pm[- ]?kisan|kisan samman).{0,100}(?:kyc|verification)|(?:kyc|verification).{0,100}pm[- ]?kisan"
-    },
-    {
-      "id": 27,
-      "task": "Check PM-KISAN payment status",
-      "matchPattern": "(?:pm[- ]?kisan|kisan samman).{0,100}(?:payment|instalment|installment|status)"
-    },
-    {
-      "id": 28,
-      "task": "Apply for Kisan Credit Card",
-      "matchPattern": "kisan credit card|kcc.{0,30}(?:loan|farmer)"
-    },
-    {
-      "id": 29,
-      "task": "Get crop insurance under PMFBY",
-      "matchPattern": "fasal bima|pmfby|crop insurance"
-    },
-    {
-      "id": 30,
-      "task": "Get farm irrigation subsidy",
-      "matchPattern": "irrigation.{0,80}(?:subsid|assistance)|(?:subsid|assistance).{0,80}irrigation|krishi sinchayee"
-    },
-    {
-      "id": 31,
-      "task": "Get subsidy for farm machinery",
-      "matchPattern": "(?:machinery|tractor|equipment).{0,80}(?:subsid|assistance)|(?:subsid|assistance).{0,80}(?:farm machinery|tractor)"
-    },
-    {
-      "id": 32,
-      "task": "Apply for Ayushman Bharat health cover",
-      "matchPattern": "ayushman bharat|pm[- ]?jay|jan arogya"
-    },
-    {
-      "id": 33,
-      "task": "Get Ayushman card",
-      "matchPattern": "ayushman.{0,80}card|card.{0,80}ayushman"
-    },
-    {
-      "id": 34,
-      "task": "Find an Ayushman-approved hospital",
-      "matchPattern": "(?:ayushman|pm[- ]?jay).{0,100}(?:hospital|empanel)|empanel.{0,100}(?:ayushman|pm[- ]?jay)"
-    },
-    {
-      "id": 35,
-      "task": "Create ABHA health ID",
-      "matchPattern": "\\babha\\b|health (?:id|account)|digital health mission"
-    },
-    {
-      "id": 36,
-      "task": "Get ESIC medical benefits",
-      "matchPattern": "\\besic\\b|employees.? state insurance"
-    },
-    {
-      "id": 37,
-      "task": "Get maternity benefit under PMMVY",
-      "matchPattern": "matru vandana|pmmvy"
-    },
-    {
-      "id": 38,
-      "task": "Get Janani Suraksha Yojana benefit",
-      "matchPattern": "janani suraksha|\\bjsy\\b"
-    },
-    {
-      "id": 39,
-      "task": "Book vaccination or get vaccination certificate",
-      "matchPattern": "vaccin.{0,80}(?:certificate|book|appointment)|co[- ]?win"
-    },
-    {
-      "id": 40,
-      "task": "Get affordable medicines through Jan Aushadhi",
-      "matchPattern": "jan aushadhi|janaushadhi"
-    },
-    {
-      "id": 41,
-      "task": "File income tax return",
-      "matchPattern": "income tax return|e[- ]?filing.{0,60}income tax|income tax.{0,60}e[- ]?filing|\\bitr\\b"
-    },
-    {
-      "id": 42,
-      "task": "Check income tax refund",
-      "matchPattern": "(?:income tax|itr).{0,100}refund|refund.{0,100}(?:income tax|itr)"
-    },
-    {
-      "id": 43,
-      "task": "Pay income tax online",
-      "matchPattern": "(?:income tax|tax).{0,80}(?:e[- ]?pay|challan)|e[- ]?pay tax"
-    },
-    {
-      "id": 44,
-      "task": "Read Form 26AS or AIS",
-      "matchPattern": "form 26as|annual information statement|\\bais\\b.{0,50}tax"
-    },
-    {
-      "id": 45,
-      "task": "Claim income tax deductions",
-      "matchPattern": "section 80c|section 80d|tax deduction|income tax.{0,60}deduction"
-    },
-    {
-      "id": 46,
-      "task": "Register for GST",
-      "matchPattern": "gst.{0,80}registration|register.{0,80}gst|goods and services tax.{0,80}registration"
-    },
-    {
-      "id": 47,
-      "task": "File GST return",
-      "matchPattern": "gst.{0,60}return|gstr[- ]?\\d"
-    },
-    {
-      "id": 48,
-      "task": "Withdraw EPF money",
-      "matchPattern": "(?:epf|provident fund).{0,80}withdraw|withdraw.{0,80}(?:epf|provident fund)"
-    },
-    {
-      "id": 49,
-      "task": "Transfer EPF account",
-      "matchPattern": "(?:epf|provident fund).{0,80}transfer|transfer.{0,80}(?:epf|provident fund)"
-    },
-    {
-      "id": 50,
-      "task": "Activate UAN and update EPF KYC",
-      "matchPattern": "\\buan\\b|universal account number|epf.{0,80}kyc"
+      "matchPattern": "pan card.{0,80}application|apply.{0,80}pan|new pan|instant e[- ]?pan",
+      "rank": 3,
+      "topic": "Apply for PAN card",
+      "interest_score": 98,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.incometaxindia.gov.in/documents/20117/0/Income-Tax-Department-PAN-Allotment-Statistics-Up-to-31-03-2025.pdf/ed42d7ab-6f61-ac8a-c380-dcfcd16749a4?t=1767598508173"
+      ]
     },
     {
       "id": 51,
       "task": "Check EPF balance or passbook",
-      "matchPattern": "(?:epf|provident fund).{0,80}(?:balance|passbook)|(?:balance|passbook).{0,80}(?:epf|provident fund)"
+      "matchPattern": "(?:epf|provident fund).{0,80}(?:balance|passbook)|(?:balance|passbook).{0,80}(?:epf|provident fund)",
+      "rank": 4,
+      "topic": "Check EPF balance or passbook",
+      "interest_score": 97,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2136592&lang=2&reg=3"
+      ]
     },
     {
-      "id": 52,
-      "task": "Claim EPS pension",
-      "matchPattern": "employees.? pension scheme|\\beps\\b.{0,80}pension"
+      "id": 48,
+      "task": "Withdraw EPF money",
+      "matchPattern": "(?:epf|provident fund).{0,80}withdraw|withdraw.{0,80}(?:epf|provident fund)",
+      "rank": 5,
+      "topic": "Withdraw EPF money",
+      "interest_score": 96,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2136592&lang=2&reg=3"
+      ]
     },
     {
-      "id": 53,
-      "task": "Submit Jeevan Pramaan life certificate",
-      "matchPattern": "jeevan pramaan|digital life certificate"
+      "id": 41,
+      "task": "File income tax return",
+      "matchPattern": "income tax return|e[- ]?filing.{0,60}income tax|income tax.{0,60}e[- ]?filing|\\bitr\\b",
+      "rank": 6,
+      "topic": "File income tax return",
+      "interest_score": 95,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jul/doc2025724591301.pdf"
+      ]
     },
     {
-      "id": 54,
-      "task": "Apply for old-age pension",
-      "matchPattern": "old[- ]?age pension|elderly.{0,80}pension|national social assistance"
+      "id": 27,
+      "task": "Check PM-KISAN payment status",
+      "matchPattern": "(?:pm[- ]?kisan|kisan samman).{0,100}(?:payment|instalment|installment|status)",
+      "rank": 7,
+      "topic": "Check PM-KISAN payment status",
+      "interest_score": 94,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2274616&lang=1&reg=3"
+      ]
     },
     {
-      "id": 55,
-      "task": "Apply for widow pension",
-      "matchPattern": "widow.{0,80}pension|pension.{0,80}widow"
+      "id": 25,
+      "task": "Check PM-KISAN eligibility and apply",
+      "matchPattern": "pm[- ]?kisan|kisan samman nidhi",
+      "rank": 8,
+      "topic": "Check PM-KISAN eligibility and apply",
+      "interest_score": 93,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2274616&lang=1&reg=3"
+      ]
     },
     {
-      "id": 56,
-      "task": "Apply for disability pension",
-      "matchPattern": "disab.{0,80}pension|pension.{0,80}disab"
+      "id": 8,
+      "task": "Apply for passport",
+      "matchPattern": "passport.{0,80}application|apply.{0,80}passport|passport seva",
+      "rank": 9,
+      "topic": "Apply for passport",
+      "interest_score": 92,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://services2.passportindia.gov.in/"
+      ]
     },
     {
-      "id": 57,
-      "task": "Register on e-Shram",
-      "matchPattern": "e[- ]?shram"
-    },
-    {
-      "id": 58,
-      "task": "Register for MGNREGA job card",
-      "matchPattern": "mgnrega|nrega|job card"
-    },
-    {
-      "id": 59,
-      "task": "Find government job vacancies",
-      "matchPattern": "(?:government|govt).{0,80}(?:job|vacan|recruit)|employment exchange|national career service"
-    },
-    {
-      "id": 60,
-      "task": "Get skill training under PMKVY",
-      "matchPattern": "kaushal vikas|pmkvy|skill india"
-    },
-    {
-      "id": 61,
-      "task": "Apply for PM Vishwakarma support",
-      "matchPattern": "vishwakarma"
-    },
-    {
-      "id": 62,
-      "task": "Apply for PMEGP business support",
-      "matchPattern": "pmegp|employment generation programme"
-    },
-    {
-      "id": 63,
-      "task": "Apply for Mudra loan",
-      "matchPattern": "mudra|pradhan mantri mudra"
-    },
-    {
-      "id": 64,
-      "task": "Apply for PM SVANidhi street-vendor loan",
-      "matchPattern": "svanidhi|street vendor.{0,80}loan"
-    },
-    {
-      "id": 65,
-      "task": "Open Jan Dhan bank account",
-      "matchPattern": "jan dhan|pmjdy"
-    },
-    {
-      "id": 66,
-      "task": "Join Atal Pension Yojana",
-      "matchPattern": "atal pension|\\bapy\\b.{0,80}pension"
-    },
-    {
-      "id": 67,
-      "task": "Join PM Jeevan Jyoti life insurance",
-      "matchPattern": "jeevan jyoti|pmjjby"
-    },
-    {
-      "id": 68,
-      "task": "Join PM Suraksha Bima accident insurance",
-      "matchPattern": "suraksha bima|pmsby"
-    },
-    {
-      "id": 69,
-      "task": "Open Sukanya Samriddhi account",
-      "matchPattern": "sukanya samriddhi"
-    },
-    {
-      "id": 70,
-      "task": "Apply for PMAY housing assistance",
-      "matchPattern": "awas yojana|\\bpmay\\b"
-    },
-    {
-      "id": 71,
-      "task": "Get Ujjwala LPG connection",
-      "matchPattern": "ujjwala|\\bpmuy\\b"
-    },
-    {
-      "id": 72,
-      "task": "Check LPG subsidy or PAHAL",
-      "matchPattern": "pahal|lpg.{0,80}subsid|subsid.{0,80}lpg"
-    },
-    {
-      "id": 73,
-      "task": "Apply for rooftop solar subsidy",
-      "matchPattern": "surya ghar|rooftop solar|solar.{0,80}subsid"
-    },
-    {
-      "id": 74,
-      "task": "Apply for household water connection",
-      "matchPattern": "water connection|jal jeevan"
-    },
-    {
-      "id": 75,
-      "task": "Apply for electricity connection",
-      "matchPattern": "electricity connection|power connection|saubhagya"
-    },
-    {
-      "id": 76,
-      "task": "Get birth certificate",
-      "matchPattern": "birth certificate|registration of birth|birth registration"
-    },
-    {
-      "id": 77,
-      "task": "Get death certificate",
-      "matchPattern": "death certificate|registration of death|death registration"
-    },
-    {
-      "id": 78,
-      "task": "Register marriage and get certificate",
-      "matchPattern": "marriage registration|registration of marriage|marriage certificate"
-    },
-    {
-      "id": 79,
-      "task": "Get income certificate",
-      "matchPattern": "income certificate"
-    },
-    {
-      "id": 80,
-      "task": "Get caste certificate",
-      "matchPattern": "caste certificate"
-    },
-    {
-      "id": 81,
-      "task": "Get domicile or residence certificate",
-      "matchPattern": "domicile certificate|residen(?:ce|tial) certificate"
-    },
-    {
-      "id": 82,
-      "task": "Get EWS certificate",
-      "matchPattern": "ews certificate|economically weaker.{0,80}certificate"
-    },
-    {
-      "id": 83,
-      "task": "Get disability certificate or UDID",
-      "matchPattern": "\\budid\\b|disability certificate|unique disability id"
-    },
-    {
-      "id": 84,
-      "task": "Get non-creamy-layer certificate",
-      "matchPattern": "non[- ]?creamy[- ]?layer"
+      "id": 32,
+      "task": "Apply for Ayushman Bharat health cover",
+      "matchPattern": "ayushman bharat|pm[- ]?jay|jan arogya",
+      "rank": 10,
+      "topic": "Apply for Ayushman Bharat health cover",
+      "interest_score": 91,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2237404&lang=1&reg=3"
+      ]
     },
     {
       "id": 85,
       "task": "Apply for student scholarship",
-      "matchPattern": "scholarship.{0,80}(?:apply|application|student|eligible)|(?:apply|student).{0,80}scholarship|national scholarship portal"
+      "matchPattern": "scholarship.{0,80}(?:apply|application|student|eligible)|(?:apply|student).{0,80}scholarship|national scholarship portal",
+      "rank": 11,
+      "topic": "Apply for student scholarship",
+      "interest_score": 90,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.semrush.com/website/myscheme.gov.in/overview/"
+      ]
     },
     {
-      "id": 86,
-      "task": "Apply for scholarship for girl students",
-      "matchPattern": "(?:girl|female|women).{0,80}scholarship|scholarship.{0,80}(?:girl|female|women)"
+      "id": 59,
+      "task": "Find government job vacancies",
+      "matchPattern": "(?:government|govt).{0,80}(?:job|vacan|recruit)|employment exchange|national career service",
+      "rank": 12,
+      "topic": "Find government job vacancies",
+      "interest_score": 89,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": []
     },
     {
-      "id": 87,
-      "task": "Apply for SC or ST scholarship",
-      "matchPattern": "(?:scheduled caste|scheduled tribe|\\bsc\\b|\\bst\\b).{0,80}scholarship|scholarship.{0,80}(?:scheduled caste|scheduled tribe|\\bsc\\b|\\bst\\b)"
+      "id": 11,
+      "task": "Apply for ration card",
+      "matchPattern": "(?:apply|application|new).{0,80}ration card|ration card.{0,80}(?:apply|application)",
+      "rank": 13,
+      "topic": "Apply for ration card",
+      "interest_score": 88,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": []
     },
     {
-      "id": 88,
-      "task": "Apply for minority scholarship",
-      "matchPattern": "minority.{0,80}scholarship|scholarship.{0,80}minority"
+      "id": 4,
+      "task": "Link Aadhaar and PAN",
+      "matchPattern": "(?:aadhaar.{0,80}pan|pan.{0,80}aadhaar).{0,80}link|link.{0,80}(?:aadhaar.{0,80}pan|pan.{0,80}aadhaar)",
+      "rank": 14,
+      "topic": "Link Aadhaar and PAN",
+      "interest_score": 87,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2141878&lang=2&reg=3",
+        "https://www.incometaxindia.gov.in/documents/20117/0/Income-Tax-Department-PAN-Allotment-Statistics-Up-to-31-03-2025.pdf/ed42d7ab-6f61-ac8a-c380-dcfcd16749a4?t=1767598508173"
+      ]
     },
     {
-      "id": 89,
-      "task": "Get education loan support",
-      "matchPattern": "education loan|vidya lakshmi|vidyalakshmi"
+      "id": 15,
+      "task": "Register for voter ID",
+      "matchPattern": "voter.{0,80}(?:registration|register|enrol)|(?:register|enrol).{0,80}voter|form 6\\b",
+      "rank": 15,
+      "topic": "Register for voter ID",
+      "interest_score": 86,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": []
     },
     {
-      "id": 90,
-      "task": "Apply for RTE school admission",
-      "matchPattern": "right to education|\\brte\\b.{0,80}admission|admission.{0,80}\\brte\\b"
+      "id": 20,
+      "task": "Apply for driving licence",
+      "matchPattern": "driving licen[cs]e.{0,80}(?:apply|application)|(?:apply|application).{0,80}driving licen[cs]e",
+      "rank": 16,
+      "topic": "Apply for driving licence",
+      "interest_score": 85,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": []
+    },
+    {
+      "id": 76,
+      "task": "Get birth certificate",
+      "matchPattern": "birth certificate|registration of birth|birth registration",
+      "rank": 17,
+      "topic": "Get birth certificate",
+      "interest_score": 84,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": []
+    },
+    {
+      "id": 57,
+      "task": "Register on e-Shram",
+      "matchPattern": "e[- ]?shram",
+      "rank": 18,
+      "topic": "Register on e-Shram",
+      "interest_score": 83,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": []
+    },
+    {
+      "id": 26,
+      "task": "Complete PM-KISAN e-KYC",
+      "matchPattern": "(?:pm[- ]?kisan|kisan samman).{0,100}(?:kyc|verification)|(?:kyc|verification).{0,100}pm[- ]?kisan",
+      "rank": 19,
+      "topic": "Complete PM-KISAN e-KYC",
+      "interest_score": 82,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2274616&lang=1&reg=3"
+      ]
     },
     {
       "id": 91,
       "task": "Use DigiLocker for certificates",
-      "matchPattern": "digilocker"
+      "matchPattern": "digilocker",
+      "rank": 20,
+      "topic": "Use DigiLocker for certificates",
+      "interest_score": 81,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://negd.gov.in/wp-content/uploads/2025/10/Charru-Malhotra-DIgilocker-the-digital-Vault-of-India.pdf"
+      ]
+    },
+    {
+      "id": 79,
+      "task": "Get income certificate",
+      "matchPattern": "income certificate",
+      "rank": 21,
+      "topic": "Get income certificate",
+      "interest_score": 80,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": []
     },
     {
       "id": 92,
       "task": "Get land records or Record of Rights",
-      "matchPattern": "land records|record of rights|bhulekh|bhoomi|jamabandi|patta"
+      "matchPattern": "land records|record of rights|bhulekh|bhoomi|jamabandi|patta",
+      "rank": 22,
+      "topic": "Get land records or Record of Rights",
+      "interest_score": 79,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": []
     },
     {
-      "id": 93,
-      "task": "Apply for land mutation",
-      "matchPattern": "land.{0,80}mutation|mutation.{0,80}land|mutation of property"
+      "id": 7,
+      "task": "Track PAN application",
+      "matchPattern": "pan.{0,80}(?:status|track)|(?:status|track).{0,80}pan",
+      "rank": 23,
+      "topic": "Track PAN application",
+      "interest_score": 78,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.incometaxindia.gov.in/documents/20117/0/Income-Tax-Department-PAN-Allotment-Statistics-Up-to-31-03-2025.pdf/ed42d7ab-6f61-ac8a-c380-dcfcd16749a4?t=1767598508173"
+      ]
     },
     {
-      "id": 94,
-      "task": "Register property or pay stamp duty",
-      "matchPattern": "property registration|registration of property|stamp duty"
+      "id": 50,
+      "task": "Activate UAN and update EPF KYC",
+      "matchPattern": "\\buan\\b|universal account number|epf.{0,80}kyc",
+      "rank": 24,
+      "topic": "Activate UAN and update EPF KYC",
+      "interest_score": 77,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2136592&lang=2&reg=3"
+      ]
     },
     {
-      "id": 95,
-      "task": "Pay property tax",
-      "matchPattern": "property tax"
+      "id": 70,
+      "task": "Apply for PMAY housing assistance",
+      "matchPattern": "awas yojana|\\bpmay\\b",
+      "rank": 25,
+      "topic": "Apply for PMAY housing assistance",
+      "interest_score": 76,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": true,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
     },
     {
-      "id": 96,
-      "task": "Check housing project under RERA",
-      "matchPattern": "\\brera\\b|real estate regulatory"
+      "id": 33,
+      "task": "Get Ayushman card",
+      "matchPattern": "ayushman.{0,80}card|card.{0,80}ayushman",
+      "rank": 26,
+      "topic": "Get Ayushman card",
+      "interest_score": 75,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2237404&lang=1&reg=3"
+      ]
+    },
+    {
+      "id": 54,
+      "task": "Apply for old-age pension",
+      "matchPattern": "old[- ]?age pension|elderly.{0,80}pension|national social assistance",
+      "rank": 27,
+      "topic": "Apply for old-age pension",
+      "interest_score": 74,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 80,
+      "task": "Get caste certificate",
+      "matchPattern": "caste certificate",
+      "rank": 28,
+      "topic": "Get caste certificate",
+      "interest_score": 73,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 17,
+      "task": "Check voter list or polling booth",
+      "matchPattern": "polling (?:booth|station)|electoral roll|voter list",
+      "rank": 29,
+      "topic": "Check voter list or polling booth",
+      "interest_score": 72,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 16,
+      "task": "Update address in voter list",
+      "matchPattern": "form 8\\b|(?:voter|elector).{0,100}(?:address|shifting)|(?:address|shifting).{0,100}(?:voter|elector)",
+      "rank": 30,
+      "topic": "Update address in voter list",
+      "interest_score": 71,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 42,
+      "task": "Check income tax refund",
+      "matchPattern": "(?:income tax|itr).{0,100}refund|refund.{0,100}(?:income tax|itr)",
+      "rank": 31,
+      "topic": "Check income tax refund",
+      "interest_score": 70,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jul/doc2025724591301.pdf"
+      ]
+    },
+    {
+      "id": 9,
+      "task": "Renew passport",
+      "matchPattern": "passport.{0,80}(?:renew|re[- ]?issue)|(?:renew|re[- ]?issue).{0,80}passport",
+      "rank": 32,
+      "topic": "Renew passport",
+      "interest_score": 69,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://services2.passportindia.gov.in/"
+      ]
+    },
+    {
+      "id": 12,
+      "task": "Update ration card or add a family member",
+      "matchPattern": "ration card.{0,100}(?:update|correction|add|member)|(?:update|correction|add).{0,80}ration card",
+      "rank": 33,
+      "topic": "Update ration card or add a family member",
+      "interest_score": 68,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 3,
+      "task": "Enrol for Aadhaar",
+      "matchPattern": "aadhaar.{0,60}enrol|enrol.{0,60}aadhaar",
+      "rank": 34,
+      "topic": "Enrol for Aadhaar",
+      "interest_score": 67,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2141878&lang=2&reg=3"
+      ]
+    },
+    {
+      "id": 6,
+      "task": "Correct or reprint PAN card",
+      "matchPattern": "(?:pan.{0,80}(?:correction|reprint)|(?:correction|reprint).{0,80}pan)",
+      "rank": 35,
+      "topic": "Correct or reprint PAN card",
+      "interest_score": 66,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.incometaxindia.gov.in/documents/20117/0/Income-Tax-Department-PAN-Allotment-Statistics-Up-to-31-03-2025.pdf/ed42d7ab-6f61-ac8a-c380-dcfcd16749a4?t=1767598508173"
+      ]
+    },
+    {
+      "id": 86,
+      "task": "Apply for scholarship for girl students",
+      "matchPattern": "(?:girl|female|women).{0,80}scholarship|scholarship.{0,80}(?:girl|female|women)",
+      "rank": 36,
+      "topic": "Apply for scholarship for girl students",
+      "interest_score": 65,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.semrush.com/website/myscheme.gov.in/overview/"
+      ]
+    },
+    {
+      "id": 87,
+      "task": "Apply for SC or ST scholarship",
+      "matchPattern": "(?:scheduled caste|scheduled tribe|\\bsc\\b|\\bst\\b).{0,80}scholarship|scholarship.{0,80}(?:scheduled caste|scheduled tribe|\\bsc\\b|\\bst\\b)",
+      "rank": 37,
+      "topic": "Apply for SC or ST scholarship",
+      "interest_score": 64,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.semrush.com/website/myscheme.gov.in/overview/"
+      ]
+    },
+    {
+      "id": 69,
+      "task": "Open Sukanya Samriddhi account",
+      "matchPattern": "sukanya samriddhi",
+      "rank": 38,
+      "topic": "Open Sukanya Samriddhi account",
+      "interest_score": 63,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 24,
+      "task": "Pay traffic challan",
+      "matchPattern": "e[- ]?challan|traffic.{0,80}(?:fine|challan)",
+      "rank": 39,
+      "topic": "Pay traffic challan",
+      "interest_score": 62,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 19,
+      "task": "Apply for learner licence",
+      "matchPattern": "learner.?s? licen[cs]e",
+      "rank": 40,
+      "topic": "Apply for learner licence",
+      "interest_score": 61,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 49,
+      "task": "Transfer EPF account",
+      "matchPattern": "(?:epf|provident fund).{0,80}transfer|transfer.{0,80}(?:epf|provident fund)",
+      "rank": 41,
+      "topic": "Transfer EPF account",
+      "interest_score": 60,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2136592&lang=2&reg=3"
+      ]
+    },
+    {
+      "id": 65,
+      "task": "Open Jan Dhan bank account",
+      "matchPattern": "jan dhan|pmjdy",
+      "rank": 42,
+      "topic": "Open Jan Dhan bank account",
+      "interest_score": 59,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 53,
+      "task": "Submit Jeevan Pramaan life certificate",
+      "matchPattern": "jeevan pramaan|digital life certificate",
+      "rank": 43,
+      "topic": "Submit Jeevan Pramaan life certificate",
+      "interest_score": 58,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2136592&lang=2&reg=3"
+      ]
+    },
+    {
+      "id": 71,
+      "task": "Get Ujjwala LPG connection",
+      "matchPattern": "ujjwala|\\bpmuy\\b",
+      "rank": 44,
+      "topic": "Get Ujjwala LPG connection",
+      "interest_score": 57,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 35,
+      "task": "Create ABHA health ID",
+      "matchPattern": "\\babha\\b|health (?:id|account)|digital health mission",
+      "rank": 45,
+      "topic": "Create ABHA health ID",
+      "interest_score": 56,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2237404&lang=1&reg=3"
+      ]
+    },
+    {
+      "id": 78,
+      "task": "Register marriage and get certificate",
+      "matchPattern": "marriage registration|registration of marriage|marriage certificate",
+      "rank": 46,
+      "topic": "Register marriage and get certificate",
+      "interest_score": 55,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 46,
+      "task": "Register for GST",
+      "matchPattern": "gst.{0,80}registration|register.{0,80}gst|goods and services tax.{0,80}registration",
+      "rank": 47,
+      "topic": "Register for GST",
+      "interest_score": 54,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 47,
+      "task": "File GST return",
+      "matchPattern": "gst.{0,60}return|gstr[- ]?\\d",
+      "rank": 48,
+      "topic": "File GST return",
+      "interest_score": 53,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 81,
+      "task": "Get domicile or residence certificate",
+      "matchPattern": "domicile certificate|residen(?:ce|tial) certificate",
+      "rank": 49,
+      "topic": "Get domicile or residence certificate",
+      "interest_score": 52,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 23,
+      "task": "Get vehicle registration certificate",
+      "matchPattern": "vehicle registration|registration certificate.{0,80}vehicle",
+      "rank": 50,
+      "topic": "Get vehicle registration certificate",
+      "interest_score": 51,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 21,
+      "task": "Renew driving licence",
+      "matchPattern": "(?:renew.{0,80}driving|driving.{0,80}renew)",
+      "rank": 51,
+      "topic": "Renew driving licence",
+      "interest_score": 49,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 58,
+      "task": "Register for MGNREGA job card",
+      "matchPattern": "mgnrega|nrega|job card",
+      "rank": 52,
+      "topic": "Register for MGNREGA job card",
+      "interest_score": 48,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 63,
+      "task": "Apply for Mudra loan",
+      "matchPattern": "mudra|pradhan mantri mudra",
+      "rank": 53,
+      "topic": "Apply for Mudra loan",
+      "interest_score": 47,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 61,
+      "task": "Apply for PM Vishwakarma support",
+      "matchPattern": "vishwakarma",
+      "rank": 54,
+      "topic": "Apply for PM Vishwakarma support",
+      "interest_score": 46,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 73,
+      "task": "Apply for rooftop solar subsidy",
+      "matchPattern": "surya ghar|rooftop solar|solar.{0,80}subsid",
+      "rank": 55,
+      "topic": "Apply for rooftop solar subsidy",
+      "interest_score": 45,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 82,
+      "task": "Get EWS certificate",
+      "matchPattern": "ews certificate|economically weaker.{0,80}certificate",
+      "rank": 56,
+      "topic": "Get EWS certificate",
+      "interest_score": 44,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 83,
+      "task": "Get disability certificate or UDID",
+      "matchPattern": "\\budid\\b|disability certificate|unique disability id",
+      "rank": 57,
+      "topic": "Get disability certificate or UDID",
+      "interest_score": 43,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 55,
+      "task": "Apply for widow pension",
+      "matchPattern": "widow.{0,80}pension|pension.{0,80}widow",
+      "rank": 58,
+      "topic": "Apply for widow pension",
+      "interest_score": 42,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 28,
+      "task": "Apply for Kisan Credit Card",
+      "matchPattern": "kisan credit card|kcc.{0,30}(?:loan|farmer)",
+      "rank": 59,
+      "topic": "Apply for Kisan Credit Card",
+      "interest_score": 41,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 29,
+      "task": "Get crop insurance under PMFBY",
+      "matchPattern": "fasal bima|pmfby|crop insurance",
+      "rank": 60,
+      "topic": "Get crop insurance under PMFBY",
+      "interest_score": 40,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 36,
+      "task": "Get ESIC medical benefits",
+      "matchPattern": "\\besic\\b|employees.? state insurance",
+      "rank": 61,
+      "topic": "Get ESIC medical benefits",
+      "interest_score": 39,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 43,
+      "task": "Pay income tax online",
+      "matchPattern": "(?:income tax|tax).{0,80}(?:e[- ]?pay|challan)|e[- ]?pay tax",
+      "rank": 62,
+      "topic": "Pay income tax online",
+      "interest_score": 38,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jul/doc2025724591301.pdf"
+      ]
+    },
+    {
+      "id": 22,
+      "task": "Transfer vehicle ownership",
+      "matchPattern": "transfer.{0,80}(?:vehicle|ownership)|vehicle.{0,80}ownership",
+      "rank": 63,
+      "topic": "Transfer vehicle ownership",
+      "interest_score": 37,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 88,
+      "task": "Apply for minority scholarship",
+      "matchPattern": "minority.{0,80}scholarship|scholarship.{0,80}minority",
+      "rank": 64,
+      "topic": "Apply for minority scholarship",
+      "interest_score": 36,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.semrush.com/website/myscheme.gov.in/overview/"
+      ]
+    },
+    {
+      "id": 77,
+      "task": "Get death certificate",
+      "matchPattern": "death certificate|registration of death|death registration",
+      "rank": 65,
+      "topic": "Get death certificate",
+      "interest_score": 35,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
     },
     {
       "id": 97,
       "task": "Report cybercrime or online financial fraud",
-      "matchPattern": "cybercrime|cyber crime|online.{0,80}fraud|1930"
+      "matchPattern": "cybercrime|cyber crime|online.{0,80}fraud|1930",
+      "rank": 66,
+      "topic": "Report cybercrime or online financial fraud",
+      "interest_score": 34,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 94,
+      "task": "Register property or pay stamp duty",
+      "matchPattern": "property registration|registration of property|stamp duty",
+      "rank": 67,
+      "topic": "Register property or pay stamp duty",
+      "interest_score": 33,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 95,
+      "task": "Pay property tax",
+      "matchPattern": "property tax",
+      "rank": 68,
+      "topic": "Pay property tax",
+      "interest_score": 32,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 18,
+      "task": "Download e-EPIC voter ID",
+      "matchPattern": "e[- ]?epic|download.{0,80}voter",
+      "rank": 69,
+      "topic": "Download e-EPIC voter ID",
+      "interest_score": 31,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 37,
+      "task": "Get maternity benefit under PMMVY",
+      "matchPattern": "matru vandana|pmmvy",
+      "rank": 70,
+      "topic": "Get maternity benefit under PMMVY",
+      "interest_score": 30,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 45,
+      "task": "Claim income tax deductions",
+      "matchPattern": "section 80c|section 80d|tax deduction|income tax.{0,60}deduction",
+      "rank": 71,
+      "topic": "Claim income tax deductions",
+      "interest_score": 29,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jul/doc2025724591301.pdf"
+      ]
+    },
+    {
+      "id": 66,
+      "task": "Join Atal Pension Yojana",
+      "matchPattern": "atal pension|\\bapy\\b.{0,80}pension",
+      "rank": 72,
+      "topic": "Join Atal Pension Yojana",
+      "interest_score": 28,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 67,
+      "task": "Join PM Jeevan Jyoti life insurance",
+      "matchPattern": "jeevan jyoti|pmjjby",
+      "rank": 73,
+      "topic": "Join PM Jeevan Jyoti life insurance",
+      "interest_score": 27,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 68,
+      "task": "Join PM Suraksha Bima accident insurance",
+      "matchPattern": "suraksha bima|pmsby",
+      "rank": 74,
+      "topic": "Join PM Suraksha Bima accident insurance",
+      "interest_score": 26,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 60,
+      "task": "Get skill training under PMKVY",
+      "matchPattern": "kaushal vikas|pmkvy|skill india",
+      "rank": 75,
+      "topic": "Get skill training under PMKVY",
+      "interest_score": 25,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 62,
+      "task": "Apply for PMEGP business support",
+      "matchPattern": "pmegp|employment generation programme",
+      "rank": 76,
+      "topic": "Apply for PMEGP business support",
+      "interest_score": 24,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 64,
+      "task": "Apply for PM SVANidhi street-vendor loan",
+      "matchPattern": "svanidhi|street vendor.{0,80}loan",
+      "rank": 77,
+      "topic": "Apply for PM SVANidhi street-vendor loan",
+      "interest_score": 23,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
     },
     {
       "id": 98,
       "task": "File consumer complaint",
-      "matchPattern": "consumer.{0,80}complaint|consumer helpline|e[- ]?daakhil"
+      "matchPattern": "consumer.{0,80}complaint|consumer helpline|e[- ]?daakhil",
+      "rank": 78,
+      "topic": "File consumer complaint",
+      "interest_score": 22,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 75,
+      "task": "Apply for electricity connection",
+      "matchPattern": "electricity connection|power connection|saubhagya",
+      "rank": 79,
+      "topic": "Apply for electricity connection",
+      "interest_score": 21,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 74,
+      "task": "Apply for household water connection",
+      "matchPattern": "water connection|jal jeevan",
+      "rank": 80,
+      "topic": "Apply for household water connection",
+      "interest_score": 20,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 14,
+      "task": "Check ration entitlement",
+      "matchPattern": "ration.{0,80}(?:entitlement|allocation)|public distribution system|national food security act",
+      "rank": 81,
+      "topic": "Check ration entitlement",
+      "interest_score": 19,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 13,
+      "task": "Use One Nation One Ration Card",
+      "matchPattern": "one nation one ration|onorc",
+      "rank": 82,
+      "topic": "Use One Nation One Ration Card",
+      "interest_score": 18,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
     },
     {
       "id": 99,
       "task": "File RTI request",
-      "matchPattern": "right to information|\\brti\\b"
+      "matchPattern": "right to information|\\brti\\b",
+      "rank": 83,
+      "topic": "File RTI request",
+      "interest_score": 17,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
     },
     {
       "id": 100,
       "task": "Submit government grievance on CPGRAMS",
-      "matchPattern": "cpgrams|public grievance|pgportal"
+      "matchPattern": "cpgrams|public grievance|pgportal",
+      "rank": 84,
+      "topic": "Submit government grievance on CPGRAMS",
+      "interest_score": 16,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 40,
+      "task": "Get affordable medicines through Jan Aushadhi",
+      "matchPattern": "jan aushadhi|janaushadhi",
+      "rank": 85,
+      "topic": "Get affordable medicines through Jan Aushadhi",
+      "interest_score": 15,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 89,
+      "task": "Get education loan support",
+      "matchPattern": "education loan|vidya lakshmi|vidyalakshmi",
+      "rank": 86,
+      "topic": "Get education loan support",
+      "interest_score": 14,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 90,
+      "task": "Apply for RTE school admission",
+      "matchPattern": "right to education|\\brte\\b.{0,80}admission|admission.{0,80}\\brte\\b",
+      "rank": 87,
+      "topic": "Apply for RTE school admission",
+      "interest_score": 13,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 34,
+      "task": "Find an Ayushman-approved hospital",
+      "matchPattern": "(?:ayushman|pm[- ]?jay).{0,100}(?:hospital|empanel)|empanel.{0,100}(?:ayushman|pm[- ]?jay)",
+      "rank": 88,
+      "topic": "Find an Ayushman-approved hospital",
+      "interest_score": 12,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2237404&lang=1&reg=3"
+      ]
+    },
+    {
+      "id": 30,
+      "task": "Get farm irrigation subsidy",
+      "matchPattern": "irrigation.{0,80}(?:subsid|assistance)|(?:subsid|assistance).{0,80}irrigation|krishi sinchayee",
+      "rank": 89,
+      "topic": "Get farm irrigation subsidy",
+      "interest_score": 11,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 31,
+      "task": "Get subsidy for farm machinery",
+      "matchPattern": "(?:machinery|tractor|equipment).{0,80}(?:subsid|assistance)|(?:subsid|assistance).{0,80}(?:farm machinery|tractor)",
+      "rank": 90,
+      "topic": "Get subsidy for farm machinery",
+      "interest_score": 10,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 38,
+      "task": "Get Janani Suraksha Yojana benefit",
+      "matchPattern": "janani suraksha|\\bjsy\\b",
+      "rank": 91,
+      "topic": "Get Janani Suraksha Yojana benefit",
+      "interest_score": 9,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 39,
+      "task": "Book vaccination or get vaccination certificate",
+      "matchPattern": "vaccin.{0,80}(?:certificate|book|appointment)|co[- ]?win",
+      "rank": 92,
+      "topic": "Book vaccination or get vaccination certificate",
+      "interest_score": 8,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 44,
+      "task": "Read Form 26AS or AIS",
+      "matchPattern": "form 26as|annual information statement|\\bais\\b.{0,50}tax",
+      "rank": 93,
+      "topic": "Read Form 26AS or AIS",
+      "interest_score": 7,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jul/doc2025724591301.pdf"
+      ]
+    },
+    {
+      "id": 52,
+      "task": "Claim EPS pension",
+      "matchPattern": "employees.? pension scheme|\\beps\\b.{0,80}pension",
+      "rank": 94,
+      "topic": "Claim EPS pension",
+      "interest_score": 6,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2136592&lang=2&reg=3"
+      ]
+    },
+    {
+      "id": 56,
+      "task": "Apply for disability pension",
+      "matchPattern": "disab.{0,80}pension|pension.{0,80}disab",
+      "rank": 95,
+      "topic": "Apply for disability pension",
+      "interest_score": 5,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
+    },
+    {
+      "id": 84,
+      "task": "Get non-creamy-layer certificate",
+      "matchPattern": "non[- ]?creamy[- ]?layer",
+      "rank": 96,
+      "topic": "Get non-creamy-layer certificate",
+      "interest_score": 4,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 93,
+      "task": "Apply for land mutation",
+      "matchPattern": "land.{0,80}mutation|mutation.{0,80}land|mutation of property",
+      "rank": 97,
+      "topic": "Apply for land mutation",
+      "interest_score": 3,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 96,
+      "task": "Check housing project under RERA",
+      "matchPattern": "\\brera\\b|real estate regulatory",
+      "rank": 98,
+      "topic": "Check housing project under RERA",
+      "interest_score": 2,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": []
+    },
+    {
+      "id": 10,
+      "task": "Get police clearance certificate",
+      "matchPattern": "police clearance certificate",
+      "rank": 99,
+      "topic": "Get police clearance certificate",
+      "interest_score": 1,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://services2.passportindia.gov.in/"
+      ]
+    },
+    {
+      "id": 72,
+      "task": "Check LPG subsidy or PAHAL",
+      "matchPattern": "pahal|lpg.{0,80}subsid|subsid.{0,80}lpg",
+      "rank": 100,
+      "topic": "Check LPG subsidy or PAHAL",
+      "interest_score": 0,
+      "source": "estimate",
+      "score_status": "estimated",
+      "priority": false,
+      "research_sources": [
+        "https://www.myscheme.gov.in/"
+      ]
     }
   ]
 }
