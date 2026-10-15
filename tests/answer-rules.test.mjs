@@ -79,3 +79,12 @@ test('answer links must exactly match a retrieved source URL', () => {
   const bodyOnly={...chunk,text:chunk.text+' More at https://other.gov.in/form.'};
   assert.equal(groundedAnswer(reply('Read [instructions](https://other.gov.in/form)'),[bodyOnly]).answer,NOT_FOUND);
 });
+
+test('source references expand only to exact retrieved titles and URLs',()=>{
+ const chunk={id:'retrieved',title:'Financial Assistance for empanelled hospitals',url:'https://example.gov.in/empanelled',text:'Eligible applicants can submit their application through the official service.'};
+ const reply=text=>({found:true,statements:[{text,evidence:[{chunkId:chunk.id,quote:chunk.text}]}]});
+ assert.equal(groundedAnswer(reply('Read [[source:retrieved]].'),[chunk]).answer,`Read [${chunk.title}](${chunk.url}).`);
+ assert.equal(groundedAnswer(reply('Read [[source:not-retrieved]].'),[chunk]).answer,NOT_FOUND);
+ assert.equal(groundedAnswer(reply('Read [[source:retrieved'),[chunk]).answer,NOT_FOUND);
+ assert.equal(groundedAnswer(reply('Read [[source:retrieved]] and [apply](https://evil.example/).'),[chunk]).answer,NOT_FOUND);
+});

@@ -3,6 +3,7 @@ import { httpAction } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { parseHistory } from "./lib/conversation";
 import { NOT_FOUND } from "./lib/answerRules";
+import { stateNotFound } from "./lib/sourcePolicy";
 
 const http = httpRouter();
 const cookieName = "bharat_visitor";
@@ -82,7 +83,7 @@ http.route({
     if (result.error === "unavailable") {
       return json({ error: "Service busy, please try again in a minute", remaining: result.remaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath }, 503);
     }
-    if (result.answer === NOT_FOUND) {
+    if (result.answer === NOT_FOUND || result.answer === stateNotFound(result.searchQuery || question)) {
       try {
         await ctx.runMutation(internal.unansweredQuestions.record, { question: question.trim() });
       } catch {

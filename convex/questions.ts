@@ -1,6 +1,7 @@
 import { internalMutation, internalQuery } from "./_generated/server";
 import { v } from "convex/values";
 import { DAILY_LIMIT, canAsk, indiaDay, usedToday, searchQuestion, usefulChunk, isLoadedSourceUrl } from "./lib/answerRules";
+import { requestedStates, matchesRequestedState, requestedStatePublisher, sourcePriority } from "./lib/sourcePolicy";
 
 export const visitor = internalMutation({
   args: { tokenHash: v.string(), create: v.boolean() },
@@ -38,7 +39,9 @@ export const search = internalQuery({
   args: { question: v.string(), keywords: v.optional(v.array(v.string())) },
   returns: v.array(v.object({ id: v.string(), title: v.string(), text: v.string(), url: v.string() })),
   handler: async (ctx, args) => {
-    const terms = searchQuestion(args.keywords?.slice(0, 5).join(" ") || args.question);
+    const states = requestedStates(args.question);
+    const terms = searchQuestion([args.keywords?.slice(0, 5).join(" ") || args.question,
+      ...states.map(state => state.name)].join(" "));
     if (!terms) return [];
     // documents already contains one record per chunk, not one per
     // source document. Reuse its existing text index without rewriting data.
@@ -56,9 +59,20 @@ export const search = internalQuery({
         candidates.set(chunk._id, existing);
       });
     }
-    return [...candidates.values()].sort((a, b) => b.score - a.score)
+    // A state-specific page may name its state in its introduction only.
+    // Keep its other matched chunks too, using the exact same source URL.
+    const statePages = new Set([...candidates.values()]
+      .filter(({ chunk }) => matchesRequestedState(chunk, states)).map(({ chunk }) => chunk.url));
+    const scoped = [...candidates.values()]
+      .filter(({ chunk }) => !states.length || statePages.has(chunk.url))
+      .filter(({ chunk }) => isLoadedSourceUrl(chunk.url) && usefulChunk(chunk.text, chunk.title, args.question));
+    // Use the state's own useful pages first. National catalogues explicitly
+    // about that state remain a fallback when no state publisher matched.
+    const primary = states.length ? scoped.filter(({ chunk }) => requestedStatePublisher(chunk.url, states)) : [];
+    return (primary.length ? primary : scoped)
+      .map(candidate => ({ ...candidate, score: candidate.score * sourcePriority(candidate.chunk, args.question) }))
+      .sort((a, b) => b.score - a.score)
       .map(({ chunk }) => chunk)
-      .filter((chunk) => isLoadedSourceUrl(chunk.url) && usefulChunk(chunk.text, chunk.title, args.question))
       .slice(0, 20)
       .map((chunk) => ({ id: chunk._id, title: chunk.title, text: chunk.text, url: chunk.url }));
   },

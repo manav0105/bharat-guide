@@ -18,9 +18,11 @@ test('gap records contain the original question, time and Indian calendar date o
  assert.equal(id,'test-log-id');
  assert.deepEqual(inserted,[{table:'unansweredQuestions',row:{question:'What is a blorp?',date:'2026-10-15',askedAt:now}}]);
 });
-test('only the exact not-found answer is logged; success, quota and provider errors are not',async()=>{
+test('generic and state-specific gaps are logged; answers, clarifications and service errors are not',async()=>{
  const results=[
   {answer:NOT_FOUND,sources:[],remaining:19,error:null},
+  {answer:"I couldn't find an official Assam page for this",sources:[],remaining:19,error:null,searchQuery:'scholarships by Assam government'},
+  {answer:'Are you an Indian travelling abroad, or a foreign national coming to India?',sources:[],remaining:19,error:null},
   {answer:'A supported answer.',sources:[{title:'Government',url:'https://example.gov.in/'}],remaining:19,error:null},
   {answer:'',sources:[],remaining:0,error:'limit'},
   {answer:'',sources:[],remaining:19,error:'unavailable'},
@@ -28,7 +30,7 @@ test('only the exact not-found answer is logged; success, quota and provider err
  for(const result of results){
   const saved=[];
   const response=await ask({runAction:async()=>result,runMutation:async(_,args)=>{saved.push(args);return 'test-log-id';}},request());
-  assert.deepEqual(saved,result.answer===NOT_FOUND?[{question:'What is a blorp?'}]:[]);
+  assert.deepEqual(saved,(result.answer===NOT_FOUND||result.answer==="I couldn't find an official Assam page for this")?[{question:'What is a blorp?'}]:[]);
   const body=await response.json();
   if(result.error===null){assert.equal(response.status,200);assert.equal(body.answer,result.answer);assert.equal(body.remaining,19);}
   else assert.equal(response.status,result.error==='limit'?429:503);

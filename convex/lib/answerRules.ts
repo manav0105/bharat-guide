@@ -135,12 +135,22 @@ export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
     if (typeof statement.text !== "string" || !statement.text.trim()
       || !Array.isArray(statement.evidence) || !statement.evidence.length
       || statement.evidence.length > 8) continue;
+    // Resolve model references only against this answer's retrieved chunks.
+    // The provider need not copy (or invent) a source URL or its page title.
+    let invalidReference = false;
+    const expandReferences = (value: string) => value.replace(/\[\[source:([^\]\s]+)\]\]/gi, (_, id) => {
+      const chunk = chunks.find(item => item.id === id);
+      if (!chunk || !isLoadedSourceUrl(chunk.url)) { invalidReference = true; return ""; }
+      const label = chunk.title.replace(/[\\[\]]/g, "\\$&");
+      return `[${label}](${chunk.url})`;
+    });
     // Preserve URLs byte-for-byte while simplifying the surrounding prose.
     const protectedUrls: string[] = [];
     const masked = statement.text.trim().replace(/https?:\/\/[^\s<>"'`]+/gi, (url) => {
       protectedUrls.push(url); return `\u0000${protectedUrls.length - 1}\u0000`;
     });
-    const text = simpleEnglish(masked).replace(/\u0000(\d+)\u0000/g, (_, index) => protectedUrls[Number(index)] ?? "");
+    const text = expandReferences(simpleEnglish(masked).replace(/\u0000(\d+)\u0000/g, (_, index) => protectedUrls[Number(index)] ?? ""));
+    if (invalidReference || /\[\[?source:/i.test(text)) continue;
     const linkedUrls = answerUrls(text);
     if (!linkedUrls || linkedUrls.some((url) => !chunks.some((chunk) => chunk.url === url && isLoadedSourceUrl(url)))) continue;
     const statementSources = new Map<string, { title: string; url: string }>();
