@@ -121,7 +121,7 @@ function answerUrls(text: string): string[] | null {
 // supporting quotation from a retrieved chunk. Reject malformed or unsupported
 // statements individually, so one bad quotation cannot erase other supported
 // information. Only fully validated statements and their sources are displayed.
-export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
+export function groundedAnswer(raw: unknown, chunks: Chunk[], maxWords = 200): Answer {
   const missing = { answer: NOT_FOUND, sources: [] };
   if (!raw || typeof raw !== "object") return missing;
   const result = raw as { found?: unknown; statements?: unknown };
@@ -141,7 +141,7 @@ export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
     const expandReferences = (value: string) => value.replace(/\[\[source:([^\]\s]+)\]\]/gi, (_, id) => {
       const chunk = chunks.find(item => item.id === id);
       if (!chunk || !isLoadedSourceUrl(chunk.url)) { invalidReference = true; return ""; }
-      const label = chunk.title.replace(/[\\[\]]/g, "\\$&");
+      const label = sourceTitle(chunk.title).replace(/[\\[\]]/g, "\\$&");
       return `[${label}](${chunk.url})`;
     });
     // Preserve URLs byte-for-byte while simplifying the surrounding prose.
@@ -162,12 +162,12 @@ export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
       if (!chunk || !isLoadedSourceUrl(chunk.url) || typeof evidence.quote !== "string"
         || normalize(evidence.quote).length < 20
         || !normalize(chunk.text).includes(normalize(evidence.quote))) { valid = false; break; }
-      statementSources.set(chunk.url, { title: chunk.title, url: chunk.url });
+      statementSources.set(chunk.url, { title: sourceTitle(chunk.title), url: chunk.url });
     }
-    if (!valid || [...paragraphs, text].join(" ").split(/\s+/).length > 200) continue;
+    if (!valid || [...paragraphs, text].join(" ").split(/\s+/).length > maxWords) continue;
     for (const url of linkedUrls) {
       const chunk = chunks.find((item) => item.url === url)!;
-      statementSources.set(url, { title: chunk.title, url });
+      statementSources.set(url, { title: sourceTitle(chunk.title), url });
     }
     paragraphs.push(text);
     for (const [url, source] of statementSources) sources.set(url, source);
@@ -175,4 +175,18 @@ export function groundedAnswer(raw: unknown, chunks: Chunk[]): Answer {
   if (!paragraphs.length) return missing;
   const answer = paragraphs.join("\n\n");
   return { answer, sources: [...sources.values()] };
+}
+
+// Display metadata only: never alter the stored title or the exact source URL.
+export function sourceTitle(title: string): string {
+  let text = title.trim().split(/\s+\|\s+/)[0];
+  for (let i = 0; i < 2; i++) {
+    try { const decoded = decodeURIComponent(text); if (decoded === text) break; text = decoded; } catch { break; }
+  }
+  if (/[/\\]|^https?:/i.test(text)) {
+    const parts = text.split(/[?#]/)[0].split(/[/\\]/).filter(Boolean);
+    text = [...parts].reverse().find(part => /\.(pdf|docx?)$/i.test(part)) || parts.pop() || '';
+  }
+  text = text.replace(/\.(pdf|html?|aspx?|php|docx?)$/i, '').replace(/_/g, ' ').replace(/([a-z])-([a-z])/gi, '$1 $2').replace(/\s+/g, ' ').trim();
+  return text && /[a-z]{3}/i.test(text) && !/^https?:|www\./i.test(text) ? text : 'Official page';
 }

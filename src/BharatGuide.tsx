@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import './bharat-guide.css';
+import { AnswerMarkdown } from './AnswerMarkdown';
+import { sourceTitle } from '../convex/lib/answerRules';
 
 type Source = { title: string; url: string };
 type Answer = { answer: string; sources: Source[]; remaining: number; searchQuery?: string; rewritePath?: string };
@@ -31,8 +33,8 @@ function Sources({ sources }: { sources: Source[] }) {
   if (!sources.length) return null;
   return <div className="source-section"><h3>Official pages used</h3>
     <ul>{sources.map(source => <li key={source.url}>
-      <a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`${source.title} (opens in a new tab)`}>
-        <span className="source-title">{source.title}</span><span className="source-url">{source.url}</span>
+      <a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`${sourceTitle(source.title)} (opens in a new tab)`}>
+        <span className="source-title">{sourceTitle(source.title)}</span>
       </a>
     </li>)}</ul>
   </div>;
@@ -133,7 +135,7 @@ export function BharatGuide() {
           <div className="assistant-message">
             <h2 className="message-author">Bharat Guide</h2>
             {turn.result ? <><div className="answer-text" data-testid="answer-text">
-              {turn.result.answer.split('\n\n').map((p,i) => <p key={i}>{p}</p>)}</div>{turn.result.searchQuery && <p className="searched-query" data-testid="searched-query">Searched: {turn.result.searchQuery} - {turn.result.rewritePath}</p>}<Sources sources={turn.result.sources} /></>
+              <AnswerMarkdown answer={turn.result.answer} sources={turn.result.sources} /></div>{turn.result.searchQuery && <p className="searched-query" data-testid="searched-query">Searched: {turn.result.searchQuery} - {turn.result.rewritePath}</p>}<Sources sources={turn.result.sources} /></>
               : turn.error ? <div className="error-message" role="alert"><p>{turn.error}</p>{turn.searchQuery && <p className="searched-query" data-testid="searched-query">Searched: {turn.searchQuery} - {turn.rewritePath}</p>}
                 <button type="button" onClick={() => { setQuestion(turn.question); input.current?.focus(); }}>Try again</button></div>
                 : <div className="searching" role="status"><span className="loading-dot" />Reading the government pages…</div>}

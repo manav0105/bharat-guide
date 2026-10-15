@@ -95,7 +95,15 @@ textarea:disabled { opacity: .7; }
 .user-message p { margin: 0; line-height: 1.5; font-size: 18px; white-space: pre-wrap; overflow-wrap: anywhere; }
 .assistant-message { padding-top: 24px; }
 .message-author { margin: 0 0 12px; color: var(--green); font-size: 16px; font-weight: 700; }
-.assistant-message .answer-text p { font-size: 18px; line-height: 1.65; }
+.assistant-message .answer-text { font-size: 18px; line-height: 1.65; overflow-wrap: anywhere; }
+.assistant-message .answer-text p { font-size: inherit; line-height: inherit; margin: 0 0 16px; }
+.answer-text ul, .answer-text ol { margin: 0 0 18px; padding-left: 1.4em; }
+.answer-text li { margin: 8px 0; padding-left: 4px; }
+.answer-text li p { margin-bottom: 8px; }
+.answer-text a { color: var(--green); text-decoration: underline; }
+.answer-text a:hover { text-decoration-thickness: 2px; }
+.answer-text strong { font-weight: 700; }
+.answer-text > :last-child { margin-bottom: 0; }
 .assistant-message .source-section { margin-top: 18px; }
 .assistant-message .source-section a { padding-block: 12px; }
 .assistant-message .source-title { font-size: 15px; }

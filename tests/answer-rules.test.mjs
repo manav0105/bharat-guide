@@ -88,3 +88,10 @@ test('source references expand only to exact retrieved titles and URLs',()=>{
  assert.equal(groundedAnswer(reply('Read [[source:retrieved'),[chunk]).answer,NOT_FOUND);
  assert.equal(groundedAnswer(reply('Read [[source:retrieved]] and [apply](https://evil.example/).'),[chunk]).answer,NOT_FOUND);
 });
+
+ test('the usual word cap stays in place while an explicit longer-answer budget permits detail',()=>{
+ const chunk={id:'c1',title:'Official guide',text:'This official guide contains supported information for citizens.',url:'https://example.gov.in/guide'};
+ const raw={found:true,statements:[{text:'Supported '.repeat(220),evidence:[{chunkId:'c1',quote:chunk.text}]}]};
+ assert.equal(groundedAnswer(raw,[chunk]).answer,NOT_FOUND);
+ assert.notEqual(groundedAnswer(raw,[chunk],400).answer,NOT_FOUND);
+ });
