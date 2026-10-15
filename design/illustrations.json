@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "runtimeGeneration": false,
+  "assets": [
+    {
+      "file": "public/images/parliament.png",
+      "prompt": "Editorial architectural line illustration for independent citizen guide. Palette off-white #F7F8F5, fine deep navy #172B46 pen lines, pale stone #DDE3DF flat washes, very small saffron #C77732 and green #39715B accents. Soft upper-left daylight, matte paper, welcoming and trustworthy. One recognizable institution three-quarter view, landscape 4:3, generous off-white negative space, thin ground line. NO national emblem, seals, ministry logos, flags, official signage, lettering, text, recognizable people, gradients or photorealism. Subject: India's old circular Parliament House, long continuous colonnade and circular sandstone form"
+    },
+    {
+      "file": "public/images/supreme-court.png",
+      "prompt": "Editorial architectural line illustration for independent citizen guide. Palette off-white #F7F8F5, fine deep navy #172B46 pen lines, pale stone #DDE3DF flat washes, very small saffron #C77732 and green #39715B accents. Soft upper-left daylight, matte paper, welcoming and trustworthy. One recognizable institution three-quarter view, landscape 4:3, generous off-white negative space, thin ground line. NO national emblem, seals, ministry logos, flags, official signage, lettering, text, recognizable people, gradients or photorealism. Subject: Supreme Court of India, recognizable central dome and symmetrical low wings"
+    },
+    {
+      "file": "public/images/rashtrapati-bhavan.png",
+      "prompt": "Editorial architectural line illustration for independent citizen guide. Palette off-white #F7F8F5, fine deep navy #172B46 pen lines, pale stone #DDE3DF flat washes, very small saffron #C77732 and green #39715B accents. Soft upper-left daylight, matte paper, welcoming and trustworthy. One recognizable institution three-quarter view, landscape 4:3, generous off-white negative space, thin ground line. NO national emblem, seals, ministry logos, flags, official signage, lettering, text, recognizable people, gradients or photorealism. Subject: Rashtrapati Bhavan New Delhi, distinctive broad dome and long sandstone facade"
+    },
+    {
+      "file": "public/images/panchayat.png",
+      "prompt": "Editorial architectural line illustration for independent citizen guide. Palette off-white #F7F8F5, fine deep navy #172B46 pen lines, pale stone #DDE3DF flat washes, very small saffron #C77732 and green #39715B accents. Soft upper-left daylight, matte paper, welcoming and trustworthy. One recognizable institution three-quarter view, landscape 4:3, generous off-white negative space, thin ground line. NO national emblem, seals, ministry logos, flags, official signage, lettering, text, recognizable people, gradients or photorealism. Subject: a modest Indian village panchayat office with a tiled roof, shaded veranda and one small tree"
+    }
+  ]
+}

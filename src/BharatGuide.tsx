@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import './bharat-guide.css';
 import { AnswerMarkdown } from './AnswerMarkdown';
+import { InstitutionCarousel } from './InstitutionCarousel';
 import { sourceTitle } from '../convex/lib/answerRules';
 
 type Source = { title: string; url: string };
@@ -115,20 +116,20 @@ export function BharatGuide() {
     }
   }
 
-  return <div className="guide">
+  return <div className={`guide ${turns.length ? 'has-chat' : 'is-empty'}`}>
     <a className="skip-link" href="#question">Skip to your question</a>
     <header className="site-header">
       <a className="brand" href="/" aria-label="Bharat Guide home"><BookMark /><span>Bharat Guide</span></a>
       <button className="new-chat" type="button" onClick={newChat}>New chat</button>
     </header>
     <main className="main-content" style={{ paddingBottom: composerHeight + 28 }}>
-      {!turns.length && <>
-        <div className="introduction"><h1>Government services and benefits, explained.</h1>
-          <p>Get a short answer, with the official pages behind it.</p></div>
+      {!turns.length && <div className="welcome-layout"><div className="welcome-copy">
+        <div className="introduction"><h1>Answers to government questions, from official sources.</h1>
+          <p>Ask in plain English. Get a clear answer, with links to the official pages.</p></div>
         <div className="suggestions"><p>Not sure where to start?</p><div className="example-list">
           {examples.map(example => <button type="button" key={example} onClick={() => { setQuestion(example); input.current?.focus(); }}>{example}</button>)}
         </div></div>
-      </>}
+      </div><InstitutionCarousel /></div>}
       <section className="conversation" aria-label="Conversation" role="log" aria-live="polite" aria-relevant="additions text">
         {turns.map(turn => <article className="chat-turn" key={turn.id} data-testid="chat-turn">
           <div className="user-message"><span className="visually-hidden">You: </span><p>{turn.question}</p></div>
