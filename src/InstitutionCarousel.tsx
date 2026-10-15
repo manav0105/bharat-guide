@@ -33,7 +33,6 @@ export function InstitutionCarousel() {
     onFocus={() => setInteracting(true)} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(false); }}>
     <figure aria-live={paused || reduced ? 'polite' : 'off'}>
       <div className="institution-art"><img key={slide.image} src={`/images/${slide.image}`} alt={`Illustration of ${slide.title}`} width="1024" height="768" /></div>
-      <figcaption><span className="institution-title">{slide.title}</span><p>{slide.caption}</p></figcaption>
     </figure>
     <div className="carousel-controls"><span className="slide-count">{index + 1} / {slides.length}</span>
       <div className="carousel-buttons">
