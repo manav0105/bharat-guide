@@ -11,10 +11,10 @@ export function InstitutionCarousel() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [interacting, setInteracting] = useState(false);
-  const [wide, setWide] = useState(() => window.matchMedia('(min-width: 900px)').matches);
+  const [wide, setWide] = useState(() => window.matchMedia('(min-width: 768px)').matches);
   const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   useEffect(() => {
-    const width = window.matchMedia('(min-width: 900px)');
+    const width = window.matchMedia('(min-width: 768px)');
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const update = () => { setWide(width.matches); setReduced(motion.matches); };
     width.addEventListener('change', update); motion.addEventListener('change', update);
