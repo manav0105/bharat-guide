@@ -9,7 +9,7 @@ const label = process.env.GATE_TEST_LABEL || 'gate-live-incognito';
 const normal = process.env.GATE_TEST_NORMAL === '1';
 const browser = normal ? await chromium.connectOverCDP('http://127.0.0.1:9222')
   : await chromium.launch({ channel: 'chrome', headless: true });
-const context = normal ? browser.contexts()[0] : await browser.newContext({ viewport: { width: 1280, height: 900 } });
+const context = normal ? browser.contexts()[0] : await browser.newContext({ viewport: { width: 1280, height: Number(process.env.GATE_TEST_HEIGHT || 900) } });
 if (process.env.GATE_TEST_LEGACY === '1') {
   if (base !== 'http://127.0.0.1:3211') throw new Error('Legacy fixtures are permitted only in the isolated local database.');
   const token = randomBytes(32).toString('hex');
