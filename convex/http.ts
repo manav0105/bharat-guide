@@ -74,22 +74,30 @@ http.route({
     const history = parseHistory(input && typeof input === "object" && "history" in input ? input.history : undefined);
     if (!history) return json({ error: "Send at most three completed chat turns." }, 400);
     let result;
+    let anonymousRemaining: number | undefined;
     try {
-      result = await ctx.runAction(internal.ai.answer, { question: question.trim(), history, tokenHash: await hash(token) });
+      const tokenHash = await hash(token);
+      result = await ctx.runAction(internal.ai.answer, { question: question.trim(), history, tokenHash });
+      // Read the same per-visitor counter used by the reservation transaction.
+      // A failed allowance refresh must not discard an otherwise valid answer.
+      try {
+        const status = await ctx.runMutation(internal.questions.visitor, { tokenHash, create: false });
+        anonymousRemaining = status?.anonymousRemaining;
+      } catch { /* The browser refreshes /api/visitor if this value is absent. */ }
     } catch (error) {
       if (error instanceof ConvexError && typeof error.data === "object" && error.data !== null && "code" in error.data && error.data.code === "SIGNUP_REQUIRED") {
-        return json({ error: "Sign up free to keep asking", code: "SIGNUP_REQUIRED" }, 403);
+        return json({ error: "Sign up free to keep asking", code: "SIGNUP_REQUIRED", anonymousRemaining: 0 }, 403);
       }
       return json({ error: "Service busy, please try again in a minute" }, 503);
     }
     if (result.error === "limit") {
-      return json({ error: "You have asked 20 questions today. Come back tomorrow.", remaining: 0 }, 429);
+      return json({ error: "You have asked 20 questions today. Come back tomorrow.", remaining: 0, anonymousRemaining }, 429);
     }
     if (result.error === "configuration") {
       return json({ error: "Answers are not available yet. Please try again later." }, 503);
     }
     if (result.error === "unavailable") {
-      return json({ error: "Service busy, please try again in a minute", remaining: result.remaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath }, 503);
+      return json({ error: "Service busy, please try again in a minute", remaining: result.remaining, anonymousRemaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath }, 503);
     }
     if (result.answer === NOT_FOUND || result.answer === stateNotFound(result.searchQuery || question)) {
       try {
@@ -100,7 +108,7 @@ http.route({
         console.warn("Could not save unanswered-question log");
       }
     }
-    return json({ answer: result.answer, sources: result.sources, remaining: result.remaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath });
+    return json({ answer: result.answer, sources: result.sources, remaining: result.remaining, anonymousRemaining, searchQuery: result.searchQuery, searchSources: result.searchSources, rewritePath: result.rewritePath });
   }),
 });
 

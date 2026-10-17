@@ -29,7 +29,7 @@ test('generic and state-specific gaps are logged; answers, clarifications and se
  ];
  for(const result of results){
   const saved=[];
-  const response=await ask({runAction:async()=>result,runMutation:async(_,args)=>{saved.push(args);return 'test-log-id';}},request());
+  const response=await ask({runAction:async()=>result,runMutation:async(_,args)=>{if(args.create===false)return {remaining:result.remaining,anonymousRemaining:2};saved.push(args);return 'test-log-id';}},request());
   assert.deepEqual(saved,(result.answer===NOT_FOUND||result.answer==="I couldn't find an official Assam page for this")?[{question:'What is a blorp?'}]:[]);
   const body=await response.json();
   if(result.error===null){assert.equal(response.status,200);assert.equal(body.answer,result.answer);assert.equal(body.remaining,19);}

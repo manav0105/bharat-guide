@@ -14,7 +14,7 @@ export const visitor = internalMutation({
       .withIndex("by_token", (q) => q.eq("tokenHash", args.tokenHash)).unique();
     if (existing) return { remaining: DAILY_LIMIT - usedToday(existing.day, existing.questions, now), anonymousRemaining: guestQuestionsRemaining(existing) };
     if (!args.create) return null;
-    await ctx.db.insert("visitors", { tokenHash: args.tokenHash, day: indiaDay(now), questions: 0, guestQuestions: 0 });
+    await ctx.db.insert("visitors", { tokenHash: args.tokenHash, day: indiaDay(now), questions: 0, guestQuestionsSinceGate: 0 });
     return { remaining: DAILY_LIMIT, anonymousRemaining: 3 };
   },
 });
@@ -37,7 +37,7 @@ export const reserveQuestion = internalMutation({
     }
     const questions = usedToday(visitor.day, visitor.questions, now) + 1;
     await ctx.db.patch(visitor._id, { day: indiaDay(now), questions,
-      guestQuestions: guestQuestionsUsed(visitor) + (signedIn ? 0 : 1),
+      guestQuestionsSinceGate: guestQuestionsUsed(visitor) + (signedIn ? 0 : 1),
     });
     return { allowed: true, remaining: DAILY_LIMIT - questions };
   },

@@ -66,18 +66,26 @@ export function BharatGuide() {
   const inFlight = useRef(false);
   const generation = useRef(0);
   const request = useRef<AbortController | null>(null);
+  const visitorRefresh = useRef(0);
+  const signedIn = useRef(isAuthenticated);
+  signedIn.current = isAuthenticated;
 
   async function startVisitor() {
+    const refresh = ++visitorRefresh.current;
+    setReady(false); setAnonymousRemaining(null);
     setConnectionError('');
     try {
       const response = await fetch('/api/visitor', { credentials: 'same-origin' });
       if (!response.ok) throw new Error('Could not start');
-      const body = await response.json(); setRemaining(body.remaining); setAnonymousRemaining(body.anonymousRemaining); setReady(true);
-    } catch { setConnectionError('Could not connect. Check your connection and try again.'); }
+      const body = await response.json();
+      if (refresh !== visitorRefresh.current) return;
+      setRemaining(body.remaining); setAnonymousRemaining(body.anonymousRemaining); setReady(true);
+    } catch { if (refresh === visitorRefresh.current) setConnectionError('Could not connect. Check your connection and try again.'); }
   }
 
   useEffect(() => {
     if (isAuthenticated) setAccountMode(null);
+    if (authLoading) { setReady(false); setAnonymousRemaining(null); }
     if (!authLoading) void startVisitor();
   }, [isAuthenticated, authLoading]);
   useEffect(() => {
@@ -122,13 +130,12 @@ export function BharatGuide() {
       const body = await response.json();
       if (generation.current !== currentGeneration) return;
       if (body.code === 'SIGNUP_REQUIRED') {
-        setAnonymousRemaining(0); setAccountMode('signUp'); setQuestion(submitted);
+        setAnonymousRemaining(0); if (!signedIn.current) setAccountMode('signUp'); setQuestion(submitted);
         setTurns(old => old.filter(t => t.id !== id)); return;
       }
-      if (typeof body.remaining === 'number') {
-        if (!isAuthenticated) setAnonymousRemaining(old => old === null ? null : Math.max(0, old - Math.max(0, (remaining ?? body.remaining) - body.remaining)));
-        setRemaining(body.remaining);
-      }
+      if (typeof body.anonymousRemaining === 'number') setAnonymousRemaining(body.anonymousRemaining);
+      else if (!signedIn.current) void startVisitor();
+      if (typeof body.remaining === 'number') setRemaining(body.remaining);
       setTurns(old => old.map(t => t.id !== id ? t : response.ok ? { ...t, result: body }
         : { ...t, error: body.error || 'Could not get an answer. Please try again.', searchQuery: body.searchQuery, rewritePath: body.rewritePath }));
     } catch {

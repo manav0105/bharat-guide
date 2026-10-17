@@ -20,6 +20,7 @@ export default defineSchema({
     day: v.string(),
     questions: v.number(),
     guestQuestions: v.optional(v.number()),
+    guestQuestionsSinceGate: v.optional(v.number()),
   }).index("by_token", ["tokenHash"]),
   unansweredQuestions: defineTable({
     question: v.string(),
