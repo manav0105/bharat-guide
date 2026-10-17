@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { writeFile, mkdir } from 'node:fs/promises';
+import { createTestAccount } from './account';
+
+test.beforeEach(async ({ page }) => { await createTestAccount(page); });
 
 const missing = 'I could not find this in official sources';
 const questions = [

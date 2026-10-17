@@ -9,13 +9,16 @@
  */
 
 import type * as ai from "../ai.js";
+import type * as auth from "../auth.js";
 import type * as documentLoader from "../documentLoader.js";
 import type * as http from "../http.js";
 import type * as lib_answerRules from "../lib/answerRules.js";
 import type * as lib_conversation from "../lib/conversation.js";
+import type * as lib_guestAccess from "../lib/guestAccess.js";
 import type * as lib_serviceRetry from "../lib/serviceRetry.js";
 import type * as lib_sourcePolicy from "../lib/sourcePolicy.js";
 import type * as questions from "../questions.js";
+import type * as signups from "../signups.js";
 import type * as storageCleanup from "../storageCleanup.js";
 import type * as unansweredQuestions from "../unansweredQuestions.js";
 
@@ -27,13 +30,16 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   ai: typeof ai;
+  auth: typeof auth;
   documentLoader: typeof documentLoader;
   http: typeof http;
   "lib/answerRules": typeof lib_answerRules;
   "lib/conversation": typeof lib_conversation;
+  "lib/guestAccess": typeof lib_guestAccess;
   "lib/serviceRetry": typeof lib_serviceRetry;
   "lib/sourcePolicy": typeof lib_sourcePolicy;
   questions: typeof questions;
+  signups: typeof signups;
   storageCleanup: typeof storageCleanup;
   unansweredQuestions: typeof unansweredQuestions;
 }>;

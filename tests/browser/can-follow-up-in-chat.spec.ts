@@ -1,5 +1,8 @@
 import {test,expect} from '@playwright/test';
 import {writeFile} from 'node:fs/promises';
+import {createTestAccount} from './account';
+
+test.beforeEach(async({page})=>{await createTestAccount(page);});
 
 test('PAN follow-ups keep context in the browser and New chat keeps the allowance',async({page})=>{
  test.setTimeout(900_000);

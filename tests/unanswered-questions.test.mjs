@@ -7,7 +7,7 @@ const bundle=async file=>{
 };
 const {record}=await bundle('convex/unansweredQuestions.ts');
 const {default:http}=await bundle('convex/http.ts');
-const ask=http.lookup('/ask','POST')[0]._handler;
+const ask=http.lookup('/api/ask','POST')[0]._handler;
 const NOT_FOUND='I could not find this in official sources';
 const request=()=>new Request('https://example.convex.site/api/ask',{method:'POST',headers:{'Content-Type':'application/json',Cookie:'bharat_visitor='+ 'a'.repeat(64)},body:JSON.stringify({question:'  What is a blorp?  ',history:[]})});
 

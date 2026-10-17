@@ -1,19 +1,21 @@
 import { internalMutation, internalQuery } from "./_generated/server";
-import { v } from "convex/values";
+import { ConvexError, v } from "convex/values";
+import { getAuthUserId } from "@convex-dev/auth/server";
+import { guestQuestionsRemaining, guestQuestionsUsed } from "./lib/guestAccess";
 import { DAILY_LIMIT, canAsk, indiaDay, usedToday, searchQuestion, usefulChunk, isLoadedSourceUrl } from "./lib/answerRules";
 import { requestedStates, matchesRequestedState, requestedStatePublisher, sourcePriority } from "./lib/sourcePolicy";
 
 export const visitor = internalMutation({
   args: { tokenHash: v.string(), create: v.boolean() },
-  returns: v.union(v.object({ remaining: v.number() }), v.null()),
+  returns: v.union(v.object({ remaining: v.number(), anonymousRemaining: v.number() }), v.null()),
   handler: async (ctx, args) => {
     const now = Date.now();
     const existing = await ctx.db.query("visitors")
       .withIndex("by_token", (q) => q.eq("tokenHash", args.tokenHash)).unique();
-    if (existing) return { remaining: DAILY_LIMIT - usedToday(existing.day, existing.questions, now) };
+    if (existing) return { remaining: DAILY_LIMIT - usedToday(existing.day, existing.questions, now), anonymousRemaining: guestQuestionsRemaining(existing) };
     if (!args.create) return null;
-    await ctx.db.insert("visitors", { tokenHash: args.tokenHash, day: indiaDay(now), questions: 0 });
-    return { remaining: DAILY_LIMIT };
+    await ctx.db.insert("visitors", { tokenHash: args.tokenHash, day: indiaDay(now), questions: 0, guestQuestions: 0 });
+    return { remaining: DAILY_LIMIT, anonymousRemaining: 3 };
   },
 });
 
@@ -29,8 +31,14 @@ export const reserveQuestion = internalMutation({
     if (!visitor || !canAsk(visitor.day, visitor.questions, now)) {
       return { allowed: false, remaining: 0 };
     }
+    const signedIn = (await getAuthUserId(ctx)) !== null;
+    if (!signedIn && guestQuestionsRemaining(visitor) === 0) {
+      throw new ConvexError({ code: "SIGNUP_REQUIRED" });
+    }
     const questions = usedToday(visitor.day, visitor.questions, now) + 1;
-    await ctx.db.patch(visitor._id, { day: indiaDay(now), questions });
+    await ctx.db.patch(visitor._id, { day: indiaDay(now), questions,
+      guestQuestions: guestQuestionsUsed(visitor) + (signedIn ? 0 : 1),
+    });
     return { allowed: true, remaining: DAILY_LIMIT - questions };
   },
 });

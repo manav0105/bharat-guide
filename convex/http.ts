@@ -4,8 +4,13 @@ import { internal } from "./_generated/api";
 import { parseHistory } from "./lib/conversation";
 import { NOT_FOUND } from "./lib/answerRules";
 import { stateNotFound } from "./lib/sourcePolicy";
+import { ConvexError } from "convex/values";
+import { auth } from "./auth";
+import { registerStaticRoutes } from "@convex-dev/static-hosting";
+import { components } from "./_generated/api";
 
 const http = httpRouter();
+auth.addHttpRoutes(http);
 const cookieName = "bharat_visitor";
 const json = (body: unknown, status = 200, extra: Record<string, string> = {}) =>
   new Response(JSON.stringify(body), { status, headers: {
@@ -25,7 +30,7 @@ async function hash(token: string): Promise<string> {
 }
 
 http.route({
-  path: "/visitor", method: "GET",
+  path: "/api/visitor", method: "GET",
   handler: httpAction(async (ctx, request) => {
     const oldToken = readToken(request);
     if (oldToken) {
@@ -44,7 +49,7 @@ http.route({
 });
 
 http.route({
-  path: "/ask", method: "POST",
+  path: "/api/ask", method: "POST",
   handler: httpAction(async (ctx, request) => {
     // No CORS allowance. Browser access is same-origin via hosting/Vite proxy.
     if (!(request.headers.get("Content-Type") || "").startsWith("application/json")) {
@@ -71,7 +76,10 @@ http.route({
     let result;
     try {
       result = await ctx.runAction(internal.ai.answer, { question: question.trim(), history, tokenHash: await hash(token) });
-    } catch {
+    } catch (error) {
+      if (error instanceof ConvexError && typeof error.data === "object" && error.data !== null && "code" in error.data && error.data.code === "SIGNUP_REQUIRED") {
+        return json({ error: "Sign up free to keep asking", code: "SIGNUP_REQUIRED" }, 403);
+      }
       return json({ error: "Service busy, please try again in a minute" }, 503);
     }
     if (result.error === "limit") {
@@ -96,4 +104,5 @@ http.route({
   }),
 });
 
+registerStaticRoutes(http, components.staticHosting);
 export default http;

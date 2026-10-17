@@ -4,6 +4,11 @@ import './bharat-guide.css';
 import { AnswerMarkdown } from './AnswerMarkdown';
 import { InstitutionCarousel } from './InstitutionCarousel';
 import { sourceTitle } from '../convex/lib/answerRules';
+import { useAuthActions, useAuthToken } from '@convex-dev/auth/react';
+import { useConvexAuth } from 'convex/react';
+import { AccountDialog } from './AccountDialog';
+import type { AccountMode } from './AccountDialog';
+import './account.css';
 
 type Source = { title: string; url: string };
 type Answer = { answer: string; sources: Source[]; remaining: number; searchQuery?: string; rewritePath?: string };
@@ -42,6 +47,13 @@ function Sources({ sources }: { sources: Source[] }) {
 }
 
 export function BharatGuide() {
+  const { isAuthenticated, isLoading: authLoading } = useConvexAuth();
+  const authToken = useAuthToken();
+  const { signOut } = useAuthActions();
+  const [accountMode, setAccountMode] = useState<AccountMode | null>(null);
+  const [accountBusy, setAccountBusy] = useState(false);
+  const [accountError, setAccountError] = useState('');
+  const [anonymousRemaining, setAnonymousRemaining] = useState<number | null>(null);
   const [turns, setTurns] = useState<Turn[]>(readChat);
   const [question, setQuestion] = useState('');
   const [remaining, setRemaining] = useState<number | null>(null);
@@ -60,11 +72,14 @@ export function BharatGuide() {
     try {
       const response = await fetch('/api/visitor', { credentials: 'same-origin' });
       if (!response.ok) throw new Error('Could not start');
-      const body = await response.json(); setRemaining(body.remaining); setReady(true);
+      const body = await response.json(); setRemaining(body.remaining); setAnonymousRemaining(body.anonymousRemaining); setReady(true);
     } catch { setConnectionError('Could not connect. Check your connection and try again.'); }
   }
 
-  useEffect(() => { void startVisitor(); }, []);
+  useEffect(() => {
+    if (isAuthenticated) setAccountMode(null);
+    if (!authLoading) void startVisitor();
+  }, [isAuthenticated, authLoading]);
   useEffect(() => {
     try { sessionStorage.setItem(CHAT_KEY, JSON.stringify(turns)); } catch { /* Chat still works if browser storage is unavailable. */ }
   }, [turns]);
@@ -93,7 +108,8 @@ export function BharatGuide() {
 
   async function ask(event: FormEvent) {
     event.preventDefault();
-    if (!question.trim() || !ready || inFlight.current || remaining === 0) return;
+    if (!question.trim() || !ready || authLoading || inFlight.current || remaining === 0) return;
+    if (!isAuthenticated && anonymousRemaining === 0) { setAccountMode('signUp'); return; }
     const currentGeneration = generation.current;
     const submitted = question.trim(); const id = crypto.randomUUID();
     const history = turns.filter(t => t.result).slice(-3).map(t => ({ question: t.question, answer: t.result!.answer }));
@@ -102,10 +118,17 @@ export function BharatGuide() {
     setTurns(old => [...old, { id, question: submitted }]);
     try {
       const response = await fetch('/api/ask', { method: 'POST', credentials: 'same-origin', signal: controller.signal,
-        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: submitted, history }) });
+        headers: { 'Content-Type': 'application/json', ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}) }, body: JSON.stringify({ question: submitted, history }) });
       const body = await response.json();
       if (generation.current !== currentGeneration) return;
-      if (typeof body.remaining === 'number') setRemaining(body.remaining);
+      if (body.code === 'SIGNUP_REQUIRED') {
+        setAnonymousRemaining(0); setAccountMode('signUp'); setQuestion(submitted);
+        setTurns(old => old.filter(t => t.id !== id)); return;
+      }
+      if (typeof body.remaining === 'number') {
+        if (!isAuthenticated) setAnonymousRemaining(old => old === null ? null : Math.max(0, old - Math.max(0, (remaining ?? body.remaining) - body.remaining)));
+        setRemaining(body.remaining);
+      }
       setTurns(old => old.map(t => t.id !== id ? t : response.ok ? { ...t, result: body }
         : { ...t, error: body.error || 'Could not get an answer. Please try again.', searchQuery: body.searchQuery, rewritePath: body.rewritePath }));
     } catch {
@@ -120,8 +143,19 @@ export function BharatGuide() {
     <a className="skip-link" href="#question">Skip to your question</a>
     <header className="site-header">
       <a className="brand" href="/" aria-label="Bharat Guide home"><BookMark /><span>Bharat Guide</span></a>
-      <button className="new-chat" type="button" onClick={newChat}>New chat</button>
+      <div className="header-actions">
+        <button className="new-chat" type="button" onClick={newChat}>New chat</button>
+        {isAuthenticated ? <button className="account-link" type="button" disabled={accountBusy} onClick={async () => {
+          setAccountBusy(true); setAccountError('');
+          try { await signOut(); } catch { setAccountError('Could not log out. Please try again.'); }
+          finally { setAccountBusy(false); }
+        }}>{accountBusy ? 'Logging out…' : 'Log out'}</button> : <>
+          <button className="account-link" type="button" disabled={authLoading} onClick={() => setAccountMode('signIn')}>Log in</button>
+          <button className="account-link" type="button" disabled={authLoading} onClick={() => setAccountMode('signUp')}>Sign up</button>
+        </>}
+      </div>
     </header>
+    {accountError && <p className="account-notice" role="alert">{accountError}</p>}
     <main className="main-content" style={{ paddingBottom: composerHeight + 28 }}>
       {!turns.length && <div className="welcome-layout"><div className="welcome-copy">
         <div className="introduction"><h1>Answers to government questions, from official sources.</h1>
@@ -152,7 +186,7 @@ export function BharatGuide() {
           onChange={event => setQuestion(event.target.value)} maxLength={500} rows={1}
           onKeyDown={event => { if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); event.currentTarget.form?.requestSubmit(); } }}
           placeholder={turns.length ? 'Ask a follow-up…' : 'Ask about a government service…'} aria-describedby="question-help" />
-          <button className="ask-button" type="submit" aria-label="Find an answer" disabled={!question.trim() || !ready || busy || remaining === 0}>
+          <button className="ask-button" type="submit" aria-label="Find an answer" disabled={!question.trim() || !ready || authLoading || busy || remaining === 0}>
             <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="m4 10 6-6 6 6M10 4v12" stroke="currentColor" fill="none" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button></div>
         <div className="composer-meta"><p id="question-help">Enter to send · Shift+Enter for a new line</p>
@@ -162,5 +196,6 @@ export function BharatGuide() {
       </form>
       <p className="chat-privacy">Chat stays in this browser tab. Bharat Guide is an independent guide.</p>
     </div>
+    {accountMode && <AccountDialog mode={accountMode} onMode={setAccountMode} onClose={() => setAccountMode(null)} />}
   </div>;
 }
