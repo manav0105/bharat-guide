@@ -1,5 +1,12 @@
 
-.env.local
+.env
+.env.*
+.auth-keys.json
+*.key
+*.pem
+*.p12
+*.pfx
+*credentials*.json
 node_modules/
 dist/
 .verification/
